@@ -75,6 +75,13 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Verify static export output
+        run: |
+          if [ ! -f ./out/index.html ]; then
+            echo "Error: ./out/index.html was not generated."
+            echo "GitHub Pages requires a static export output at ./out."
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
