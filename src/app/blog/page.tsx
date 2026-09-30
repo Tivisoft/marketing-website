@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const blogPosts = [
+const blogPosts = [
   {
     slug: 'costo-real-asistente-ia-codigo-equipo',
     title: 'El costo real de un asistente de IA para tu equipo: Por qué no son solo $20 USD al mes',
