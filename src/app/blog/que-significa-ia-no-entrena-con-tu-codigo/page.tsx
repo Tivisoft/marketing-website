@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: '¿Qué Significa Realmente que la IA no Entrena con tu Código? | Tivisoft Blog',
+  title: '¿Qué significa que la IA no entrena con tu código?',
   description:
     'Qué dicen los términos de DeepInfra sobre el uso de los datos de inferencia y qué límites conviene tener presentes.',
   alternates: {

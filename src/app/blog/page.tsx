@@ -7,7 +7,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Blog de Inteligencia Artificial para Ingeniería de Software | Tivisoft',
+  title: 'Blog de inteligencia artificial para ingeniería de software',
   description:
     'Artículos sobre FinOps para IA, tratamiento de datos y comparativas entre asistentes de código como GitHub Copilot, Cursor, Claude Code y Continue.',
   alternates: {

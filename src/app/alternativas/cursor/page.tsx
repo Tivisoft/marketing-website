@@ -8,7 +8,7 @@ import { FaqSection } from '@/components/FaqSection';
 import { CtaBanner } from '@/components/CtaBanner';
 
 export const metadata: Metadata = {
-  title: 'Alternativa al asistente de Cursor para empresas | EjectorSeat',
+  title: 'EjectorSeat en Cursor: acceso y FinOps para equipos',
   description: 'EjectorSeat es un plugin propio para VS Code y Cursor, basado en una modificación de Continue. Conoce su modelo integrado, acceso por clave y análisis FinOps.',
   alternates: { canonical: '/alternativas/cursor' },
   openGraph: {

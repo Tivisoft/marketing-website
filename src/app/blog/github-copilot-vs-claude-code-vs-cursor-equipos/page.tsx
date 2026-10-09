@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'GitHub Copilot, Claude Code y Cursor: guía para equipos | Tivisoft',
+  title: 'GitHub Copilot, Claude Code y Cursor: guía para equipos',
   description:
     'Compara asistentes de código para equipos y conoce EjectorSeat, solución empresarial basada en Continue para VS Code y Cursor, con modelo integrado y análisis FinOps.',
   alternates: { canonical: '/blog/github-copilot-vs-claude-code-vs-cursor-equipos' },

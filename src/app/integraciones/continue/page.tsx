@@ -9,7 +9,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Continue + EjectorSeat para VS Code y Cursor | Tivisoft',
+  title: 'Continue y EjectorSeat para VS Code y Cursor',
   description:
     'Conoce EjectorSeat, la solución empresarial basada en Continue para VS Code y Cursor: acceso con API key, modelo integrado de desarrollo y herramientas FinOps.',
   alternates: { canonical: '/integraciones/continue' },

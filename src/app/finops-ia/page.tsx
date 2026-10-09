@@ -34,7 +34,7 @@ const finopsFaqs = [
   {
     question: '¿Cómo ayudan los créditos a entender el consumo?',
     answer:
-      'Cada plan define créditos de inferencia. Un crédito equivale a 0,01 USD de precio de lista. La cantidad de tokens que representa depende del carril y de si son tokens de entrada, salida o caché; por eso no existe una conversión única de créditos a tokens.',
+      'Los créditos permiten medir el consumo del modelo integrado. La cantidad de tokens cubierta depende del carril y de si son tokens de entrada, salida o caché; por eso no existe una conversión única de créditos a tokens. Las condiciones comerciales se definen en la propuesta para cada organización.',
   },
   {
     question: '¿FinOps guarda el código, los prompts o las respuestas?',
@@ -77,7 +77,7 @@ export default function FinOpsIAPage() {
               Respuesta directa: ¿para qué sirve FinOps en EjectorSeat?
             </p>
             <p className="mt-3 text-base leading-relaxed text-slate-200 sm:text-lg">
-              El tablero de EjectorSeat atribuye consumo por proyecto, persona y carril. Esa visibilidad permite revisar el gasto, encontrar patrones de uso y orientar optimizaciones y formación. Los créditos muestran el precio de lista de la inferencia; los tokens que cubren varían según el modelo de trabajo y el tipo de token.
+              El tablero de EjectorSeat atribuye consumo por proyecto, persona y carril. Esa visibilidad permite revisar el gasto, encontrar patrones de uso y orientar optimizaciones y formación. Los créditos permiten medir el consumo de inferencia; la cantidad de tokens cubierta depende del carril, el modelo de trabajo y el tipo de token.
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -124,9 +124,9 @@ export default function FinOpsIAPage() {
         </section>
 
         <section className="py-8">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Créditos: una forma comparable de leer el gasto</h2>
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">Cómo interpretar los créditos</h2>
           <p className="mt-4 max-w-4xl leading-relaxed text-slate-300">
-            Un crédito equivale a 0,01 USD de precio de lista. Cada carril tiene tarifas separadas para tokens de entrada, salida y caché: por ejemplo, el carril ejs-agent valora un millón de tokens de entrada en 30 créditos y un millón de salida en 90. Por eso la bolsa puede cubrir más tokens de inferencia que una suscripción de asistente con cuota fija, aunque la equivalencia depende de la mezcla de uso. No es una promesa de tokens idénticos para todas las tareas.
+            Los créditos permiten revisar el consumo del modelo integrado. El uso se calcula según el carril y el tipo de token —entrada, salida o caché—, por lo que la cantidad de tokens cubierta varía con la mezcla de tareas. No existe una equivalencia única para comparar todos los patrones de uso. Las condiciones de cada propuesta comercial se acuerdan con la organización.
           </p>
         </section>
 

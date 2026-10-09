@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Planes de EjectorSeat | Tivisoft',
+  title: 'Planes de EjectorSeat',
   description:
     'Conoce la estructura de los planes de EjectorSeat y solicita una propuesta comercial para tu equipo.',
   alternates: { canonical: '/precios' },

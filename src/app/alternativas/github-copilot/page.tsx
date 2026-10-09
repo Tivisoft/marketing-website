@@ -9,7 +9,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Alternativa empresarial a GitHub Copilot | EjectorSeat',
+  title: 'EjectorSeat como alternativa empresarial a GitHub Copilot',
   description: 'EjectorSeat ofrece un plugin propio para VS Code y Cursor, acceso gobernado por clave y análisis FinOps. Conoce qué evaluar al comparar alternativas a GitHub Copilot.',
   alternates: { canonical: '/alternativas/github-copilot' },
   openGraph: {

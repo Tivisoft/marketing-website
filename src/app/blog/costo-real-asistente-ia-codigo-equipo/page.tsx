@@ -9,7 +9,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'El costo de los asistentes de IA para código | Tivisoft',
+  title: 'El costo de los asistentes de IA para código',
   description:
     'Cómo entender el costo de inferencia de los asistentes de código, comparar créditos y gestionar seguridad y uso con FinOps.',
   alternates: { canonical: '/blog/costo-real-asistente-ia-codigo-equipo' },
@@ -87,7 +87,7 @@ export default function CostoRealAsistentePage() {
         <div className="my-8 rounded-2xl border border-emerald-500/30 bg-slate-900 p-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">Respuesta rápida</p>
           <p className="mt-3 leading-relaxed text-slate-200">
-            EjectorSeat incluye créditos de inferencia para usar el modelo integrado. Según el catálogo comercial vigente, Team cuesta <strong>19 USD por asiento al mes</strong> e incluye una bolsa de 1.900 créditos. Cada crédito equivale a 0,01 USD de precio de lista; la cantidad de tokens depende del carril y de si son de entrada, salida o caché. FinOps permite revisar el consumo y buscar optimizaciones, sin prometer un porcentaje de ahorro.
+            EjectorSeat incluye créditos de inferencia para usar el modelo integrado. El alcance de los créditos y las condiciones comerciales se definen en la propuesta para cada organización. El consumo depende del carril y del tipo de token —entrada, salida o caché—. FinOps permite revisar patrones de uso y evaluar oportunidades de optimización con datos del equipo, sin prometer un porcentaje de ahorro.
           </p>
         </div>
 
@@ -105,10 +105,7 @@ export default function CostoRealAsistentePage() {
           <section>
             <h2 className="mt-10 text-2xl font-bold text-white">Cómo leer los créditos de inferencia</h2>
             <p>
-              En el catálogo de EjectorSeat, un crédito representa 0,01 USD de precio de lista. El precio por millón de tokens varía por carril y tipo de token. Como ejemplo, en el carril ejs-agent un millón de tokens de entrada equivale a 30 créditos y un millón de salida a 90 créditos. Así, la bolsa puede cubrir más tokens de inferencia que una cuota plana de otro asistente en ciertos patrones de uso; la equivalencia cambia con la mezcla de tareas y no debe interpretarse como una comparación universal.
-            </p>
-            <p>
-              La bolsa de 1.900 créditos de Team corresponde a 19 USD de precio de lista. El plan Enterprise define 3.900 créditos por asiento y cuesta 39 USD al mes; la variante de 29 USD aplica bajo la condición de precertificación SOC 2 descrita en el catálogo. Consulta <Link href="/precios" className="text-emerald-300 underline">precios y condiciones</Link> para ver los planes.
+              Los créditos permiten medir el consumo del modelo integrado. El gasto en créditos depende del carril y del tipo de token —entrada, salida o caché—, por lo que la cantidad de tokens cubierta puede cambiar según la tarea y la mezcla de uso. En determinados patrones, los créditos pueden cubrir más tokens de inferencia que otras ofertas; la comparación requiere medir el mismo tipo de tarea y token. Consulta la página de <Link href="/precios" className="text-emerald-300 underline">planes</Link> o solicita una propuesta para conocer las condiciones comerciales aplicables.
             </p>
           </section>
 

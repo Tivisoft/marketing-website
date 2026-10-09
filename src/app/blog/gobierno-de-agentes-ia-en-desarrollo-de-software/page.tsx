@@ -9,7 +9,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Gobierno de Agentes de IA en Desarrollo de Software | Tivisoft Blog',
+  title: 'Gobierno de agentes de IA en desarrollo de software',
   description:
     'Guía para equipos de ingeniería sobre control de acceso, análisis FinOps, seguridad y alternativas a asistentes de código como GitHub Copilot.',
   alternates: {

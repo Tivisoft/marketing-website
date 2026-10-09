@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Seguridad y tratamiento de datos en EjectorSeat | Tivisoft',
+  title: 'Seguridad y tratamiento de datos en EjectorSeat',
   description:
     'Conoce cómo se trata el código enviado desde EjectorSeat y el compromiso de no entrenamiento publicado por DeepInfra, proveedor del modelo integrado.',
   alternates: {

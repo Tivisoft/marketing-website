@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Claude Code y Continue: dos enfoques para asistir el desarrollo | Tivisoft',
+  title: 'Claude Code y Continue: dos enfoques para asistir el desarrollo',
   description:
     'Compara un agente de terminal de terceros con EjectorSeat, una solución empresarial basada en Continue para VS Code y Cursor con modelo de desarrollo integrado y FinOps.',
   alternates: { canonical: '/blog/claude-code-vs-continue-gateway-empresarial' },

@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Opciones de infraestructura para asistentes de código | Tivisoft',
+  title: 'Opciones de infraestructura para asistentes de código',
   description:
     'EjectorSeat es un plugin para VS Code y Cursor que utiliza un modelo integrado. Conoce también la oferta empresarial de Tivisoft para infraestructura propia.',
   alternates: { canonical: '/despliegue-en-tu-infraestructura' },
