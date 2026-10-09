@@ -20,7 +20,7 @@ const homeFeaturedPosts = [
   {
     slug: 'costo-real-asistente-ia-codigo-equipo',
     title: 'El costo real de un asistente de IA para tu equipo',
-    description: 'Por qué el costo real asciende a $100-$200 USD/mes por desarrollador en modo agéntico y cómo FinOps lo resuelve.',
+    description: 'Cómo evaluar el consumo real de asistentes de código y usar FinOps para encontrar oportunidades de optimización.',
     category: 'FinOps',
     readTime: '6 min',
   },
@@ -34,7 +34,7 @@ const homeFeaturedPosts = [
   {
     slug: 'que-significa-ia-no-entrena-con-tu-codigo',
     title: '¿Qué significa que la IA no entrene con tu código?',
-    description: 'Guía para CISOs: la diferencia entre promesas web, APIs comerciales y acuerdos formales de Zero Data Retention (ZDR).',
+    description: 'Guía para CISOs sobre el alcance de las cláusulas de no entrenamiento y el tratamiento de datos del proveedor.',
     category: 'Seguridad',
     readTime: '5 min',
   },
@@ -61,7 +61,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-6 max-w-xl text-lg text-slate-300">
-                Desde nuestro gateway empresarial <strong>EjectorSeat</strong> para desarrollo con Continue hasta software a medida y videojuegos interactivos.
+                Desde <strong>EjectorSeat</strong>, nuestro asistente empresarial de código basado en una modificación de Continue, hasta software a medida y videojuegos interactivos.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -102,12 +102,12 @@ export default function Home() {
                     <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4">
                       <div className="mb-3 flex items-center gap-2 text-sm text-slate-300">
                         <Bot className="h-4 w-4 text-emerald-400" />
-                        Gateway Activo (ZDR & DLP)
+                        EjectorSeat para equipos de desarrollo
                       </div>
                       <div className="flex items-end justify-between gap-4">
                         <div>
-                          <p className="text-3xl font-bold text-white">100%</p>
-                          <p className="text-sm text-slate-400">código protegido sin entrenamiento</p>
+                          <p className="text-2xl font-bold text-white">VS Code + Cursor</p>
+                          <p className="text-sm text-slate-400">plugin propio basado en Continue</p>
                         </div>
                         <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 text-emerald-300">
                           <Zap className="h-7 w-7" />
@@ -117,19 +117,19 @@ export default function Home() {
 
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4">
-                        <p className="text-sm text-slate-400">Ahorro TCO en Licencias</p>
-                        <p className="mt-2 text-2xl font-bold text-emerald-400">-52%</p>
+                        <p className="text-sm text-slate-400">Acceso</p>
+                        <p className="mt-2 text-2xl font-bold text-emerald-400">Por clave</p>
                       </div>
                       <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4">
-                        <p className="text-sm text-slate-400">Secretos Filtrados (DLP)</p>
-                        <p className="mt-2 text-2xl font-bold text-white">0 fugas</p>
+                        <p className="text-sm text-slate-400">Uso y costos</p>
+                        <p className="mt-2 text-2xl font-bold text-white">FinOps</p>
                       </div>
                     </div>
 
                     <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4">
                       <div className="mb-3 flex items-center justify-between text-sm text-slate-300">
-                        <span>Eficiencia de Tokens</span>
-                        <span className="text-emerald-300">+48.2%</span>
+                        <span>Visibilidad del consumo</span>
+                        <span className="text-emerald-300">Por equipo y usuario</span>
                       </div>
                       <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-800">
                         <div className="h-full w-[84%] rounded-full bg-gradient-to-r from-emerald-400 via-emerald-500 to-blue-500" />
@@ -173,12 +173,12 @@ export default function Home() {
             <div className="p-6 sm:p-8 lg:p-10">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
                 <Sparkles className="h-3.5 w-3.5" />
-                Gateway Empresarial de IA
+                Asistente empresarial de código
               </div>
               <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">EjectorSeat</h2>
 
               <p className="mt-5 text-slate-300 leading-relaxed">
-                El gateway corporativo que conecta a tus desarrolladores con los mejores modelos de IA (Claude 3.5 Sonnet, GPT-4o, DeepSeek) a través de <strong>Continue</strong> en VS Code y JetBrains, con custodia total, Zero Data Retention y disciplina FinOps.
+                Un plugin propio basado en una modificación de <strong>Continue</strong> para VS Code y Cursor. Integra un modelo especializado en desarrollo, gobierno de acceso para el equipo y análisis FinOps del consumo.
               </p>
 
               <ul className="mt-8 space-y-4 text-slate-200">
@@ -186,19 +186,19 @@ export default function Home() {
                   <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
                     <ShieldCheck className="h-3.5 w-3.5" />
                   </span>
-                  <span><strong>Zero Data Retention & DLP:</strong> Tu código nunca entrena modelos y los secretos se redactan automáticamente antes de salir.</span>
+                  <span><strong>Tratamiento de datos:</strong> DeepInfra declara en <a className="text-emerald-300 underline" href="https://deepinfra.com/terms">sus términos</a> que no usa datos de clientes para entrenar modelos, con el alcance y las excepciones allí descritos.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-blue-300">
                     <ChartBar className="h-3.5 w-3.5" />
                   </span>
-                  <span><strong>FinOps y Control de Costos:</strong> Límites por escuadrón y prompt caching que reducen el TCO hasta un 60% frente a Copilot y Cursor.</span>
+                  <span><strong>FinOps y control de costos:</strong> Analiza el consumo, identifica oportunidades de optimización y patrones de uso útiles para formación y retroalimentación.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
                     <Terminal className="h-3.5 w-3.5" />
                   </span>
-                  <span><strong>Continue en VS Code y JetBrains:</strong> Sin forks cerrados ni vendor lock-in. Compatible con tus editores estándar.</span>
+                  <span><strong>Instalación sencilla:</strong> El desarrollador pega su clave API de EjectorSeat en el plugin para VS Code o Cursor.</span>
                 </li>
               </ul>
 
@@ -245,33 +245,33 @@ export default function Home() {
                     <span className="h-3 w-3 rounded-full bg-blue-500" />
                     <span className="h-3 w-3 rounded-full bg-slate-500" />
                   </div>
-                  <span className="rounded-full border border-slate-700 bg-slate-800 px-2 py-1 text-xs text-slate-300">Squad Report</span>
+                  <span className="rounded-full border border-slate-700 bg-slate-800 px-2 py-1 text-xs text-slate-300">Panel FinOps</span>
                 </div>
 
                 <div className="space-y-4">
                   <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4">
-                    <p className="text-sm text-slate-400">Ahorro Promedio Estimado</p>
+                    <p className="text-sm text-slate-400">Consumo por equipo</p>
                     <div className="mt-3 flex items-end justify-between">
-                      <p className="text-3xl font-bold text-white">$10,560 USD</p>
-                      <span className="rounded-full bg-emerald-500/15 px-2 py-1 text-xs text-emerald-300">Anual / 50 devs</span>
+                      <p className="text-3xl font-bold text-white">Trazable</p>
+                      <span className="rounded-full bg-emerald-500/15 px-2 py-1 text-xs text-emerald-300">Por usuario y proyecto</span>
                     </div>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4">
-                      <p className="text-sm text-slate-400">Tokens con Descuento</p>
-                      <p className="mt-2 text-2xl font-bold text-white">88%</p>
+                      <p className="text-sm text-slate-400">Uso de inferencia</p>
+                      <p className="mt-2 text-2xl font-bold text-white">Tokens</p>
                     </div>
                     <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4">
-                      <p className="text-sm text-slate-400">Modelos Soportados</p>
-                      <p className="mt-2 text-2xl font-bold text-white">Multi (BYOK)</p>
+                      <p className="text-sm text-slate-400">Acceso del equipo</p>
+                      <p className="mt-2 text-2xl font-bold text-white">Claves</p>
                     </div>
                   </div>
 
                   <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4">
                     <div className="mb-3 flex items-center justify-between text-sm text-slate-300">
-                      <span>Cumplimiento SOC2 / ZDR</span>
-                      <span className="text-emerald-300">100% Auditado</span>
+                      <span>Datos para decisiones FinOps</span>
+                      <span className="text-emerald-300">Visibilidad</span>
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
                       <div className="h-full w-full rounded-full bg-gradient-to-r from-emerald-400 to-blue-500" />

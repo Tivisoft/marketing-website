@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BarChart3, TrendingDown, DollarSign, PieChart, ShieldAlert, Cpu, CheckCircle2, ArrowRight, Sparkles, Sliders } from 'lucide-react';
+import { BarChart3, TrendingDown, PieChart, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -9,52 +9,42 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'FinOps para IA en Ingeniería de Software | EjectorSeat Tivisoft',
+  title: 'FinOps para asistentes de código | EjectorSeat',
   description:
-    'Aplica principios de FinOps a tus asistentes de código y modelos de IA: asignación de costos por escuadrón, límites automáticos de tokens, prompt caching y ahorro de hasta 60%.',
-  alternates: {
-    canonical: '/finops-ia',
-  },
+    'Consulta el consumo de asistentes de código por proyecto, persona y carril. Usa datos agregados para optimizar recursos y orientar formación, sin registrar prompts ni respuestas.',
+  alternates: { canonical: '/finops-ia' },
   openGraph: {
-    title: 'FinOps for AI: Control de Costos en Asistentes de Código | EjectorSeat',
+    title: 'FinOps para asistentes de código | EjectorSeat',
     description:
-      'Elimina el despilfarro de licencias fijas y bucles agénticos descontrolados. Gestiona el gasto de Claude, GPT-4o y Copilot con el gateway FinOps de Tivisoft.',
+      'Visibilidad del consumo de IA para ingeniería, análisis de patrones de uso y créditos de inferencia por carril.',
     url: 'https://tivisoft.com/finops-ia',
     siteName: 'Tivisoft',
     locale: 'es_ES',
     type: 'website',
   },
-  keywords: [
-    'finops ia',
-    'finops for ai',
-    'control de costos ia desarrollo',
-    'optimizacion gasto llm ingenieria',
-    'finops software desarrollo',
-    'ejectorseat finops',
-    'ahorro licencias copilot cursor',
-  ],
+  keywords: ['finops ia', 'costos asistentes de código', 'gobierno de IA', 'EjectorSeat FinOps'],
 };
 
 const finopsFaqs = [
   {
-    question: '¿Qué es "FinOps para IA" en el contexto de desarrollo de software?',
+    question: '¿Qué muestra FinOps en EjectorSeat?',
     answer:
-      'FinOps para IA es la disciplina de gestión financiera y operativa aplicada al consumo de modelos de lenguaje e infraestructura de IA por parte de equipos de ingeniería. Su objetivo es garantizar la máxima productividad del desarrollador al menor costo posible, mediante visibilidad en tiempo real (Informar), optimización de modelos y caché (Optimizar) y políticas automáticas de presupuesto (Operar).',
+      'El tablero presenta consumo agregado y atribuido por organización, proyecto, persona, carril y sesión, según los datos disponibles. Ayuda a entender dónde se usan los recursos y a revisar su evolución; no promete ahorros porcentuales ni una reducción automática del gasto.',
   },
   {
-    question: '¿Cómo evita EjectorSeat que los flujos agénticos disparen la factura mensual?',
+    question: '¿Cómo ayudan los créditos a entender el consumo?',
     answer:
-      'Los agentes de código (como Claude Code, Continue en bucle o herramientas de testing) pueden generar cientos de miles de tokens por tarea si entran en bucles iterativos. EjectorSeat detecta anomalías de consumo en tiempo real, impone techos presupuestarios por sesión/día por desarrollador y corta bucles infinitos antes de que representen una sorpresa en la factura.',
+      'Cada plan define créditos de inferencia. Un crédito equivale a 0,01 USD de precio de lista. La cantidad de tokens que representa depende del carril y de si son tokens de entrada, salida o caché; por eso no existe una conversión única de créditos a tokens.',
   },
   {
-    question: '¿Qué es el enrutamiento inteligente de modelos (Tiered Model Routing)?',
+    question: '¿FinOps guarda el código, los prompts o las respuestas?',
     answer:
-      'No todas las tareas requieren el modelo más costoso. EjectorSeat enruta automáticamente el autocompletado en segundo plano a modelos ultrarrápidos y económicos (como DeepSeek Coder o Haiku), reservando modelos de frontera como Claude 3.5 Sonnet o GPT-4o únicamente para peticiones de chat y refactorización compleja, reduciendo el gasto medio de tokens hasta un 70%.',
+      'El tablero trabaja con metadatos de uso y consumo. El producto no debe registrar el contenido de prompts ni respuestas. Los patrones agregados pueden ayudar a los responsables a identificar necesidades de formación y dar retroalimentación al equipo, sin usar el contenido de las conversaciones.',
   },
   {
-    question: '¿Es compatible con el modelo BYOK (Bring Your Own Key)?',
+    question: '¿Puedo conectar mi propia cuenta de Anthropic, OpenAI o Bedrock?',
     answer:
-      'Sí. EjectorSeat permite conectar tus propias cuentas y contratos corporativos de Anthropic, Azure OpenAI o AWS Bedrock, agregando la capa de telemetría y límites presupuestarios sin comisiones abusivas sobre el consumo de inferencia.',
+      'EjectorSeat ofrece el modelo y el proveedor integrados en el producto. La modalidad BYOK y el enrutamiento hacia proveedores elegidos por cada cliente no forman parte de la oferta actual.',
   },
 ];
 
@@ -62,145 +52,93 @@ export default function FinOpsIAPage() {
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: 'Estrategia y Prácticas de FinOps para Asistentes de Código IA en Empresas',
+    headline: 'FinOps para asistentes de código: visibilidad y optimización del consumo',
     description:
-      'Guía técnica sobre la implementación de la disciplina FinOps para controlar el costo de tokens y asistentes de código en equipos de desarrollo.',
-    author: {
-      '@type': 'Organization',
-      name: 'Tivisoft',
-      url: 'https://tivisoft.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Tivisoft',
-      url: 'https://tivisoft.com',
-    },
+      'Cómo entender el uso de asistentes de código mediante créditos de inferencia y métricas agregadas.',
+    author: { '@type': 'Organization', name: 'Tivisoft', url: 'https://tivisoft.com' },
+    publisher: { '@type': 'Organization', name: 'Tivisoft', url: 'https://tivisoft.com' },
   };
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <JsonLd data={schemaData} />
-
       <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
-        <Breadcrumbs
-          items={[
-            { name: 'FinOps IA', href: '/finops-ia' },
-          ]}
-        />
-
-        {/* Hero */}
-        <section className="pt-4 pb-16 text-center sm:text-left">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-emerald-300">
-            <BarChart3 className="h-4 w-4" />
-            Disciplina FinOps para Equipos de Ingeniería
+        <Breadcrumbs items={[{ name: 'FinOps IA', href: '/finops-ia' }]} />
+        <section className="pb-14 pt-4">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-sm font-medium text-emerald-300">
+            <BarChart3 className="h-4 w-4" /> FinOps para equipos de ingeniería
           </div>
-
-          <h1 className="max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Controla y optimiza el costo real de la IA en tu equipo de desarrollo.
+          <h1 className="max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl">
+            Entiende y optimiza el consumo de IA de tu equipo.
           </h1>
-
-          {/* AEO Direct Answer Box */}
-          <div className="mt-8 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 p-6 shadow-glow">
+          <div className="mt-7 max-w-4xl rounded-2xl border border-emerald-500/30 bg-slate-900 p-6">
             <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-              Respuesta Directa (AEO): ¿Cómo ayuda FinOps para IA a recortar el presupuesto de ingeniería?
+              Respuesta directa: ¿para qué sirve FinOps en EjectorSeat?
             </p>
-            <p className="mt-3 text-base sm:text-lg text-slate-200 leading-relaxed">
-              <strong>FinOps para IA</strong> con <strong>EjectorSeat</strong> sustituye los costosos asientos planos de licencias ($19-$40/mes por desarrollador) por una gestión basada en consumo real, <strong>enrutamiento inteligente de modelos</strong> (DeepSeek para autocompletado y Claude 3.5 para arquitectura), <strong>prompt caching</strong> y <strong>techos presupuestarios por escuadrón</strong>. Esto permite reducir entre un 40% y un 60% el gasto en inferencia manteniendo la velocidad del equipo.
+            <p className="mt-3 text-base leading-relaxed text-slate-200 sm:text-lg">
+              El tablero de EjectorSeat atribuye consumo por proyecto, persona y carril. Esa visibilidad permite revisar el gasto, encontrar patrones de uso y orientar optimizaciones y formación. Los créditos muestran el precio de lista de la inferencia; los tokens que cubren varían según el modelo de trabajo y el tipo de token.
             </p>
           </div>
-
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="https://wa.me/573102134709"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-7 py-3.5 text-base font-semibold text-slate-950 shadow-glow transition hover:scale-[1.02]"
-            >
-              Auditar Gasto de IA de mi Equipo
-              <ArrowRight className="h-4 w-4" />
+            <a href="https://wa.me/573102134709" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 font-semibold text-slate-950">
+              Hablar con Tivisoft <ArrowRight className="h-4 w-4" />
             </a>
-            <Link
-              href="/precios"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/90 px-7 py-3.5 text-base font-semibold text-slate-200 transition hover:border-emerald-400/50 hover:text-white"
-            >
-              Ver Comparativa de Precios
+            <Link href="/precios" className="inline-flex items-center justify-center rounded-full border border-slate-700 px-7 py-3.5 font-semibold text-slate-200 hover:border-emerald-400/50">
+              Consultar planes
             </Link>
           </div>
         </section>
 
-        {/* The 3 FinOps Phases */}
-        <section className="py-12">
-          <div className="mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              El Ciclo FinOps para Asistentes de Código en 3 Etapas
-            </h2>
-            <p className="mt-2 text-slate-400">
-              Inspirado en el estándar de la FinOps Foundation y adaptado a la economía de tokens de LLMs.
-            </p>
+        <section className="grid gap-6 py-8 md:grid-cols-3">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-7">
+            <PieChart className="h-7 w-7 text-blue-400" />
+            <h2 className="mt-5 text-xl font-bold text-white">Consumo atribuible</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">Revisa el uso agregado por proyecto, persona y carril para saber cómo se distribuyen los recursos de inferencia.</p>
           </div>
+          <div className="rounded-3xl border border-emerald-500/30 bg-slate-900/80 p-7">
+            <TrendingDown className="h-7 w-7 text-emerald-400" />
+            <h2 className="mt-5 text-xl font-bold text-white">Decisiones de optimización</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">Compara periodos y carriles para evaluar cambios en el uso y enfocar las revisiones donde puedan tener mayor impacto.</p>
+          </div>
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-7">
+            <Users className="h-7 w-7 text-purple-400" />
+            <h2 className="mt-5 text-xl font-bold text-white">Acompañamiento del equipo</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">Usa patrones agregados de adopción para identificar oportunidades de formación y dar retroalimentación sobre prácticas de uso.</p>
+          </div>
+        </section>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-8">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/10 text-blue-400">
-                <PieChart className="h-6 w-6" />
-              </div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">Fase 1</span>
-              <h3 className="mt-2 text-2xl font-bold text-white">1. Informar (Inform)</h3>
-              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                Asignación de costos transparente. Visualiza cuánto gasta cada escuadrón, proyecto o desarrollador en tokens de entrada y salida, con etiquetado claro para showback y chargeback interno.
+        <section className="my-8 rounded-3xl border border-slate-800 bg-slate-900/60 p-7 sm:p-10">
+          <div className="flex items-start gap-4">
+            <ShieldCheck className="mt-1 h-7 w-7 flex-shrink-0 text-emerald-400" />
+            <div>
+              <h2 className="text-2xl font-bold text-white">Métricas de uso sin contenido de conversaciones</h2>
+              <p className="mt-3 leading-relaxed text-slate-300">
+                FinOps utiliza metadatos de consumo para atribución y análisis. Los prompts, las respuestas y el código enviado al asistente no se incorporan al tablero. La garantía de no entrenamiento se basa en las cláusulas de DeepInfra, proveedor integrado; consulta esas condiciones contractuales para conocer su alcance.
               </p>
-              <ul className="mt-6 space-y-2 text-xs text-slate-400">
-                <li className="flex items-center gap-2">✓ Desglose por escuadrón y repositorio</li>
-                <li className="flex items-center gap-2">✓ Telemetría en tiempo real</li>
-              </ul>
-            </div>
-
-            <div className="rounded-3xl border border-emerald-500/40 bg-slate-900/90 p-8 shadow-glow">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400">
-                <TrendingDown className="h-6 w-6" />
-              </div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">Fase 2</span>
-              <h3 className="mt-2 text-2xl font-bold text-emerald-300">2. Optimizar (Optimize)</h3>
-              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                Aprovecha prompt caching para reutilizar el contexto del repositorio con un 90% de descuento en tokens. Implementa enrutamiento escalonado para no pagar precios de Claude 3.5 en completado simple.
+              <p className="mt-3 leading-relaxed text-slate-300">
+                EjectorSeat utiliza el modelo y proveedor incluidos en el servicio. La plataforma no ofrece actualmente BYOK ni una VPC de EjectorSeat. Tivisoft también ofrece proyectos empresariales de asistentes en infraestructura propia, con procesamiento sin conexión a Internet, como una solución separada.
               </p>
-              <ul className="mt-6 space-y-2 text-xs text-emerald-400/80">
-                <li className="flex items-center gap-2">✓ Hasta 90% de ahorro con Prompt Caching</li>
-                <li className="flex items-center gap-2">✓ Tiered routing de modelos</li>
-              </ul>
-            </div>
-
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/60 p-8">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
-                <Sliders className="h-6 w-6" />
-              </div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-purple-400">Fase 3</span>
-              <h3 className="mt-2 text-2xl font-bold text-white">3. Operar (Operate)</h3>
-              <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-                Gobernanza continua y automatizada. Fija presupuestos mensuales máximos con alertas automáticas y degradación elegante a modelos de menor costo antes de exceder el presupuesto del sprint.
-              </p>
-              <ul className="mt-6 space-y-2 text-xs text-slate-400">
-                <li className="flex items-center gap-2">✓ Alertas de desvío y corte de bucles</li>
-                <li className="flex items-center gap-2">✓ Integración con Slack y SIEM</li>
-              </ul>
             </div>
           </div>
         </section>
 
-        {/* FAQs */}
-        <FaqSection items={finopsFaqs} />
+        <section className="py-8">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">Créditos: una forma comparable de leer el gasto</h2>
+          <p className="mt-4 max-w-4xl leading-relaxed text-slate-300">
+            Un crédito equivale a 0,01 USD de precio de lista. Cada carril tiene tarifas separadas para tokens de entrada, salida y caché: por ejemplo, el carril ejs-agent valora un millón de tokens de entrada en 30 créditos y un millón de salida en 90. Por eso la bolsa puede cubrir más tokens de inferencia que una suscripción de asistente con cuota fija, aunque la equivalencia depende de la mezcla de uso. No es una promesa de tokens idénticos para todas las tareas.
+          </p>
+        </section>
 
-        {/* CTA */}
+        <FaqSection items={finopsFaqs} />
         <CtaBanner
-          title="Toma el control financiero de la IA en tu empresa"
-          subtitle="Implementa EjectorSeat y descubre de inmediato el desperdicio oculto en licencias y peticiones redundantes."
-          primaryButtonText="Agendar Auditoría FinOps"
-          secondaryButtonText="Ver Planes y Precios"
+          title="Lleva visibilidad FinOps a tus asistentes de código"
+          subtitle="Conoce cómo EjectorSeat atribuye el uso y ayuda a tu equipo a tomar decisiones informadas sobre recursos de IA."
+          primaryButtonText="Hablar con Tivisoft"
+          secondaryButtonText="Ver planes y precios"
           secondaryButtonHref="/precios"
         />
       </div>
-
       <Footer />
     </main>
   );

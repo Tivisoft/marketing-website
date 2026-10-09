@@ -9,14 +9,14 @@ import { JsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: 'Blog de Inteligencia Artificial para Ingeniería de Software | Tivisoft',
   description:
-    'Artículos técnicos sobre FinOps para IA, custodia de código, Zero Data Retention (ZDR) y comparativas entre GitHub Copilot, Cursor, Claude Code y Continue.',
+    'Artículos sobre FinOps para IA, tratamiento de datos y comparativas entre asistentes de código como GitHub Copilot, Cursor, Claude Code y Continue.',
   alternates: {
     canonical: '/blog',
   },
   openGraph: {
     title: 'Blog de IA para Ingeniería y Equipos de Software | Tivisoft',
     description:
-      'Aprende a controlar costos de tokens, garantizar la privacidad de tu código fuente y seleccionar las mejores herramientas de IA para tu equipo.',
+      'Aprende a analizar el consumo de tokens, revisar condiciones de privacidad y seleccionar asistentes de código para tu equipo.',
     url: 'https://tivisoft.com/blog',
     siteName: 'Tivisoft',
     locale: 'es_ES',
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 const blogPosts = [
   {
     slug: 'costo-real-asistente-ia-codigo-equipo',
-    title: 'El costo real de un asistente de IA para tu equipo: Por qué no son solo $20 USD al mes',
+    title: 'El costo real de un asistente de IA para código',
     description:
-      'Desglosamos la economía oculta de los asistentes de código: cómo los flujos agénticos disparan el gasto real a $100-$200 USD/mes y cómo controlarlo con FinOps.',
+      'Analizamos cómo medir el costo de los asistentes de código y usar FinOps para identificar oportunidades de optimización.',
     category: 'FinOps & Costos',
     readTime: '6 min',
     date: '2026-09-24',
@@ -40,7 +40,7 @@ const blogPosts = [
     slug: 'github-copilot-vs-claude-code-vs-cursor-equipos',
     title: 'GitHub Copilot vs. Claude Code vs. Cursor: Guía para líderes de ingeniería',
     description:
-      'Comparativa exhaustiva entre extensiones de IDE, editores bifurcados y agentes de terminal. Ventajas, riesgos de seguridad y cómo unificarlos con un gateway.',
+      'Comparativa entre extensiones, editores y agentes de terminal: gobierno del acceso, tratamiento de datos y costos.',
     category: 'Comparativas',
     readTime: '8 min',
     date: '2026-09-24',
@@ -49,9 +49,9 @@ const blogPosts = [
   },
   {
     slug: 'claude-code-vs-continue-gateway-empresarial',
-    title: 'Claude Code vs. Continue en el IDE: Agente de terminal frente a asistente de código con gateway',
+    title: 'Claude Code y Continue: dos enfoques para asistir el desarrollo',
     description:
-      'Entendiendo las diferencias arquitectónicas entre agentes autónomos de CLI y asistentes de IDE, y cómo gestionarlos bajo una misma política corporativa.',
+      'Diferencias entre un agente de terminal y un asistente integrado en el editor, con criterios de gobierno empresarial.',
     category: 'Arquitectura',
     readTime: '7 min',
     date: '2026-09-24',
@@ -62,8 +62,8 @@ const blogPosts = [
     slug: 'que-significa-ia-no-entrena-con-tu-codigo',
     title: '¿Qué significa realmente que la IA no entrene con tu código? Guía para CISOs',
     description:
-      'La diferencia legal y técnica entre promesas web, APIs comerciales y acuerdos formales de Zero Data Retention (ZDR) con filtrado preventivo de secretos.',
-    category: 'Seguridad & ZDR',
+      'Cómo leer las cláusulas de no entrenamiento y retención del proveedor antes de enviar código a inferencia.',
+    category: 'Seguridad y datos',
     readTime: '5 min',
     date: '2026-09-24',
     featured: false,
@@ -73,7 +73,7 @@ const blogPosts = [
     slug: 'gobierno-de-agentes-ia-en-desarrollo-de-software',
     title: 'Gobierno de agentes de IA en desarrollo de software: Velocidad sin perder el control',
     description:
-      'Framework práctico para VPs de Ingeniería y CTOs: cuotas presupuestarias, trazabilidad de PRs generados por IA, DLP de secretos y prevención de Shadow AI.',
+      'Criterios prácticos para VPs de Ingeniería y CTOs: acceso, visibilidad del consumo y formación del equipo.',
     category: 'Gobernanza',
     readTime: '7 min',
     date: '2026-09-24',
@@ -101,6 +101,7 @@ export default function BlogHubPage() {
       description: post.description,
       url: `https://tivisoft.com/blog/${post.slug}`,
       datePublished: post.date,
+      dateModified: '2026-10-09',
     })),
   };
 
@@ -125,7 +126,7 @@ export default function BlogHubPage() {
             Blog: IA aplicada a ingeniería de software
           </h1>
           <p className="mt-4 max-w-3xl text-slate-400 text-base sm:text-lg">
-            Análisis técnicos independientes basados en telemetría de producción, auditorías de costos de tokens y mejores prácticas de custodia de código.
+            Guías para evaluar asistentes de código, condiciones de tratamiento de datos y costos de inferencia.
           </p>
         </section>
 

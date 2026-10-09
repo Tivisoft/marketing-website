@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Clock, Calendar, ArrowRight, DollarSign, TrendingUp, AlertTriangle, CheckCircle2, Sparkles, Shield } from 'lucide-react';
+import { Clock, Calendar, Shield, BarChart3 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -9,46 +9,41 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'El Costo Real de un Asistente de IA para Código en Equipos | Tivisoft Blog',
+  title: 'El costo de los asistentes de IA para código | Tivisoft',
   description:
-    '¿Cuánto cuesta realmente Claude Code o Copilot para un equipo? Por qué el costo real asciende a $100-$200 USD/mes por desarrollador en modo agéntico y cómo FinOps lo resuelve.',
-  alternates: {
-    canonical: '/blog/costo-real-asistente-ia-codigo-equipo',
-  },
+    'Cómo entender el costo de inferencia de los asistentes de código, comparar créditos y gestionar seguridad y uso con FinOps.',
+  alternates: { canonical: '/blog/costo-real-asistente-ia-codigo-equipo' },
   openGraph: {
-    title: 'El Costo Real de un Asistente de IA: Por qué no son solo $20 USD/mes',
-    description:
-      'Análisis económico de tokens y flujos agénticos en software engineering. Descubre cómo calcular y optimizar el TCO de tus desarrolladores.',
+    title: 'El costo real de un asistente de IA para código',
+    description: 'Créditos, consumo de tokens, seguridad y FinOps para equipos de ingeniería.',
     url: 'https://tivisoft.com/blog/costo-real-asistente-ia-codigo-equipo',
     siteName: 'Tivisoft',
     locale: 'es_ES',
     type: 'article',
   },
-  keywords: [
-    'cuanto cuesta claude code',
-    'costo real asistente ia codigo equipo',
-    'claude code precio real',
-    'copilot vs claude code costos',
-    'economia de tokens desarrollo software',
-    'finops para asistentes de codigo',
-  ],
+  keywords: ['costo asistente código IA', 'créditos de inferencia', 'FinOps para IA', 'alternativas a Copilot'],
 };
 
 const articleFaqs = [
   {
-    question: '¿Por qué un asistente de código de $20 USD termina costando $100-$200 USD al mes?',
+    question: '¿Cuánto cuesta usar un asistente de código?',
     answer:
-      'La tarifa nominal de $20 USD suele cubrir únicamente el autocompletado en línea básico o peticiones acotadas. Cuando los ingenieros adoptan flujos de trabajo agénticos (como Claude Code, Cursor Composer o bucles autónomos de Continue), el asistente lee el árbol de archivos completo, ejecuta tests, analiza logs y reintenta de forma automática. Cada una de estas iteraciones envía decenas de miles de tokens de contexto una y otra vez, multiplicando el consumo por 10x.',
+      'Depende de la herramienta, el plan, los modelos y el volumen de uso. No hay una cifra mensual universal que describa el costo de inferencia de todos los equipos. Conviene distinguir la suscripción por asiento de los tokens realmente consumidos y revisar la política de límites de cada servicio.',
   },
   {
-    question: '¿Qué porcentaje del gasto de tokens se desperdicia típicamente?',
+    question: '¿Qué alternativas a GitHub Copilot buscan las empresas?',
     answer:
-      'En auditorías de equipos sin un gateway inteligente, entre el 45% y el 65% del gasto de tokens corresponde a contexto redundante (archivos que no cambiaron entre turnos de chat) y al uso del modelo más caro (Claude 3.5 Sonnet) para tareas triviales como escribir comentarios o autocompletar sintaxis repetitiva.',
+      'Además de precio y funciones, algunas empresas evalúan confiabilidad, control de acceso y protección de su infraestructura y secretos empresariales. EjectorSeat centraliza el acceso del equipo al asistente incluido en el servicio y presenta métricas de consumo para apoyar el gobierno y la optimización.',
   },
   {
-    question: '¿Cómo reduce EjectorSeat este sobrecosto?',
+    question: '¿EjectorSeat permite usar mi cuenta de OpenAI o Anthropic?',
     answer:
-      'EjectorSeat implementa tres palancas clave: (1) Prompt Caching agresivo para no facturar el contexto estático del repositorio más de una vez, (2) Enrutamiento dinámico que envía el autocompletado a modelos ligeros de centavos por millón de tokens, y (3) Presupuestos diarios por escuadrón que detienen bucles agénticos desbocados.',
+      'No. EjectorSeat integra el modelo y el proveedor incluidos en el producto; no ofrece hoy BYOK ni conecta la inferencia con cuentas de OpenAI o Anthropic.',
+  },
+  {
+    question: '¿EjectorSeat se despliega en una VPC privada?',
+    answer:
+      'La oferta actual de EjectorSeat no incluye una VPC dedicada. Tivisoft ofrece por separado proyectos empresariales con asistentes en infraestructura propia y procesamiento que no se conecta a Internet. Consulta con Tivisoft el alcance de esa solución.',
   },
 ];
 
@@ -56,197 +51,107 @@ export default function CostoRealAsistentePage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: 'El costo real de un asistente de IA para tu equipo: Por qué no son solo $20 USD al mes',
+    headline: 'El costo de los asistentes de IA para código: créditos, uso y gobierno',
     description:
-      'Análisis de la economía oculta de los asistentes de código y el impacto de los flujos agénticos en el presupuesto de ingeniería.',
+      'Guía para distinguir la suscripción del costo de inferencia y gestionar el uso de asistentes de código en equipos.',
     datePublished: '2026-09-24T08:00:00+00:00',
-    dateModified: '2026-09-24T08:00:00+00:00',
-    author: {
-      '@type': 'Organization',
-      name: 'Tivisoft Research',
-      url: 'https://tivisoft.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Tivisoft',
-      url: 'https://tivisoft.com',
-    },
+    dateModified: '2026-10-09T00:00:00+00:00',
+    author: { '@type': 'Organization', name: 'Tivisoft', url: 'https://tivisoft.com' },
+    publisher: { '@type': 'Organization', name: 'Tivisoft', url: 'https://tivisoft.com' },
   };
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <JsonLd data={articleSchema} />
-
       <div className="relative mx-auto max-w-4xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
-        <Breadcrumbs
-          items={[
-            { name: 'Blog', href: '/blog' },
-            { name: 'Costo Real de un Asistente de IA', href: '/blog/costo-real-asistente-ia-codigo-equipo' },
-          ]}
-        />
-
-        {/* Article Header */}
-        <header className="pt-4 pb-10 border-b border-slate-800">
-          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400 mb-4">
-            <span className="rounded-full bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 font-semibold text-emerald-300">
-              FinOps & Costos
-            </span>
-            <span className="flex items-center gap-1">
-              <Calendar className="h-3.5 w-3.5" />
-              24 de septiembre, 2026
-            </span>
+        <Breadcrumbs items={[
+          { name: 'Blog', href: '/blog' },
+          { name: 'Costo de asistentes de código', href: '/blog/costo-real-asistente-ia-codigo-equipo' },
+        ]} />
+        <header className="border-b border-slate-800 pb-10 pt-4">
+          <div className="mb-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+            <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 font-semibold text-emerald-300">FinOps &amp; costos</span>
+            <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />9 de octubre, 2026</span>
             <span>•</span>
-            <span className="flex items-center gap-1">
-              <Clock className="h-3.5 w-3.5" />
-              6 min de lectura
-            </span>
+            <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />5 min de lectura</span>
           </div>
-
-          <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl leading-tight">
-            El costo real de un asistente de IA para tu equipo: Por qué no son solo $20 USD al mes
+          <h1 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">
+            El costo real de un asistente de IA para código
           </h1>
-
-          <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            Muchos directores de ingeniería aprueban presupuestos asumiendo que los asistentes de IA cuestan una cuota fija de $20 USD por desarrollador. La realidad en producción es muy distinta cuando los equipos comienzan a usar agentes de código.
+          <p className="mt-6 text-lg leading-relaxed text-slate-300">
+            Una suscripción y el costo de inferencia son cosas distintas. Para entender el gasto de un equipo, hay que observar cuántos tokens consume, en qué carriles y con qué reglas de precio, sin inventar una cifra mensual que aplique a todos.
           </p>
         </header>
 
-        {/* Direct Answer Box (AEO) */}
-        <div className="my-8 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 p-6 shadow-glow">
-          <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-            Respuesta Rápida (AEO): ¿Cuánto cuesta realmente Claude Code o un asistente agéntico en un equipo?
-          </p>
-          <p className="mt-3 text-sm sm:text-base text-slate-200 leading-relaxed">
-            El costo real de un asistente de IA en modo agéntico oscila entre <strong>$100 y $200 USD por desarrollador al mes</strong> si se utiliza intensivamente con modelos de frontera (como Claude 3.5 Sonnet). Mientras que el autocompletado tradicional consume entre $3 y $8 USD al mes en tokens, las herramientas agénticas envían repositorios enteros en cada iteración y ejecutan bucles autónomos de pruebas y refactorización que disparan el consumo de tokens de entrada y salida exponencialmente.
+        <div className="my-8 rounded-2xl border border-emerald-500/30 bg-slate-900 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">Respuesta rápida</p>
+          <p className="mt-3 leading-relaxed text-slate-200">
+            EjectorSeat incluye créditos de inferencia para usar el modelo integrado. Según el catálogo comercial vigente, Team cuesta <strong>19 USD por asiento al mes</strong> e incluye una bolsa de 1.900 créditos. Cada crédito equivale a 0,01 USD de precio de lista; la cantidad de tokens depende del carril y de si son de entrada, salida o caché. FinOps permite revisar el consumo y buscar optimizaciones, sin prometer un porcentaje de ahorro.
           </p>
         </div>
 
-        {/* Article Body */}
-        <article className="prose prose-invert max-w-none text-slate-300 text-base sm:text-lg leading-relaxed space-y-8">
+        <article className="prose prose-invert max-w-none space-y-8 text-base leading-relaxed text-slate-300 sm:text-lg">
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">
-              La falacia de la tarifa plana de $20 USD
-            </h2>
+            <h2 className="mt-10 text-2xl font-bold text-white">Suscripción no es lo mismo que consumo</h2>
             <p>
-              Cuando GitHub Copilot popularizó el precio de $10-$19 USD al mes y Cursor fijó su suscripción Pro en $20 USD, la industria asumió que el costo de la inteligencia artificial para desarrollo de software se comportaría como cualquier SaaS tradicional: predecible y cerrado.
+              Una licencia por asiento fija el precio de acceso de acuerdo con las condiciones de ese proveedor. Un servicio de inferencia por uso calcula el consumo de tokens. Compararlos requiere revisar qué incluye cada plan, qué límites aplica y qué tipo de modelo y tareas cubre. Sin datos representativos del equipo, una estimación de ahorro sería especulativa.
             </p>
             <p>
-              Sin embargo, los modelos de lenguaje no son software estático; son cómputo medido en tokens. Para mantener el precio de $20 USD, los proveedores aplican restricciones silenciosas:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-300">
-              <li>Límites estrictos de &quot;peticiones rápidas&quot; que degradan al modelo a colas lentas a mitad de mes.</li>
-              <li>Recorte del contexto del repositorio para que la IA no analice más de unos cientos de líneas a la vez.</li>
-              <li>Imposibilidad de utilizar herramientas agénticas autónomas de terminal sin configurar claves API adicionales pagadas por consumo directo.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">
-              Anatomía del gasto: Autocompletado vs. Chat vs. Agente
-            </h2>
-            <p>
-              Para entender a dónde va el presupuesto de tokens, es necesario segmentar el uso en tres niveles operativos:
-            </p>
-
-            <div className="overflow-x-auto my-6">
-              <table className="w-full text-left text-sm border border-slate-800 rounded-xl overflow-hidden">
-                <thead className="bg-slate-900 text-slate-400 text-xs uppercase font-semibold">
-                  <tr>
-                    <th className="p-4">Modo de Operación</th>
-                    <th className="p-4">Tokens Típicos / Acción</th>
-                    <th className="p-4">Costo Estimado / Dev / Mes</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-800 bg-slate-950/60">
-                  <tr>
-                    <td className="p-4 font-semibold text-white">1. Autocompletado tabular (Tab)</td>
-                    <td className="p-4 text-slate-400">100 - 500 tokens</td>
-                    <td className="p-4 text-emerald-400 font-medium">$3 - $8 USD</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-semibold text-white">2. Chat contextual en IDE</td>
-                    <td className="p-4 text-slate-400">2,000 - 8,000 tokens</td>
-                    <td className="p-4 text-yellow-400 font-medium">$15 - $35 USD</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-semibold text-white">3. Agente Autónomo (Claude Code / Continue loop)</td>
-                    <td className="p-4 text-slate-400">50,000 - 300,000 tokens por tarea</td>
-                    <td className="p-4 text-rose-400 font-bold">$100 - $220 USD</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p>
-              El salto cuántico ocurre en el nivel 3. Un agente de código que busca un bug, ejecuta los tests unitarios, lee el stack trace y edita tres archivos no realiza una sola llamada; realiza entre 8 y 20 llamadas consecutivas re-enviando todo el contexto en cada iteración.
+              Los asistentes agénticos pueden realizar varias llamadas para leer contexto, proponer cambios y revisar resultados. El volumen cambia según la tarea, el contexto enviado, el modelo y la cantidad de iteraciones. Por eso los conteos de tokens por acción no sirven como pronóstico universal.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">
-              Cómo implementar FinOps para no asfixiar el presupuesto
-            </h2>
+            <h2 className="mt-10 text-2xl font-bold text-white">Cómo leer los créditos de inferencia</h2>
             <p>
-              La solución no es prohibir los asistentes de código —el aumento del 30% al 40% en velocidad de entrega es innegable. La solución es gobernar el gasto mediante una disciplina <strong>FinOps para IA</strong>:
+              En el catálogo de EjectorSeat, un crédito representa 0,01 USD de precio de lista. El precio por millón de tokens varía por carril y tipo de token. Como ejemplo, en el carril ejs-agent un millón de tokens de entrada equivale a 30 créditos y un millón de salida a 90 créditos. Así, la bolsa puede cubrir más tokens de inferencia que una cuota plana de otro asistente en ciertos patrones de uso; la equivalencia cambia con la mezcla de tareas y no debe interpretarse como una comparación universal.
             </p>
-
-            <div className="space-y-4 my-6">
-              <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-                <h3 className="font-bold text-emerald-400 flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  1. Enrutamiento Inteligente por Tarea (Tiered Routing)
-                </h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  No utilices Claude 3.5 Sonnet para autocompletar una función utilitaria simple. El gateway EjectorSeat enruta el autocompletado en milisegundos a DeepSeek Coder o modelos ligeros (que cuestan una fracción de centavo), y activa Claude 3.5 únicamente cuando el desarrollador abre una sesión de arquitectura o refactorización masiva.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-                <h3 className="font-bold text-emerald-400 flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  2. Prompt Caching a nivel de Gateway
-                </h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Anthropic y otros proveedores permiten cachear prefijos de tokens con hasta un 90% de descuento. Si cinco desarrolladores están trabajando en el mismo microservicio, la definición del repositorio no debe cobrarse a precio completo en cada consulta.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-                <h3 className="font-bold text-emerald-400 flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5" />
-                  3. Presupuestos y límites duros por escuadrón
-                </h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Asigna cuotas mensuales (ej. $35 USD/dev). Si un agente entra en un bucle recursivo por un test que nunca pasa, el gateway frena la ejecución automáticamente antes de consumir cientos de dólares en una madrugada.
-                </p>
-              </div>
-            </div>
+            <p>
+              La bolsa de 1.900 créditos de Team corresponde a 19 USD de precio de lista. El plan Enterprise define 3.900 créditos por asiento y cuesta 39 USD al mes; la variante de 29 USD aplica bajo la condición de precertificación SOC 2 descrita en el catálogo. Consulta <Link href="/precios" className="text-emerald-300 underline">precios y condiciones</Link> para ver los planes.
+            </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">
-              Conclusión: Hacia una estrategia sostenible
-            </h2>
+            <h2 className="mt-10 flex items-center gap-3 text-2xl font-bold text-white"><BarChart3 className="h-6 w-6 text-emerald-400" />FinOps para optimizar con datos</h2>
             <p>
-              El verdadero ROI de la IA para equipos de desarrollo se alcanza cuando los líderes técnicos conocen con exactitud cuánto cuesta cada línea generada. Pasar de licencias ciegas de asiento a una arquitectura gobernada por un gateway empresarial como <strong>EjectorSeat</strong> es el paso natural para cualquier equipo de más de 10 desarrolladores.
+              El tablero FinOps atribuye consumo por organización, proyecto, desarrollador, carril y sesión. Esta información ayuda a localizar patrones de alto consumo, evaluar el uso de recursos y decidir dónde conviene optimizar. Los responsables también pueden emplear patrones agregados para orientar formación y retroalimentación al personal, sin analizar el contenido de sus conversaciones.
+            </p>
+            <p>
+              EjectorSeat conserva metadatos de uso para medir el consumo; no registra los prompts ni las respuestas en su contabilidad de uso. La garantía de no entrenamiento se basa en las cláusulas de DeepInfra, proveedor integrado. Revisa esas condiciones contractuales para conocer su alcance.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mt-10 flex items-center gap-3 text-2xl font-bold text-white"><Shield className="h-6 w-6 text-emerald-400" />Seguridad y control del acceso</h2>
+            <p>
+              Las empresas también buscan alternativas a GitHub Copilot por requisitos de confiabilidad y control: quién puede usar el asistente, cómo se administran las claves y cómo se protege la infraestructura y los secretos empresariales. EjectorSeat es una solución empresarial basada en el fork de Continue, con plugin para VS Code y Cursor, claves por desarrollador y visibilidad de consumo.
+            </p>
+            <p>
+              El servicio integra el modelo y proveedor incluidos en EjectorSeat; el cliente no elige ni conecta sus propias cuentas de OpenAI, Anthropic u otros proveedores mediante BYOK. La oferta actual tampoco incluye despliegue de EjectorSeat en una VPC dedicada.
+            </p>
+            <p>
+              Tivisoft ofrece por separado soluciones empresariales de asistentes de código en infraestructura propia, con procesamiento que no se conecta a Internet. Es una modalidad distinta que se define según el proyecto y sus requisitos.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mt-10 text-2xl font-bold text-white">Conclusión</h2>
+            <p>
+              Para gestionar el costo de la IA en ingeniería, mide el consumo con una unidad consistente, separa tokens de entrada, salida y caché, y revisa patrones de uso antes de fijar objetivos de ahorro. EjectorSeat combina acceso empresarial al asistente integrado con FinOps para entender y optimizar el gasto con datos del equipo.
             </p>
           </section>
         </article>
 
-        {/* FAQs */}
         <FaqSection items={articleFaqs} />
-
-        {/* CTA */}
         <CtaBanner
-          title="Descubre cuánto está gastando tu equipo de software en IA"
-          subtitle="Realizamos una auditoría de consumo y configuramos EjectorSeat para reducir hasta un 60% tu gasto en tokens."
-          primaryButtonText="Agendar Auditoría FinOps"
-          secondaryButtonText="Ver Planes de EjectorSeat"
+          title="Entiende el consumo de IA de tu equipo"
+          subtitle="Conoce los créditos, el tablero FinOps y las opciones empresariales de Tivisoft."
+          primaryButtonText="Consultar con Tivisoft"
+          secondaryButtonText="Ver precios"
           secondaryButtonHref="/precios"
         />
       </div>
-
       <Footer />
     </main>
   );

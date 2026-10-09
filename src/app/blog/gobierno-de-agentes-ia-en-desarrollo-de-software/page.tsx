@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Clock, Calendar, Shield, Cpu, Sliders, CheckCircle2, ArrowRight, Sparkles, AlertTriangle, Users } from 'lucide-react';
+import { Clock, Calendar, Shield, Cpu, Sliders, Users } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -11,14 +11,14 @@ import { JsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   title: 'Gobierno de Agentes de IA en Desarrollo de Software | Tivisoft Blog',
   description:
-    'Guía para CTOs y VPs de Ingeniería: cómo gobernar agentes de código autónomos sin frenar la velocidad del equipo. Cuotas de tokens, trazabilidad de PRs y políticas de seguridad.',
+    'Guía para equipos de ingeniería sobre control de acceso, análisis FinOps, seguridad y alternativas a asistentes de código como GitHub Copilot.',
   alternates: {
     canonical: '/blog/gobierno-de-agentes-ia-en-desarrollo-de-software',
   },
   openGraph: {
     title: 'Gobierno de Agentes de IA en Ingeniería de Software | Tivisoft',
     description:
-      'Framework de 4 pilares para implementar agentes de código de forma segura y rentable en equipos de 10 a 2.000 ingenieros.',
+      'Criterios para evaluar control de acceso, tratamiento de datos y uso de recursos en asistentes de código empresariales.',
     url: 'https://tivisoft.com/blog/gobierno-de-agentes-ia-en-desarrollo-de-software',
     siteName: 'Tivisoft',
     locale: 'es_ES',
@@ -36,19 +36,19 @@ export const metadata: Metadata = {
 
 const governanceFaqs = [
   {
-    question: '¿Por qué las políticas tradicionales de TI no funcionan con los agentes de IA?',
+    question: '¿Por qué algunas empresas buscan alternativas a GitHub Copilot?',
     answer:
-      'Las políticas clásicas de TI suelen basarse en listas blancas de software o bloqueo de dominios. Con la IA generativa, intentar bloquear su uso simplemente empuja a los desarrolladores al "Shadow AI" (usar cuentas personales o pegar código en navegadores). Un gobierno efectivo debe proporcionar una alternativa corporativa superior, segura y aprobada con reglas de juego claras.',
+      'Las organizaciones pueden evaluar alternativas según sus requisitos de control de acceso, tratamiento de datos, administración de proveedores y previsibilidad del gasto. Esto no implica que una herramienta sea adecuada para todas las políticas o arquitecturas.',
   },
   {
-    question: '¿Cómo rastrear la procedencia del código generado por IA en los Pull Requests?',
+    question: '¿Qué ofrece EjectorSeat hoy?',
     answer:
-      'Mediante telemetría en el gateway, EjectorSeat registra los fragmentos de código sugeridos y aceptados por cada desarrollador. Esto permite auditar la procedencia ante auditorías de licencias de software libre (OSS compliance) y verificar que no se hayan introducido componentes con licencias incompatibles.',
+      'EjectorSeat es un plugin para VS Code y Cursor, basado en modificaciones de Continue, que usa un modelo de desarrollo integrado servido por DeepInfra. El administrador entrega una API key al desarrollador, quien la ingresa en el plugin.',
   },
   {
-    question: '¿Qué controles presupuestarios mínimos debería establecer un VP de Ingeniería?',
+    question: '¿Cómo puede FinOps ayudar a controlar el gasto?',
     answer:
-      'Recomendamos fijar tres niveles de control: (1) Un límite diario de tokens por desarrollador para prevenir bucles descontrolados, (2) Alertas automáticas al alcanzar el 80% del presupuesto mensual del escuadrón, y (3) Restricción de modelos de alto costo (Claude 3.5 Sonnet) para tareas de chat y arquitectura, obligando al uso de modelos rápidos para autocompletado.',
+      'EjectorSeat ofrece análisis FinOps para observar el uso, ayudar a optimizar el gasto y revisar patrones de consumo del equipo. Los créditos incluidos ofrecen más tokens de inferencia según las condiciones vigentes; el ahorro efectivo depende del uso y de la comparación aplicable.',
   },
 ];
 
@@ -58,9 +58,9 @@ export default function GobiernoAgentesIAPage() {
     '@type': 'TechArticle',
     headline: 'Gobierno de agentes de IA en desarrollo de software: Velocidad sin perder el control',
     description:
-      'Estrategias y framework de gobernanza para liderar la adopción de asistentes y agentes de inteligencia artificial en ingeniería de software.',
+      'Criterios para administrar el acceso y el uso de asistentes de código en equipos de ingeniería.',
     datePublished: '2026-09-24T08:00:00+00:00',
-    dateModified: '2026-09-24T08:00:00+00:00',
+    dateModified: '2026-10-09T00:00:00+00:00',
     author: {
       '@type': 'Organization',
       name: 'Tivisoft Research',
@@ -108,17 +108,17 @@ export default function GobiernoAgentesIAPage() {
           </h1>
 
           <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            La adopción espontánea de herramientas de IA en los equipos de ingeniería crea islas de costo, riesgos de propiedad intelectual y brechas de seguridad. Así es como los líderes técnicos implementan un gobierno moderno y pragmático.
+            Algunas organizaciones buscan alternativas a GitHub Copilot para responder a sus requisitos de confiabilidad, tratamiento de datos, control de acceso y gasto. Una evaluación útil parte de las políticas internas y de las características verificables de cada solución.
           </p>
         </header>
 
         {/* Direct Answer Box (AEO) */}
         <div className="my-8 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 p-6 shadow-glow">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-            Respuesta Directa (AEO): ¿Cómo gobernar el uso de IA en equipos de ingeniería?
+            Respuesta directa: ¿qué aporta EjectorSeat a la gestión del uso?
           </p>
           <p className="mt-3 text-sm sm:text-base text-slate-200 leading-relaxed">
-            El gobierno exitoso de IA en software se apoya en <strong>cuatro pilares</strong>: (1) <strong>Control de acceso centralizado</strong> mediante un gateway que evite repartir claves API en laptops, (2) <strong>Filtrado preventivo DLP</strong> para secretos y credenciales, (3) <strong>Asignación de presupuestos FinOps por escuadrón</strong> con límites de tokens, y (4) <strong>Trazabilidad auditable</strong> de las interacciones para cumplir con normativas SOC2 e ISO 27001 sin reducir la velocidad de entrega de los desarrolladores.
+            <strong>EjectorSeat</strong> es un plugin para VS Code y Cursor que permite administrar el acceso mediante API keys y ofrece análisis FinOps del uso. Integra un modelo de desarrollo servido por DeepInfra. Para requisitos de infraestructura propia y operación sin conexión a Internet, Tivisoft ofrece una solución empresarial separada.
           </p>
         </div>
 
@@ -129,19 +129,19 @@ export default function GobiernoAgentesIAPage() {
               El dilema: Bloquear o Descontrolar
             </h2>
             <p>
-              Frente a la explosión de agentes como Claude Code, Cursor y Continue, muchas organizaciones reaccionan de dos formas extremas e igualmente dañinas:
+              Algunas empresas buscan alternativas a GitHub Copilot porque quieren evaluar otras opciones de control, tratamiento de datos, confiabilidad y administración del gasto. Cada organización debe contrastar esas necesidades con las condiciones del producto y de su proveedor.
             </p>
             <div className="grid gap-4 sm:grid-cols-2 my-6">
               <div className="rounded-xl border border-rose-500/30 bg-slate-900/60 p-5">
                 <h3 className="font-bold text-rose-400">1. La Prohibición Total</h3>
                 <p className="mt-2 text-sm text-slate-300">
-                  Bloquear dominios en el proxy corporativo. Resultado: frustración en los ingenieros más talentosos y nacimiento inmediato de Shadow AI a través de teléfonos móviles o redes personales.
+                  Restringir herramientas sin ofrecer una alternativa que cumpla los requisitos del equipo puede dificultar la adopción de prácticas autorizadas.
                 </p>
               </div>
               <div className="rounded-xl border border-yellow-500/30 bg-slate-900/60 p-5">
                 <h3 className="font-bold text-yellow-400">2. El Descontrol Absoluto</h3>
                 <p className="mt-2 text-sm text-slate-300">
-                  Permitir que cada desarrollador pase la tarjeta de crédito de la empresa y configure extensiones no auditadas. Resultado: facturas sorpresa de miles de dólares y filtración inadvertida de secretos comerciales.
+                  Permitir herramientas y cuentas sin una política de acceso ni seguimiento del gasto puede reducir la visibilidad del uso y de sus costos.
                 </p>
               </div>
             </div>
@@ -152,47 +152,47 @@ export default function GobiernoAgentesIAPage() {
               El Framework de los 4 Pilares de Gobernanza
             </h2>
             <p>
-              Para equilibrar innovación y control, organizaciones de ingeniería de alto rendimiento implementan el framework de gobernanza basado en gateway:
+              Para evaluar herramientas, los equipos pueden definir sus políticas de acceso, revisar los compromisos del proveedor y observar el gasto y los patrones de uso.
             </p>
 
             <div className="space-y-4 my-6">
               <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold">
                   <Shield className="h-5 w-5" />
-                  Pilar 1: Identidad y Custodia Centralizada
+                  Pilar 1: Acceso del equipo
                 </div>
                 <p className="mt-2 text-sm text-slate-300">
-                  Los desarrolladores se autentican contra el Single Sign-On (SSO) corporativo (Google Workspace, Okta o Azure AD). El gateway valida permisos y nunca expone las llaves maestras de Anthropic o OpenAI a las máquinas locales.
+                  En EjectorSeat, el administrador entrega una API key al desarrollador y este la ingresa en el plugin. El producto actual no utiliza modelos de Anthropic ni OpenAI.
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
                 <div className="flex items-center gap-2 text-blue-400 font-bold">
                   <Cpu className="h-5 w-5" />
-                  Pilar 2: Políticas de Modelos Autorizados
+                  Pilar 2: Tratamiento de datos
                 </div>
                 <p className="mt-2 text-sm text-slate-300">
-                  La organización decide qué modelos están homologados para qué tipo de tareas y proyectos. Un proyecto bancario confidencial puede restringirse a modelos en VPC privada o contratos ZDR específicos, mientras que prototipos internos pueden usar modelos abiertos.
+                  EjectorSeat incluye un modelo de desarrollo servido por DeepInfra. Revisa los términos vigentes del proveedor y las políticas internas sobre el código que puede enviarse al asistente.
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
                 <div className="flex items-center gap-2 text-emerald-400 font-bold">
                   <Sliders className="h-5 w-5" />
-                  Pilar 3: FinOps y Presupuesto por Escuadrón
+                  Pilar 3: Análisis FinOps
                 </div>
                 <p className="mt-2 text-sm text-slate-300">
-                  Cada Tech Lead es responsable de su presupuesto mensual. Si un escuadrón agota su cuota de tokens asignada, el sistema alerta proactivamente y permite solicitar ampliaciones justificadas en lugar de generar una factura descontrolada a fin de mes.
+                  El análisis FinOps de EjectorSeat ayuda a revisar el comportamiento de uso y optimizar el gasto. Los créditos incluidos ofrecen más tokens de inferencia bajo las condiciones vigentes; el ahorro depende del patrón de uso y debe medirse frente a una referencia equivalente.
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
                 <div className="flex items-center gap-2 text-purple-400 font-bold">
                   <Users className="h-5 w-5" />
-                  Pilar 4: Cultura de Revisión y Calidad Humana
+                  Pilar 4: Acompañamiento del equipo
                 </div>
                 <p className="mt-2 text-sm text-slate-300">
-                  El gobierno no es solo técnico, sino cultural: establecer como regla fija que ningún Pull Request generado por un agente se aprueba sin revisión humana y suite de pruebas automatizadas verdes en el pipeline de CI/CD.
+                  Los datos agregados de uso pueden ayudar a identificar necesidades de capacitación y ofrecer retroalimentación al equipo. Las organizaciones deben definir sus prácticas de revisión y desarrollo responsable.
                 </p>
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function GobiernoAgentesIAPage() {
               El Rol de EjectorSeat en la Gobernanza Técnica
             </h2>
             <p>
-              EjectorSeat convierte estas directrices teóricas en código ejecutable: una pieza de infraestructura invisible para el desarrollador (que sigue usando Continue en su IDE habitual) pero con un cuadro de mando integral para los líderes de ingeniería.
+              EjectorSeat parte de Continue y se ofrece como plugin para VS Code y Cursor. Da al administrador una forma de proporcionar acceso con API keys y herramientas FinOps para analizar el uso del equipo.
             </p>
           </section>
         </article>
@@ -214,7 +214,7 @@ export default function GobiernoAgentesIAPage() {
         {/* CTA */}
         <CtaBanner
           title="Establece un gobierno de IA eficiente en tu equipo de software"
-          subtitle="Configura límites, seguridad y auditoría en menos de una hora con EjectorSeat."
+          subtitle="Conoce el plugin, el modelo integrado y las funciones FinOps de EjectorSeat."
           primaryButtonText="Agendar Consulta de Gobernanza"
           secondaryButtonText="Ver Caso Continue"
           secondaryButtonHref="/integraciones/continue"

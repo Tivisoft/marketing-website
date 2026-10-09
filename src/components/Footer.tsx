@@ -12,11 +12,11 @@ export function Footer() {
               TIVISOFT
             </Link>
             <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-sm">
-              Soluciones de inteligencia artificial aplicada, desarrollo de software empresarial y videojuegos narrativos. Creadores de <strong>EjectorSeat</strong>, el gateway de IA para ingeniería de software con Continue.
+              Soluciones de inteligencia artificial aplicada, desarrollo de software empresarial y videojuegos narrativos. Creadores de <strong>EjectorSeat</strong>, un asistente empresarial de código basado en una modificación de Continue.
             </p>
             <div className="mt-5 flex items-center gap-2 text-xs text-emerald-400">
               <ShieldCheck className="h-4 w-4" />
-              <span>Garantía Zero Data Retention & DLP Preventivo</span>
+              <span>Acceso administrado y análisis FinOps</span>
             </div>
             <div className="mt-6">
               <a
@@ -31,7 +31,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 2: EjectorSeat Gateway */}
+          {/* Col 2: EjectorSeat */}
           <div>
             <p className="font-semibold text-white text-xs uppercase tracking-wider mb-4">
               EjectorSeat
@@ -39,7 +39,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
                 <Link href="/integraciones/continue" className="transition hover:text-emerald-300">
-                  Integración Continue (IDE)
+                  EjectorSeat y Continue
                 </Link>
               </li>
               <li>
@@ -54,12 +54,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/seguridad-y-custodia" className="transition hover:text-emerald-300">
-                  Seguridad, ZDR & DLP
+                  Seguridad y tratamiento de datos
                 </Link>
               </li>
               <li>
                 <Link href="/despliegue-en-tu-infraestructura" className="transition hover:text-emerald-300">
-                  Despliegue Managed VPC
+                  Infraestructura empresarial
                 </Link>
               </li>
             </ul>
@@ -78,7 +78,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/alternativas/cursor" className="transition hover:text-emerald-300">
-                  Alternativa Open Source a Cursor
+                  Alternativa al asistente de Cursor
                 </Link>
               </li>
               <li>
