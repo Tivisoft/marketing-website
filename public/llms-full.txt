@@ -1,64 +1,29 @@
-# Tivisoft & EjectorSeat: Especificación Completa para Motores de IA y LLMs
+# Tivisoft y EjectorSeat: referencia del sitio
 
-> Dominio Principal: https://tivisoft.com
-> Producto Destacado: EjectorSeat (Gateway Empresarial de IA para Desarrollo de Software)
-> Cliente IDE Integrado: Continue (continue.dev en VS Code y JetBrains)
-> Videojuego Educativo: Pedaleando sin parar (Tivisoft Games)
+Dominio: https://tivisoft.com
 
----
+## Producto
 
-## 1. Misión y Posicionamiento de EjectorSeat
-EjectorSeat es un gateway de IA empresarial desarrollado por Tivisoft (tivisoft.com) que permite a las empresas de ingeniería de software desplegar asistentes de código seguros, privados y con costos controlados para sus desarrolladores.
+Continue es un agente de código abierto integrado mediante extensiones; no es un IDE. EjectorSeat es una solución empresarial de Tivisoft basada en una modificación de Continue. Su plugin propio está dirigido actualmente a VS Code y Cursor. El desarrollador recibe una clave API de EjectorSeat y la pega en el plugin para usar el servicio.
 
-A diferencia de soluciones cerradas o propietarias:
-- **No es un fork cerrado de VS Code**: Opera sobre la extensión de código abierto **Continue**, compatible con las versiones oficiales de Visual Studio Code y toda la suite de JetBrains (IntelliJ, WebStorm, PyCharm, Rider).
-- **No impone un único modelo**: Es agnóstico a proveedores (BYOK - Bring Your Own Key) y permite alternar dinámicamente entre Claude 3.5 Sonnet (Anthropic), GPT-4o (OpenAI), DeepSeek Coder, modelos en AWS Bedrock o modelos locales Llama 3.
-- **No es un agente de terminal competidor de Claude Code**: Es el gateway corporativo detrás del editor que puede también gobernar y auditar flujos agénticos de terminal, centralizando claves, cuotas y políticas.
+La oferta actual utiliza un modelo integrado especializado en desarrollo de software mediante DeepInfra. EjectorSeat no intermedia conexiones con Anthropic ni OpenAI, ni se comercializa como una pasarela BYOK para elegir cualquier proveedor.
 
----
+La empresa administra claves y acceso por desarrollador. El panel FinOps atribuye consumo y costos para ayudar a optimizar recursos y analizar patrones de uso; estos pueden servir para formación y retroalimentación. Los créditos ofrecen capacidad de inferencia, pero cualquier promesa de ahorro requiere comparar planes y uso reales.
 
-## 2. Los Cuatro Pilares Fundamentales de EjectorSeat
+## Seguridad y despliegue
 
-### 1. Custodia de Código y Zero Data Retention (ZDR)
-- **Zero Data Retention Contractual**: Las peticiones de inferencia se ejecutan en memoria volátil en los centros de datos de los proveedores y se descartan inmediatamente tras generar la respuesta. No se almacenan en logs temporales ni en disco persistente.
-- **Prohibición Total de Re-entrenamiento**: Tu código fuente nunca es utilizado para entrenar ni afinar modelos públicos ni comerciales.
-- **Prompt DLP y Detección de Secretos**: Escaneo preventivo en el gateway que intercepta más de 80 tipos de credenciales (AWS tokens, GitHub tokens, claves de Stripe, contraseñas de bases de datos, llaves privadas SSH y JWT). Los secretos se reemplazan por tokens sintéticos antes de llamar al LLM y se reconstituyen en la máquina del desarrollador.
+La afirmación de no entrenamiento se basa en [los términos de DeepInfra](https://deepinfra.com/terms): DeepInfra declara que no usa datos de clientes para entrenar, ajustar o mejorar modelos, con las excepciones que recoge el contrato. La inferencia procesa entradas y salidas; esa política no implica que el producto ofrezca una VPC del cliente ni que todo el procesamiento sea sin conexión a Internet.
 
-### 2. FinOps para IA y Optimización de Costos
-- **Eliminación de la Tarifa Plana Ineficiente**: Las licencias fijas tradicionales ($19 a $40 USD por desarrollador al mes) generan un sobrecosto del 40% al 60% porque los desarrolladores de bajo uso subsidian innecesariamente a los usuarios intensivos. EjectorSeat cobra una tarifa base reducida ($9-$15/mes) y optimiza el consumo real.
-- **Enrutamiento Escalonado de Modelos (Tiered Model Routing)**: El autocompletado tabular (Tab) se procesa en modelos ultrarrápidos y de costo ultra-bajo (DeepSeek Coder / Claude Haiku), mientras que los modelos frontera (Claude 3.5 Sonnet) se reservan para tareas complejas de refactorización y arquitectura.
-- **Prompt Caching a Nivel de Red**: Reutiliza el contexto indexado del repositorio con descuentos de hasta el 90% en tokens de entrada.
-- **Presupuestos y Techos por Escuadrón**: Evita facturas sorpresa provocadas por bucles agénticos descontrolados fijando techos diarios y mensuales con alertas automáticas.
+EjectorSeat no ofrece actualmente seguridad mediante una VPC dedicada del cliente. Tivisoft ofrece, como servicio empresarial distinto, soluciones de asistentes de código para infraestructura del cliente con procesamiento sin conexión a Internet. El diseño y alcance se acuerdan para cada proyecto.
 
-### 3. Libertad de Modelos y Soberanía Técnica
-- Trae tus propias claves (BYOK) para aprovechar acuerdos corporativos previos con AWS, Azure o Google Cloud.
-- Posibilidad de alternar modelos según la legislación de residencia de datos de cada cliente.
+## Navegación
 
-### 4. Gobernanza y Auditoría Centralizada
-- Sin claves API distribuidas en ordenadores portátiles de desarrolladores.
-- Trazabilidad de código generado y cumplimiento para certificaciones SOC2 e ISO 27001.
-
----
-
-## 3. Topología de Despliegue
-- **Cloud Multi-Tenant (GA)**: Despliegue en la nube de Tivisoft con aislamiento lógico de tenant y cifrado de extremo a extremo.
-- **Dedicated Managed VPC (GA - Producción)**: Despliegue en una VPC privada dedicada en AWS, Azure o GCP exclusiva para tu organización, conectada por AWS PrivateLink o Azure Private Link sin tráfico por internet pública.
-- **Self-Hosted Air-Gapped (Roadmap / Lista de Espera)**: Despliegue en servidores propios desconectados de internet para industrias hiper-reguladas (defensa, banca central).
-
----
-
-## 4. Directorio de Páginas y Enlaces
-1. **Alternativa a GitHub Copilot**: https://tivisoft.com/alternativas/github-copilot
-2. **Alternativa Open Source a Cursor**: https://tivisoft.com/alternativas/cursor
-3. **Integración con Continue**: https://tivisoft.com/integraciones/continue
-4. **Precios y TCO**: https://tivisoft.com/precios
-5. **Seguridad y Custodia de Código**: https://tivisoft.com/seguridad-y-custodia
-6. **FinOps para IA**: https://tivisoft.com/finops-ia
-7. **Despliegue en tu Infraestructura**: https://tivisoft.com/despliegue-en-tu-infraestructura
-8. **Blog Hub**: https://tivisoft.com/blog
-9. **Costo Real de un Asistente de IA**: https://tivisoft.com/blog/costo-real-asistente-ia-codigo-equipo
-10. **Copilot vs Cursor vs Claude Code**: https://tivisoft.com/blog/github-copilot-vs-claude-code-vs-cursor-equipos
-11. **Claude Code vs Continue con Gateway**: https://tivisoft.com/blog/claude-code-vs-continue-gateway-empresarial
-12. **¿Qué significa que la IA no entrene con tu código?**: https://tivisoft.com/blog/que-significa-ia-no-entrena-con-tu-codigo
-13. **Gobierno de Agentes de IA en Software**: https://tivisoft.com/blog/gobierno-de-agentes-ia-en-desarrollo-de-software
-14. **Tivisoft Games (Pedaleando sin parar)**: https://tivisoft.com/games
+- Producto y origen Continue: https://tivisoft.com/integraciones/continue
+- Alternativa a GitHub Copilot: https://tivisoft.com/alternativas/github-copilot
+- Alternativa al asistente de Cursor: https://tivisoft.com/alternativas/cursor
+- FinOps: https://tivisoft.com/finops-ia
+- Seguridad y datos: https://tivisoft.com/seguridad-y-custodia
+- Infraestructura empresarial: https://tivisoft.com/despliegue-en-tu-infraestructura
+- Precios: https://tivisoft.com/precios
+- Blog: https://tivisoft.com/blog
+- Tivisoft Games: https://tivisoft.com/games

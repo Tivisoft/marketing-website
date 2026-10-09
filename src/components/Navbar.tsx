@@ -8,7 +8,6 @@ import logoDark from '@/media/LOGO TIVISOFT FONDO OSCURO.png';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
@@ -68,36 +67,36 @@ export function Navbar() {
                   href="/integraciones/continue"
                   className="block rounded-xl p-2.5 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-emerald-300"
                 >
-                  <p className="font-semibold text-white">Integración Continue</p>
-                  <p className="text-slate-400 text-[11px]">El gateway para VS Code e IntelliJ</p>
+                  <p className="font-semibold text-white">EjectorSeat y Continue</p>
+                  <p className="text-slate-400 text-[11px]">Plugin para VS Code y Cursor</p>
                 </Link>
                 <Link
                   href="/alternativas/github-copilot"
                   className="block rounded-xl p-2.5 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-emerald-300"
                 >
                   <p className="font-semibold text-white">Alternativa a Copilot</p>
-                  <p className="text-slate-400 text-[11px]">Sin lock-in de modelos y con ZDR</p>
+                  <p className="text-slate-400 text-[11px]">Acceso administrado y FinOps</p>
                 </Link>
                 <Link
                   href="/alternativas/cursor"
                   className="block rounded-xl p-2.5 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-emerald-300"
                 >
                   <p className="font-semibold text-white">Alternativa a Cursor</p>
-                  <p className="text-slate-400 text-[11px]">Sin forks propietarios cerrados</p>
+                  <p className="text-slate-400 text-[11px]">Usa el plugin en VS Code o Cursor</p>
                 </Link>
                 <Link
                   href="/seguridad-y-custodia"
                   className="block rounded-xl p-2.5 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-emerald-300"
                 >
-                  <p className="font-semibold text-white">Seguridad & DLP</p>
-                  <p className="text-slate-400 text-[11px]">Zero Data Retention y filtro de claves</p>
+                  <p className="font-semibold text-white">Seguridad y datos</p>
+                  <p className="text-slate-400 text-[11px]">Condiciones del proveedor y acceso</p>
                 </Link>
                 <Link
                   href="/despliegue-en-tu-infraestructura"
                   className="block rounded-xl p-2.5 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-emerald-300"
                 >
-                  <p className="font-semibold text-white">Dedicated VPC & On-Prem</p>
-                  <p className="text-slate-400 text-[11px]">Soberanía y despliegue privado</p>
+                  <p className="font-semibold text-white">Infraestructura empresarial</p>
+                  <p className="text-slate-400 text-[11px]">Soluciones a medida de Tivisoft</p>
                 </Link>
               </div>
             </div>
@@ -162,7 +161,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-300 hover:text-emerald-300"
                 >
-                  Integración Continue (VS Code & JetBrains)
+                  EjectorSeat y Continue (VS Code y Cursor)
                 </Link>
                 <Link
                   href="/alternativas/github-copilot"
@@ -176,21 +175,21 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-300 hover:text-emerald-300"
                 >
-                  Alternativa Open Source a Cursor
+                  Alternativa al asistente de Cursor
                 </Link>
                 <Link
                   href="/seguridad-y-custodia"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-300 hover:text-emerald-300"
                 >
-                  Seguridad, ZDR & DLP
+                  Seguridad y tratamiento de datos
                 </Link>
                 <Link
                   href="/despliegue-en-tu-infraestructura"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-300 hover:text-emerald-300"
                 >
-                  Dedicated VPC & Roadmap On-Prem
+                  Infraestructura empresarial
                 </Link>
               </div>
             </div>

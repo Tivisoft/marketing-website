@@ -1,0 +1,59 @@
+# Auditoría independiente SEO y AEO — EjectorSeat / Tivisoft
+
+**Fecha:** 9 de octubre de 2026. **Mercado prioritario:** Colombia, búsquedas en español. **Estado:** diagnóstico y plan de ejecución; ninguna recomendación de este documento implica que el cambio ya esté desplegado.
+
+## Alcance y calidad de la evidencia
+
+- Se revisó la rama `codex/correcciones-marketing-ejectorseat` del sitio de marketing, su HTML exportado y una muestra HTTP de `https://tivisoft.com`. La web pública todavía sirve la versión del 30 de septiembre; el PR de correcciones de producto [#3](https://github.com/Tivisoft/marketing-website/pull/3) sigue siendo un borrador. Por tanto, se distingue entre problemas **públicos** y problemas **del PR**.
+- El sitemap público enumera **15 URLs** y les asigna a todas el mismo `lastmod` de `2026-09-30T13:37:36.995Z`; la implementación del PR genera `lastModified` con la fecha de cada build. La portada, `robots.txt`, `sitemap.xml` y las rutas verificadas sin barra final respondieron 200. `https://tivisoft.com/logo.png` respondió **404**. La revisión del HTML exportado encontró H1 y canonical en las rutas principales; esto no prueba que Google las haya indexado.
+- Dos solicitudes DataForSEO para Colombia/español costaron **USD 0,1056** y dejaron un [recibo saneado](dataforseo-colombia-es-ejectorseat-2026-10-09.json). Son estimaciones de búsquedas, **no** clics, tráfico observado ni demanda total de mercado. El endpoint de ideas mezcló consultas de imágenes y Windows ajenas al producto, que se excluyen de la priorización.
+- No hubo acceso confirmado a la propiedad de Google Search Console. Ahrefs devolvió `Insufficient plan`. Por ello no hay línea base validada de impresiones, posiciones, indexación, clics ni conversiones orgánicas.
+
+## Dictamen
+
+La estructura de rastreo básica existe. El problema de mayor impacto inmediato es la **credibilidad y consistencia**: el sitio público aún expresa afirmaciones de producto ya corregidas en el PR. Durante esta auditoría también se detectaron cifras comerciales en un artículo cuando la página de precios decía «A consultar» y `docs/PRECIO.md` señalaba que aún no se podía publicar una lista de precios; esas cifras se retiraron de la rama después de la revisión. Antes de crear más URLs hay que publicar información comprobable, mostrar experiencia propia y medir qué búsquedas llegan al sitio.
+
+La [guía de Google para funciones de IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) mantiene como base el contenido original y útil, la indexabilidad y una estructura clara. Google indica que `llms.txt` no aporta una ventaja en su buscador. También [retiró los resultados enriquecidos FAQ en mayo de 2026](https://developers.google.com/search/updates); el marcado FAQ no debe usarse como promesa de visibilidad AEO.
+
+## Acciones priorizadas
+
+| Prioridad | Acción concreta | Evidencia / URL | Criterio de cierre |
+| --- | --- | --- | --- |
+| P0 | Terminar revisión y publicar las correcciones de producto del PR #3; comprobar HTML público por URL después del despliegue. | La web pública tiene el título antiguo de `/precios` y menciones a OpenAI/Anthropic; el PR corrige el posicionamiento del producto. | Las páginas públicas describen el modelo integrado, Continue, VS Code/Cursor, DeepInfra y la oferta de infraestructura propia sin VPC/BYOK no ofrecidos. Se documentan URLs y fecha de despliegue. |
+| P0 | Retirar del artículo de costos los USD 19/39/29 y las bolsas numéricas, o esperar una aprobación comercial explícita y hacer que `/precios` y el artículo coincidan. | La revisión inicial de `src/app/blog/costo-real-asistente-ia-codigo-equipo/page.tsx` contenía cifras; `/precios` dice «A consultar»; `docs/PRECIO.md` § «Lo que todavía bloquea publicar una lista de precios». | Un lector no encuentra precios contradictorios; la página pública respeta la fuente comercial vigente. |
+| P1 | Reparar títulos, fechas, FAQ y logo estructurado. Quitar el sufijo `| Tivisoft` de los títulos de página cuando el template ya lo añade; usar fechas reales por artículo/URL; servir un logo real; renderizar todas las respuestas FAQ en el HTML. | `src/app/layout.tsx`, `src/app/sitemap.ts`, `src/app/blog/page.tsx`, `src/components/FaqSection.tsx`; `/logo.png` público responde 404. | Un solo nombre de marca por `<title>`; `lastmod` solo tras cambios sustanciales o ausente; fechas visibles y JSON-LD coherentes; URL del logo 200; respuestas legibles sin ejecutar JavaScript. Google exige [precisión verificable en `lastmod`](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap). |
+| P1 | Configurar/recuperar Search Console de `tivisoft.com`, enviar sitemap y registrar línea base CO para marca, no marca y páginas de EjectorSeat. Instrumentar demostraciones/contactos como eventos con origen orgánico. | Falta acceso a GSC en esta auditoría. | Export semanal reproducible por consulta, página, país y dispositivo; serie de impresiones, clics, CTR y posición; estado de indexación y conversiones orgánicas. |
+| P1 | Corregir el encaje de `/alternativas/cursor`: EjectorSeat funciona **en** Cursor. Decidir si la URL responde a comparar asistentes o si debe ser una integración, con redirección 301 y enlaces/canonical coherentes en caso de moverla. | `src/app/alternativas/cursor/page.tsx` promete alternativa y su FAQ aclara que se usa dentro de Cursor. | Una intención principal verificable, título/H1/CTA coherentes y sin promesa de sustituir el editor. |
+| P1 | Asignar autor técnico real, revisor, fuentes primarias y método de comparación a los cinco artículos existentes. Publicar una demostración propia de alta de clave, revocación y lectura FinOps, sin exponer datos sensibles. | Los artículos atribuyen autoría a la organización y contienen comparaciones con poca metodología verificable. | Cada artículo muestra autor y revisión verificables, versiones/fecha de productos comparados, límites y enlaces a fuentes; al menos una evidencia original reproducible. Google recomienda [autoría clara e información de fondo](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). |
+| P2 | Añadir dos activos originales y enlazarlos desde páginas comerciales: (1) método de cálculo de costo por tokens/créditos con ejemplo anonimizado real; (2) lista técnica para evaluar tratamiento de código, secretos, retención y cláusulas de no entrenamiento. | `/finops-ia`, `/seguridad-y-custodia` y artículos relacionados; falta prueba propia. | Método, supuestos, fecha, responsable y límites explícitos; sin porcentajes de ahorro ni garantías de privacidad no acreditadas. |
+| P2 | Corregir `llms-full.txt` solo si se mantiene para consumidores externos: incluir contenido/resúmenes fieles y enlaces actualizados; eliminar la etiqueta visual «AEO Ready». | `public/llms-full.txt` es una ficha breve; `FaqSection` mostraba «AEO Ready» antes de esta auditoría. | El archivo coincide con HTML y no se presenta como factor de ranking de Google. |
+
+**Preparado en la rama durante la auditoría, pendiente de publicación:** se retiraron las cifras comerciales del artículo de costos y de FinOps; se eliminaron sufijos de marca duplicados de los títulos; el sitemap dejó de atribuir a cada build una actualización de todas las URLs; se añadió el archivo de logo que usa el marcado de organización; y las respuestas FAQ quedaron en HTML nativo sin la etiqueta «AEO Ready» ni un `FAQPage` que ya no produce resultados enriquecidos en Google. `npm run lint`, `npm run build` y las verificaciones del HTML exportado pasaron. La validación pública debe repetirse después de desplegar el PR.
+
+## Investigación de demanda: lo que sí dicen los datos
+
+| Consulta CO/es | Volumen mensual estimado DataForSEO | Interpretación |
+| --- | ---: | --- |
+| `mejor ia para programar` | 590 | Tema amplio y probablemente mixto entre personas y equipos; candidato a guía comparativa solo tras revisar la SERP colombiana y aportar pruebas propias. No adjudicar esta demanda a una URL comercial. |
+| `alternativa a GitHub Copilot` | 10 | Señal exacta pequeña en esta muestra. Mantener la página por intención de evaluación empresarial y revisar variantes/SERP antes de extrapolar. |
+| `asistente de código con IA para empresas` | Sin dato (`null`) | Cobertura insuficiente; no significa cero búsquedas. |
+| `privacidad del código con IA` | Sin dato (`null`) | Prioridad editorial por diferenciación y preguntas de comprador, condicionada a pruebas y GSC. |
+| `FinOps para inteligencia artificial` | Sin dato (`null`) | Prioridad editorial por encaje con producto, no por volumen medido. |
+| `Continue VS Code` | Sin dato (`null`) | Validar variantes e intención de integración antes de añadir páginas. |
+
+El valor `competition` de Google Ads en el recibo no mide dificultad SEO. Antes de abrir una URL nueva, registrar consulta/mercado/fecha, SERP, intención distinta, encaje real con la oferta, URL dueña/canonical, evidencia original y enlace interno. No convertir cada variación de palabra clave en una página: Google desaconseja producir muchas páginas para cubrir variantes de consultas sin valor propio en su [guía de búsqueda con IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide).
+
+## Arquitectura de intención y autoridad
+
+1. **Producto y evaluación:** inicio y `/integraciones/continue` explican qué es EjectorSeat y su instalación con clave; `/alternativas/github-copilot` responde a la evaluación de una alternativa empresarial; `/finops-ia` y `/seguridad-y-custodia` documentan capacidades y límites; `/despliegue-en-tu-infraestructura` presenta la oferta separada de Tivisoft. Cada página enlaza al método o prueba relevante.
+2. **Blog:** las comparativas explican criterios, versiones y límites con neutralidad. El artículo de costo enseña un método; el de privacidad cita cláusulas del proveedor y aclara su alcance. Mantener artículos separados solo cuando responden a una decisión distinta; revisar consultas y URL de destino en GSC antes de consolidarlos. Coincidencia de palabras no basta para declarar canibalización.
+3. **Autoridad fuera del dominio:** documentar el fork/arquitectura y el método FinOps en un repositorio o ficha técnica pública autorizada; buscar reseñas técnicas y menciones relevantes de comunidades de ingeniería y seguridad mediante contribuciones reales. Registrar cada mención, URL fuente y enlace; no comprar enlaces ni inventar testimonios.
+4. **AEO:** respuestas breves y autosuficientes bajo preguntas auténticas, HTML rastreable, entidad Tivisoft/EjectorSeat coherente, citas a fuentes primarias y evidencia propia. Medir citas y visitas referidas donde existan datos, sin prometer aparición en respuestas generativas. Google señala que `llms.txt` y marcado especial no sustituyen el SEO básico.
+
+## Secuencia y medición
+
+- **Semana 1:** resolver P0, publicar PR y validar 15 URLs, canonicals, títulos, sitemap, logo y contenido visible. Obtener GSC y registrar línea base; si no hay acceso, dejar explícita esa dependencia.
+- **Semanas 2–4:** terminar P1 y dos piezas de prueba original; corregir interlinking entre páginas comerciales y guías; revisar SERP CO/es para cada cluster antes de producir URLs nuevas.
+- **Semanas 5–12:** publicar activos comprobables, ganar menciones técnicas pertinentes y ajustar títulos/contenido según consultas reales por página. Evaluar conversiones orgánicas, no solo clics.
+
+**Tablero semanal:** URLs indexadas de las 15 candidatas; errores de cobertura; impresiones y clics no marcarios CO por cluster y URL; CTR/posición contextualizados; demostraciones/contactos orgánicos válidos; menciones/citas externas verificadas. La primera lectura es línea base, no objetivo de crecimiento inventado. Comparar ventanas equivalentes y anotar fechas de despliegue y cambios editoriales.
