@@ -81,7 +81,7 @@ export function Navbar() {
                   href="/alternativas/cursor"
                   className="block rounded-xl p-2.5 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-emerald-300"
                 >
-                  <p className="font-semibold text-white">Alternativa a Cursor</p>
+                  <p className="font-semibold text-white">EjectorSeat en Cursor</p>
                   <p className="text-slate-400 text-[11px]">Usa el plugin en VS Code o Cursor</p>
                 </Link>
                 <Link
@@ -106,7 +106,7 @@ export function Navbar() {
             FinOps IA
           </Link>
           <Link href="/precios" className="transition hover:text-emerald-300">
-            Precios
+            Planes
           </Link>
           <Link href="/blog" className="transition hover:text-emerald-300">
             Blog
@@ -175,7 +175,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-300 hover:text-emerald-300"
                 >
-                  Alternativa al asistente de Cursor
+                  EjectorSeat en Cursor
                 </Link>
                 <Link
                   href="/seguridad-y-custodia"
@@ -207,7 +207,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block font-medium text-slate-200 hover:text-emerald-300"
               >
-                Precios y TCO
+                Planes
               </Link>
               <Link
                 href="/blog"

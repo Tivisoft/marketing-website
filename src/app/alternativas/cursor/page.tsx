@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'EjectorSeat es un plugin propio para VS Code y Cursor, basado en una modificación de Continue. Conoce su modelo integrado, acceso por clave y análisis FinOps.',
   alternates: { canonical: '/alternativas/cursor' },
   openGraph: {
-    title: 'EjectorSeat para equipos que evalúan alternativas a Cursor',
+    title: 'EjectorSeat en Cursor: acceso y FinOps para equipos',
     description: 'Gobierno de acceso y análisis del consumo del asistente de código en VS Code y Cursor.',
     url: 'https://tivisoft.com/alternativas/cursor',
     siteName: 'Tivisoft', locale: 'es_ES', type: 'website',
@@ -47,7 +47,7 @@ export default function CursorAlternativePage() {
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
-        <Breadcrumbs items={[{ name: 'Alternativa al asistente de Cursor', href: '/alternativas/cursor' }]} />
+        <Breadcrumbs items={[{ name: 'EjectorSeat en Cursor', href: '/alternativas/cursor' }]} />
         <section className="pt-4 pb-16">
           <h1 className="max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
             Evalúa EjectorSeat como asistente empresarial en VS Code o Cursor

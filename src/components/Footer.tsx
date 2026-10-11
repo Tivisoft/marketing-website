@@ -49,7 +49,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/precios" className="transition hover:text-emerald-300">
-                  Precios y TCO
+                  Planes
                 </Link>
               </li>
               <li>
@@ -78,7 +78,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/alternativas/cursor" className="transition hover:text-emerald-300">
-                  Alternativa al asistente de Cursor
+                  EjectorSeat en Cursor
                 </Link>
               </li>
               <li>
