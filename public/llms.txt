@@ -1,37 +1,22 @@
-# Tivisoft & EjectorSeat
+# Tivisoft y EjectorSeat
 
-> Gateway empresarial de Inteligencia Artificial para equipos de desarrollo de software y videojuegos educativos.
+Tivisoft desarrolla software con IA, videojuegos narrativos y soluciones empresariales. EjectorSeat es su asistente empresarial para desarrollo de software.
 
-## Resumen Ejecutivo
-Tivisoft (tivisoft.com) desarrolla soluciones de software con inteligencia artificial y videojuegos narrativos. Su producto insignia para equipos de ingeniería es **EjectorSeat**, un gateway empresarial de IA diseñado para potenciar la extensión open-source **Continue** en Visual Studio Code y JetBrains.
+EjectorSeat parte de una modificación del proyecto de código abierto Continue. El producto actual incluye un plugin propio para VS Code y Cursor, un modelo integrado especializado en desarrollo, administración del acceso de desarrolladores y análisis FinOps. Para empezar, la empresa entrega una clave API de EjectorSeat y el desarrollador la introduce en el plugin.
 
-EjectorSeat soluciona los tres grandes problemas de la IA en desarrollo de software corporativo:
-1. **Custodia y Privacidad**: Garantía contractual de Zero Data Retention (ZDR), ningún modelo entrena con el código del cliente y filtrado preventivo de secretos (DLP) antes de que el prompt salga de la red.
-2. **FinOps y Control de Costos**: Elimina las tarifas planas fijas por asiento ($19-$40 USD/mes) mediante cuotas por escuadrón, enrutamiento inteligente de modelos (DeepSeek para autocompletado, Claude 3.5 Sonnet para refactorizaciones) y prompt caching, reduciendo el TCO entre un 40% y un 60%.
-3. **Libertad de Modelos (BYOK)**: Sin vendor lock-in. Conecta Claude 3.5 Sonnet, GPT-4o, DeepSeek, AWS Bedrock, Azure OpenAI o modelos locales Llama 3.
+La oferta actual de EjectorSeat no intermedia inferencia con Anthropic ni OpenAI y no se presenta como una pasarela para elegir cualquier proveedor. DeepInfra declara en [sus términos](https://deepinfra.com/terms) que no usa datos de clientes para entrenar, ajustar ni mejorar modelos, sujeto al alcance y las excepciones de esos términos.
 
-## Páginas Principales y Documentación
+EjectorSeat no se ofrece actualmente como un despliegue VPC del cliente. Tivisoft también ofrece soluciones empresariales separadas para asistentes de código en infraestructura propia del cliente y procesamiento sin conexión a Internet; su alcance se define con cada empresa.
 
-### Alternativas y Comparativas
-- [Alternativa a GitHub Copilot](https://tivisoft.com/alternativas/github-copilot): Comparativa detallada frente a Copilot. Por qué las empresas migran por modelos abiertos (Claude 3.5), Zero Data Retention, DLP de secretos y ahorro en TCO.
-- [Alternativa Open Source a Cursor](https://tivisoft.com/alternativas/cursor): Toda la potencia de Cursor sin forzar a tu equipo a un fork cerrado de VS Code. Compatibilidad total con VS Code estándar y la suite de JetBrains.
+El panel FinOps permite analizar consumo y costos para optimizar recursos. Sus datos de uso también pueden orientar capacitación y retroalimentación del personal. Los créditos buscan dar más capacidad de inferencia por presupuesto; el ahorro concreto depende del uso y del plan comparado.
 
-### Integraciones y Arquitectura
-- [Integración Continue](https://tivisoft.com/integraciones/continue): Cómo conectar la extensión open source Continue (en VS Code e IntelliJ) al gateway corporativo EjectorSeat. Cero distribución de claves API a laptops.
-- [Despliegue en tu Infraestructura](https://tivisoft.com/despliegue-en-tu-infraestructura): Opciones de topología: Cloud Multi-Tenant, Dedicated Managed VPC (Single-Tenant disponible hoy) y lista de espera para Self-Hosted Air-Gapped.
+## Páginas
 
-### Finanzas y Seguridad
-- [Precios y Análisis de TCO](https://tivisoft.com/precios): Planes para equipos (Starter $9/mes, Team $15/mes + consumo, Enterprise). Comparativa de costos frente a licencias fijas tradicionales.
-- [FinOps para IA en Ingeniería](https://tivisoft.com/finops-ia): Disciplina Informar-Optimizar-Operar aplicada al consumo de tokens y modelos de lenguaje en desarrollo de software.
-- [Seguridad y Custodia](https://tivisoft.com/seguridad-y-custodia): Los 5 pilares de seguridad: Zero Data Retention (ZDR), escaneo DLP de secretos, prohibición de re-entrenamiento, auditoría inmutable y aislamiento en VPC.
-
-### Blog Técnico e Investigación
-- [Blog de IA para Ingeniería](https://tivisoft.com/blog): Publicaciones técnicas sobre economía de tokens, seguridad y gobernanza.
-- [Costo Real de un Asistente de IA](https://tivisoft.com/blog/costo-real-asistente-ia-codigo-equipo): Por qué los flujos agénticos (Claude Code / Cursor) disparan el costo real a $100-$200 USD/mes y cómo resolverlo con FinOps.
-- [GitHub Copilot vs Claude Code vs Cursor](https://tivisoft.com/blog/github-copilot-vs-claude-code-vs-cursor-equipos): Guía para líderes de ingeniería sobre los tres paradigmas de IA para código.
-- [Claude Code vs Continue](https://tivisoft.com/blog/claude-code-vs-continue-gateway-empresarial): Diferencias arquitectónicas entre agentes autónomos de CLI y asistentes de IDE.
-- [¿Qué significa que la IA no entrene con tu código?](https://tivisoft.com/blog/que-significa-ia-no-entrena-con-tu-codigo): Guía para CISOs sobre términos de servicio, ZDR y retención de logs.
-- [Gobierno de Agentes de IA](https://tivisoft.com/blog/gobierno-de-agentes-ia-en-desarrollo-de-software): Framework de gobernanza para CTOs y VPs de ingeniería.
-
-### Otros Productos
-- [Tivisoft Games - Pedaleando sin parar](https://tivisoft.com/games): Videojuego narrativo y educativo de aventuras para PC y móvil sobre la travesía del oso polar Debi por Colombia.
+- [EjectorSeat y Continue](https://tivisoft.com/integraciones/continue)
+- [Alternativa a GitHub Copilot](https://tivisoft.com/alternativas/github-copilot)
+- [Alternativa al asistente de Cursor](https://tivisoft.com/alternativas/cursor)
+- [FinOps para IA](https://tivisoft.com/finops-ia)
+- [Seguridad y tratamiento de datos](https://tivisoft.com/seguridad-y-custodia)
+- [Soluciones en infraestructura del cliente](https://tivisoft.com/despliegue-en-tu-infraestructura)
+- [Precios](https://tivisoft.com/precios)
+- [Blog](https://tivisoft.com/blog)

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, X, ShieldCheck, Zap, Layers, Sparkles, ArrowRight, Server, Terminal, Lock } from 'lucide-react';
+import { ArrowRight, KeyRound, BarChart3, ShieldCheck } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -9,283 +9,101 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'La Mejor Alternativa a GitHub Copilot para Empresas | EjectorSeat',
-  description:
-    'Descubre por qué equipos de software migran de GitHub Copilot a EjectorSeat con Continue: Zero Data Retention (ZDR), modelos Claude 3.5 y GPT-4o sin lock-in y FinOps para ahorrar hasta un 60%.',
-  alternates: {
-    canonical: '/alternativas/github-copilot',
-  },
+  title: 'EjectorSeat como alternativa empresarial a GitHub Copilot',
+  description: 'EjectorSeat ofrece un plugin propio para VS Code y Cursor, acceso gobernado por clave y análisis FinOps. Conoce qué evaluar al comparar alternativas a GitHub Copilot.',
+  alternates: { canonical: '/alternativas/github-copilot' },
   openGraph: {
-    title: 'Alternativa Empresarial a GitHub Copilot | EjectorSeat + Continue',
-    description:
-      'Supera el vendor lock-in de Copilot: usa Claude 3.5 Sonnet, GPT-4o o DeepSeek en VS Code y JetBrains con custodia de código total y DLP de secretos.',
+    title: 'EjectorSeat como alternativa empresarial a GitHub Copilot',
+    description: 'Compara gobierno de acceso, tratamiento de datos y visibilidad del consumo de asistentes de código.',
     url: 'https://tivisoft.com/alternativas/github-copilot',
-    siteName: 'Tivisoft',
-    locale: 'es_ES',
-    type: 'website',
+    siteName: 'Tivisoft', locale: 'es_ES', type: 'website',
   },
-  keywords: [
-    'github copilot alternative',
-    'alternativa a github copilot',
-    'alternativa open source copilot',
-    'continue vscode copilot',
-    'asistente ia codigo privacidad',
-    'zero data retention ai',
-    'ejectorseat tivisoft',
-  ],
 };
 
 const comparisonData = [
-  {
-    feature: 'Modelos disponibles',
-    copilot: 'Modelos fijos de OpenAI / Microsoft',
-    cursor: 'Modelos seleccionados por Cursor',
-    ejector: 'Claude 3.5 Sonnet, GPT-4o, DeepSeek, Bedrock, Llama 3 (BYOK)',
-    highlight: true,
-  },
-  {
-    feature: 'Soporte de IDE',
-    copilot: 'Extensión para VS Code, JetBrains, Visual Studio',
-    cursor: 'Fork propietario cerrado de VS Code',
-    ejector: 'VS Code y JetBrains nativos vía Continue (Open Source)',
-    highlight: false,
-  },
-  {
-    feature: 'Zero Data Retention (ZDR)',
-    copilot: 'Políticas estándar corporativas de Microsoft',
-    cursor: 'Almacena telemetría en sus servidores',
-    ejector: 'Garantía ZDR contractual: tu código no se almacena ni entrena',
-    highlight: true,
-  },
-  {
-    feature: 'DLP de secretos y tokens',
-    copilot: 'No detecta ni redacta secretos antes de enviar',
-    cursor: 'Sin redactado preventivo en cliente',
-    ejector: 'Escaneo y redactado de secretos y credenciales en el gateway',
-    highlight: true,
-  },
-  {
-    feature: 'Modelo de precios y FinOps',
-    copilot: '$19 a $39 USD/mes/usuario (asiento plano)',
-    cursor: '$20 a $40 USD/mes/usuario + costos extras',
-    ejector: 'FinOps real: consumo transparente por escuadrón y BYOK',
-    highlight: true,
-  },
-  {
-    feature: 'Despliegue en VPC privada',
-    copilot: 'No disponible (solo SaaS multi-tenant)',
-    cursor: 'No disponible',
-    ejector: 'Disponible: Managed VPC dedicada para máxima soberanía',
-    highlight: false,
-  },
-  {
-    feature: 'Vendor Lock-in',
-    copilot: 'Alto (ecosistema Microsoft GitHub)',
-    cursor: 'Alto (dependencia de binarios propietarios de Cursor)',
-    ejector: 'Cero: cliente 100% open-source (Continue) y gateway agnóstico',
-    highlight: true,
-  },
+  { feature: 'Cliente de desarrollo', copilot: 'Extensiones y herramientas de GitHub', ejector: 'Plugin propio basado en una modificación de Continue para VS Code y Cursor' },
+  { feature: 'Acceso del equipo', copilot: 'Administración según el plan contratado con GitHub', ejector: 'Una clave de EjectorSeat por desarrollador, administrada por la empresa' },
+  { feature: 'Inferencia', copilot: 'Opciones y condiciones del servicio de GitHub', ejector: 'Modelo especializado en desarrollo integrado en EjectorSeat' },
+  { feature: 'Visibilidad de uso', copilot: 'Informes disponibles según el plan de GitHub', ejector: 'Panel FinOps con consumo atribuido a organización, proyecto y usuario' },
+  { feature: 'Tratamiento de datos', copilot: 'Revisar las condiciones del plan y del modelo utilizado', ejector: 'DeepInfra declara en sus términos que no usa datos de clientes para entrenar modelos' },
 ];
 
 const faqs = [
   {
-    question: '¿Por qué las empresas buscan una alternativa a GitHub Copilot?',
-    answer:
-      'Las principales razones son la rigidez en la elección de modelos (Copilot limita a modelos específicos de OpenAI sin acceso inmediato a lo mejor de Anthropic Claude 3.5 Sonnet o DeepSeek), el costo fijo por asiento que desperdicia presupuesto en desarrolladores con uso bajo, y la necesidad de políticas estrictas de Zero Data Retention y redactado de secretos (DLP) antes de que el código salga de la red corporativa.',
+    question: '¿Por qué considerar una alternativa a GitHub Copilot?',
+    answer: 'Cada empresa puede exigir controles distintos de acceso, costos y tratamiento del código y los secretos empresariales. También puede necesitar mayor confianza en la seguridad de su infraestructura. Conviene comparar las condiciones concretas de cada servicio.',
   },
   {
-    question: '¿Qué es EjectorSeat y cómo se compara con Copilot?',
-    answer:
-      'EjectorSeat es un gateway empresarial de IA desarrollado por Tivisoft que se conecta directamente al cliente open-source Continue en VS Code y JetBrains. A diferencia de Copilot, EjectorSeat te permite utilizar cualquier modelo de IA (Anthropic, OpenAI, AWS Bedrock, etc.), centraliza la gestión de claves API, audita cada interacción, filtra secretos mediante DLP y ofrece métricas FinOps para optimizar el gasto de tu equipo.',
+    question: '¿Qué es EjectorSeat?',
+    answer: 'Es la solución empresarial de Tivisoft basada en una modificación de Continue. Incluye un plugin propio para VS Code y Cursor, un modelo integrado especializado en desarrollo, gobierno del acceso de desarrolladores y análisis FinOps del uso.',
   },
   {
-    question: '¿Los desarrolladores tienen que cambiar de editor de código?',
-    answer:
-      'No. A diferencia de alternativas como Cursor (que obligan a instalar un fork cerrado de VS Code), EjectorSeat funciona mediante la extensión Continue en las versiones oficiales y estándares de VS Code y la suite de JetBrains (IntelliJ, WebStorm, PyCharm), manteniendo intactos todos los plugins corporativos y configuraciones.',
+    question: '¿Qué debe configurar cada desarrollador?',
+    answer: 'La empresa entrega una clave API de EjectorSeat al desarrollador, que la pega en el panel del plugin. No necesita introducir una URL ni aportar una clave personal de un proveedor de modelos.',
   },
   {
-    question: '¿Cómo garantiza EjectorSeat que la IA no entrene con nuestro código?',
-    answer:
-      'EjectorSeat implementa acuerdos Zero Data Retention (ZDR) con los proveedores de inferencia y opera bajo una arquitectura de paso efímero: el código nunca se almacena en bases de datos del gateway, los tokens sensibles se redactan automáticamente mediante DLP y no existe almacenamiento intermedio para re-entrenamiento.',
+    question: '¿Se usan modelos de Anthropic u OpenAI?',
+    answer: 'No en la oferta actual de EjectorSeat. La inferencia se ofrece con el modelo especializado integrado mediante DeepInfra; EjectorSeat no intermedia conexiones con Anthropic ni OpenAI.',
   },
   {
-    question: '¿Cuánto puede ahorrar una empresa migrando de Copilot a EjectorSeat?',
-    answer:
-      'Los equipos suelen ahorrar entre un 35% y un 60% en TCO. Mientras que GitHub Copilot cobra una tarifa plana de $19-$39 USD por desarrollador al mes independientemente de su uso real, EjectorSeat permite pagar solo por el cómputo consumido (BYOK o planes optimizados) con límites y enrutamiento inteligente por escuadrón.',
+    question: '¿Cómo se trata el código enviado para inferencia?',
+    answer: 'DeepInfra declara en sus términos de servicio que no utiliza los datos de sus clientes para entrenar, ajustar o mejorar modelos. La inferencia requiere procesar las entradas y salidas, y sus términos contemplan excepciones de retención.',
+  },
+  {
+    question: '¿Cuánto puede ahorrar mi equipo?',
+    answer: 'Los créditos de EjectorSeat buscan ofrecer más tokens de inferencia por presupuesto y el panel FinOps ayuda a encontrar oportunidades de optimización. El ahorro real depende del plan, el uso y la comparación concreta; no existe un porcentaje universal.',
   },
 ];
 
 export default function GitHubCopilotAlternativePage() {
   const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'EjectorSeat',
-    applicationCategory: 'DeveloperApplication',
-    operatingSystem: 'Cross-platform (VS Code, JetBrains)',
-    offers: {
-      '@type': 'Offer',
-      price: '0.00',
-      priceCurrency: 'USD',
-      description: 'Planes flexibles y evaluación empresarial para equipos de desarrollo.',
-    },
-    description:
-      'Gateway empresarial de IA para desarrollo de software con Continue. Alternativa a GitHub Copilot con Zero Data Retention, FinOps y soporte multi-modelo.',
-    provider: {
-      '@type': 'Organization',
-      name: 'Tivisoft',
-      url: 'https://tivisoft.com',
-    },
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+    name: 'EjectorSeat', applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'VS Code y Cursor',
+    description: 'Asistente empresarial de código basado en una modificación de Continue, con acceso gobernado y análisis FinOps.',
+    provider: { '@type': 'Organization', name: 'Tivisoft', url: 'https://tivisoft.com' },
   };
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <JsonLd data={productSchema} />
-
       <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
-        <Breadcrumbs
-          items={[
-            { name: 'Alternativas', href: '/alternativas/github-copilot' },
-            { name: 'Alternativa a GitHub Copilot', href: '/alternativas/github-copilot' },
-          ]}
-        />
-
-        {/* Hero Section */}
-        <section className="relative pt-4 pb-16 text-center sm:text-left">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-emerald-300">
-            <Sparkles className="h-4 w-4" />
-            La alternativa abierta, privada y rentable a GitHub Copilot
-          </div>
-
+        <Breadcrumbs items={[{ name: 'Alternativa a GitHub Copilot', href: '/alternativas/github-copilot' }]} />
+        <section className="pt-4 pb-16">
           <h1 className="max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-            La alternativa empresarial a GitHub Copilot sin lock-in ni fuga de código.
+            Una alternativa empresarial a GitHub Copilot con gobierno de acceso y FinOps
           </h1>
-
-          {/* AEO Direct Answer Summary Box */}
-          <div className="mt-8 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 p-6 shadow-glow">
-            <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-              Respuesta Directa (AEO): ¿Por qué elegir EjectorSeat + Continue frente a Copilot?
-            </p>
-            <p className="mt-3 text-base sm:text-lg text-slate-200 leading-relaxed">
-              <strong>EjectorSeat</strong> con el cliente open source <strong>Continue</strong> es la alternativa líder a GitHub Copilot para equipos de ingeniería. A diferencia de Copilot, ofrece <strong>libertad total de modelos</strong> (Claude 3.5 Sonnet, GPT-4o, DeepSeek), <strong>Zero Data Retention contractual</strong> garantizado, <strong>redactado automático de secretos (DLP)</strong> y un control <strong>FinOps de costos por escuadrón</strong> que ahorra entre el 35% y el 60% frente a las tarifas planas tradicionales.
-            </p>
-          </div>
-
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="https://wa.me/573102134709"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-7 py-3.5 text-base font-semibold text-slate-950 shadow-glow transition hover:scale-[1.02]"
-            >
-              Solicitar Demostración
-              <ArrowRight className="h-4 w-4" />
+          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-slate-300">
+            Los equipos que evalúan alternativas buscan controlar quién accede al asistente, entender su consumo y revisar cómo se protegen el código, los secretos y la infraestructura. EjectorSeat integra un modelo especializado en desarrollo en un plugin propio para VS Code y Cursor.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="https://wa.me/573102134709" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 font-semibold text-slate-950">
+              Solicitar demostración <ArrowRight className="h-4 w-4" />
             </a>
-            <Link
-              href="/integraciones/continue"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/90 px-7 py-3.5 text-base font-semibold text-slate-200 transition hover:border-emerald-400/50 hover:text-white"
-            >
-              Cómo funciona con Continue
-            </Link>
+            <Link href="/integraciones/continue" className="rounded-full border border-slate-700 px-7 py-3.5 font-semibold text-slate-200">Conocer el plugin</Link>
           </div>
         </section>
-
-        {/* Comparison Matrix Section */}
         <section className="py-12">
-          <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Comparativa detallada: GitHub Copilot vs. Cursor vs. EjectorSeat
-            </h2>
-            <p className="mt-2 text-slate-400">
-              Analizamos las dimensiones críticas para equipos de tecnología: modelos, privacidad, costos y gobierno corporativo.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/80 shadow-2xl">
+          <h2 className="mb-3 text-2xl font-bold text-white sm:text-3xl">Qué comparar antes de decidir</h2>
+          <p className="mb-8 text-slate-400">Las condiciones de terceros cambian por plan y fecha; confirma sus términos vigentes antes de contratar.</p>
+          <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/80">
             <table className="w-full min-w-[650px] text-left text-sm sm:text-base">
-              <thead>
-                <tr className="border-b border-slate-800 bg-slate-950/70 text-xs font-semibold uppercase tracking-wider text-slate-400">
-                  <th className="py-4 px-6">Característica</th>
-                  <th className="py-4 px-6 text-slate-300">GitHub Copilot</th>
-                  <th className="py-4 px-6 text-slate-300">Cursor</th>
-                  <th className="py-4 px-6 text-emerald-400 bg-emerald-950/20">
-                    EjectorSeat + Continue
-                  </th>
-                </tr>
-              </thead>
+              <thead className="bg-slate-950/70 text-slate-300"><tr><th className="px-6 py-4">Dimensión</th><th className="px-6 py-4">GitHub Copilot</th><th className="px-6 py-4 text-emerald-300">EjectorSeat</th></tr></thead>
               <tbody className="divide-y divide-slate-800/60">
-                {comparisonData.map((row, idx) => (
-                  <tr key={idx} className={row.highlight ? 'bg-slate-900/40' : ''}>
-                    <td className="py-4 px-6 font-medium text-white">{row.feature}</td>
-                    <td className="py-4 px-6 text-slate-400">{row.copilot}</td>
-                    <td className="py-4 px-6 text-slate-400">{row.cursor}</td>
-                    <td className="py-4 px-6 font-semibold text-emerald-300 bg-emerald-950/20">
-                      {row.ejector}
-                    </td>
-                  </tr>
-                ))}
+                {comparisonData.map((row) => <tr key={row.feature}><td className="px-6 py-4 font-medium text-white">{row.feature}</td><td className="px-6 py-4 text-slate-400">{row.copilot}</td><td className="px-6 py-4 text-emerald-300">{row.ejector}</td></tr>)}
               </tbody>
             </table>
           </div>
         </section>
-
-        {/* 4 Pillars of Migration */}
-        <section className="py-12">
-          <div className="mb-10 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              ¿Por qué migrar de GitHub Copilot a EjectorSeat?
-            </h2>
-            <p className="mt-2 text-slate-400">
-              Diseñado para responder a las exigencias de directores de ingeniería, arquitectos y CISOs.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
-                <Layers className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white">Agnóstico de Modelos (BYOK)</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                No quedes atrapado en una sola familia de modelos. Alterna dinámicamente entre Claude 3.5 Sonnet para refactorizaciones complejas y modelos más veloces y económicos para autocompletado en milisegundos.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
-                <Lock className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white">DLP Preventivo de Secretos</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                EjectorSeat intercepta y anonimiza claves API, credenciales AWS, JWTs y datos sensibles antes de que el prompt abandone tu red, mitigando incidentes de seguridad que Copilot no detecta.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
-                <Zap className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white">FinOps y Control de Costos</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                Acaba con las licencias inactivas. Asigna presupuestos por equipo, visualiza telemetría de tokens en tiempo real y optimiza con prompt caching inteligente.
-              </p>
-            </div>
-          </div>
+        <section className="grid gap-6 py-12 md:grid-cols-3">
+          <article className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"><KeyRound className="mb-4 text-emerald-400" /><h2 className="text-xl font-bold">Acceso administrado</h2><p className="mt-2 text-slate-300">Entrega y revoca claves por desarrollador desde el entorno empresarial. Para empezar, cada persona pega su clave en el plugin.</p></article>
+          <article className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"><BarChart3 className="mb-4 text-emerald-400" /><h2 className="text-xl font-bold">FinOps de uso</h2><p className="mt-2 text-slate-300">Consulta consumo y costos por equipo, proyecto y usuario para optimizar recursos y orientar capacitación y retroalimentación.</p></article>
+          <article className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6"><ShieldCheck className="mb-4 text-emerald-400" /><h2 className="text-xl font-bold">Condiciones de datos claras</h2><p className="mt-2 text-slate-300">La política de no entrenamiento corresponde a <a className="text-emerald-300 underline" href="https://deepinfra.com/terms">los términos de DeepInfra</a>. Revisa su alcance y excepciones para tus requisitos.</p></article>
         </section>
-
-        {/* FAQs */}
         <FaqSection items={faqs} />
-
-        {/* Conversion Banner */}
-        <CtaBanner
-          title="Migra de GitHub Copilot a una arquitectura de IA sin lock-in"
-          subtitle="Descubre cómo empresas de software ahorran costos y blindan su código fuente con EjectorSeat y Continue."
-          primaryButtonText="Hablar con un Especialista"
-          secondaryButtonText="Ver Caso Continue"
-          secondaryButtonHref="/integraciones/continue"
-        />
+        <CtaBanner title="Evalúa EjectorSeat con tu equipo" subtitle="Conoce el plugin, el modelo integrado y la visibilidad FinOps con tus requisitos de seguridad y presupuesto." primaryButtonText="Hablar con un especialista" secondaryButtonText="Ver cómo funciona" secondaryButtonHref="/integraciones/continue" />
       </div>
-
       <Footer />
     </main>
   );

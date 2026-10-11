@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: '%s | Tivisoft',
   },
   description:
-    'Desarrollo de software a medida, videojuegos narrativos y EjectorSeat: gateway empresarial de IA para equipos de desarrollo con Continue, FinOps y Zero Data Retention.',
+    'Desarrollo de software a medida, videojuegos narrativos y EjectorSeat: asistente empresarial de código basado en Continue con gobierno de acceso y FinOps.',
   alternates: {
     canonical: '/',
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tivisoft | Soluciones de Inteligencia Artificial',
     description:
-      'EjectorSeat: Gateway empresarial de IA para desarrollo con Continue, FinOps y Zero Data Retention.',
+      'EjectorSeat: plugin empresarial para VS Code y Cursor con acceso administrado y FinOps.',
   },
   robots: {
     index: true,
@@ -79,17 +79,11 @@ const globalSchema = {
       '@id': 'https://tivisoft.com/#ejectorseat',
       name: 'EjectorSeat',
       applicationCategory: 'DeveloperApplication',
-      operatingSystem: 'Cross-platform (VS Code, JetBrains)',
+      operatingSystem: 'VS Code y Cursor',
       description:
-        'Gateway empresarial de IA para equipos de software con soporte nativo de Continue, Zero Data Retention (ZDR), escaneo DLP de secretos y control FinOps de costos.',
+        'Asistente empresarial de código basado en una modificación de Continue, con modelo integrado, acceso administrado y análisis FinOps.',
       provider: {
         '@id': 'https://tivisoft.com/#organization',
-      },
-      offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'USD',
-        lowPrice: '9.00',
-        offerCount: 3,
       },
     },
   ],

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Clock, Calendar, Shield, Lock, AlertTriangle, CheckCircle2, FileText, ArrowRight, EyeOff } from 'lucide-react';
+import { Clock, Calendar, CheckCircle2 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -9,16 +8,16 @@ import { CtaBanner } from '@/components/CtaBanner';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: '¿Qué Significa Realmente que la IA no Entrena con tu Código? | Tivisoft Blog',
+  title: '¿Qué significa que la IA no entrena con tu código?',
   description:
-    'Análisis para CISOs y líderes técnicos: qué hay detrás de las promesas de no-entrenamiento, qué es Zero Data Retention (ZDR) y cómo blindar tu propiedad intelectual.',
+    'Qué dicen los términos de DeepInfra sobre el uso de los datos de inferencia y qué límites conviene tener presentes.',
   alternates: {
     canonical: '/blog/que-significa-ia-no-entrena-con-tu-codigo',
   },
   openGraph: {
     title: '¿Qué Significa Realmente que la IA no Entrena con tu Código?',
     description:
-      'Descubre la verdad sobre los términos legales de las APIs de IA, retención de telemetría y por qué se requiere filtrado DLP a nivel de gateway.',
+      'Revisa el compromiso de DeepInfra sobre entrenamiento de modelos, su alcance y las excepciones de retención.',
     url: 'https://tivisoft.com/blog/que-significa-ia-no-entrena-con-tu-codigo',
     siteName: 'Tivisoft',
     locale: 'es_ES',
@@ -29,26 +28,26 @@ export const metadata: Metadata = {
     'zero data retention desarrollo software',
     'seguridad codigo fuente ia',
     'politicas privacidad asistentes codigo',
-    'zdr anthropic openai continue',
-    'dlp secretos prompts ia',
+    'deepinfra tratamiento de datos',
+    'privacidad asistentes codigo',
   ],
 };
 
 const zdrFaqs = [
   {
-    question: '¿Las versiones gratuitas o de consumidor de ChatGPT y Copilot entrenan con mi código?',
+    question: '¿Qué compromiso de no entrenamiento aplica a EjectorSeat?',
     answer:
-      'Por defecto, en los niveles para consumidores (Consumer / Free / Plus estándar sin optar por salir expresamente), los proveedores se reservan el derecho legal de utilizar los datos enviados para entrenar o calibrar futuros modelos de lenguaje. En las cuentas comerciales y Enterprise, esto se desactiva contractualmente, pero sigue habiendo retención temporal para moderación de abusos salvo que se firme un acuerdo ZDR.',
+      'EjectorSeat utiliza el modelo de desarrollo integrado servido por DeepInfra. En sus términos, DeepInfra declara que no vende los datos del cliente ni los usa para entrenar, ajustar o mejorar modelos, excepto cuando sea necesario para prestar el servicio. Consulta los términos oficiales en https://deepinfra.com/terms.',
   },
   {
-    question: '¿Qué es el periodo de retención de 30 días para moderación?',
+    question: '¿Significa esto que no se conserva ningún dato?',
     answer:
-      'La mayoría de las APIs comerciales estándar (incluso sin entrenamiento) conservan los prompts y respuestas en discos cifrados durante 30 días para auditar abusos y seguridad. Si tu empresa maneja secretos comerciales o datos de clientes regulados por GDPR o HIPAA, esos 30 días en servidores de terceros suponen un riesgo legal. La garantía Zero Data Retention (ZDR) elimina ese periodo de retención.',
+      'No debe interpretarse como ausencia absoluta de retención. Los términos de DeepInfra contemplan datos autorizados por escrito para resolver incidentes de soporte (que se eliminan dentro de los 30 días siguientes a su resolución), metadatos operativos sin contenido y registros que deban conservarse por ley o para investigar fraude, incidentes de seguridad o abuso.',
   },
   {
-    question: '¿Cómo complementa el DLP de EjectorSeat a las políticas ZDR?',
+    question: '¿EjectorSeat ofrece DLP o despliegue en la VPC del cliente?',
     answer:
-      'Aunque un proveedor de modelos prometa ZDR, enviar claves de producción, certificados SSL o credenciales AWS a la nube sigue siendo una vulnerabilidad grave. EjectorSeat añade una capa preventiva de DLP en el propio gateway corporativo, anonimizando las credenciales antes de que salgan de la red, garantizando defensa en profundidad.',
+      'No. El producto actual no ofrece escaneo DLP de secretos, despliegue en la VPC del cliente ni modalidad air-gapped. Tivisoft ofrece por separado soluciones empresariales para infraestructura propia; su alcance debe conversarse con el equipo.',
   },
 ];
 
@@ -56,11 +55,11 @@ export default function QueSignificaIANoEntrenaPage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: '¿Qué significa realmente que la IA no entrene con tu código? Guía para CISOs',
+    headline: 'Qué significa el compromiso de no entrenamiento de DeepInfra',
     description:
-      'Explicación jurídica y técnica sobre los acuerdos de confidencialidad, Zero Data Retention y protección de secretos en modelos de lenguaje.',
+      'Alcance del compromiso de DeepInfra sobre entrenamiento y excepciones contractuales de retención.',
     datePublished: '2026-09-24T08:00:00+00:00',
-    dateModified: '2026-09-24T08:00:00+00:00',
+    dateModified: '2026-10-09T00:00:00+00:00',
     author: {
       '@type': 'Organization',
       name: 'Tivisoft Research',
@@ -90,7 +89,7 @@ export default function QueSignificaIANoEntrenaPage() {
         <header className="pt-4 pb-10 border-b border-slate-800">
           <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400 mb-4">
             <span className="rounded-full bg-emerald-500/10 border border-emerald-400/30 px-3 py-1 font-semibold text-emerald-300">
-              Seguridad & ZDR
+              Seguridad y datos
             </span>
             <span className="flex items-center gap-1">
               <Calendar className="h-3.5 w-3.5" />
@@ -108,71 +107,34 @@ export default function QueSignificaIANoEntrenaPage() {
           </h1>
 
           <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            Casi todos los proveedores de herramientas de IA afirman que &quot;no entrenan con tus datos&quot;. Sin embargo, para un Director de Seguridad (CISO) o un abogado corporativo, el diablo está en los detalles de retención, telemetría y logs.
+            La frase &quot;no entrenamos con tus datos&quot; no describe por sí sola todo el tratamiento de una solicitud. Conviene revisar qué datos cubre el compromiso, para qué se procesan y qué excepciones de retención aplican.
           </p>
         </header>
 
         {/* Direct Answer Box (AEO) */}
         <div className="my-8 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 p-6 shadow-glow">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-            Respuesta Directa (AEO): ¿Cómo verificar que una IA no entrena con tu código fuente?
+            Respuesta directa: ¿qué dice el proveedor integrado de EjectorSeat?
           </p>
           <p className="mt-3 text-sm sm:text-base text-slate-200 leading-relaxed">
-            Una afirmación verbal de marketing no es vinculante. Para garantizar la seguridad corporativa se requieren tres elementos verificables: (1) <strong>Términos comerciales de API</strong> que excluyan expresamente el entrenamiento de modelos, (2) un acuerdo de <strong>Zero Data Retention (ZDR)</strong> que anule el almacenamiento de logs de 30 días, y (3) un <strong>gateway corporativo con DLP</strong> como EjectorSeat que elimine credenciales, llaves API y secretos antes de que el código salga de la frontera corporativa.
+            EjectorSeat utiliza un modelo de desarrollo integrado servido por DeepInfra. Sus términos dicen que DeepInfra no vende los datos del cliente ni los usa para entrenar, ajustar o mejorar modelos, salvo cuando sea necesario para prestar el servicio. La cláusula también contempla excepciones específicas; por eso, no equivale a prometer retención cero absoluta. <a className="text-emerald-300 underline" href="https://deepinfra.com/terms" target="_blank" rel="noreferrer">Lee los términos de DeepInfra</a>.
           </p>
         </div>
 
         {/* Article Body */}
         <article className="prose prose-invert max-w-none text-slate-300 text-base sm:text-lg leading-relaxed space-y-8">
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">
-              Los 3 Niveles de Retención de Datos en IA
-            </h2>
-            <div className="space-y-4 my-6">
-              <div className="rounded-xl border border-rose-500/30 bg-slate-900/60 p-5">
-                <span className="text-xs font-semibold uppercase tracking-wider text-rose-400">Nivel 1: Alto Riesgo</span>
-                <h3 className="text-lg font-bold text-white mt-1">Cuentas gratuitas y de consumidor</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Las plataformas web estándar guardan historiales de conversación y los utilizan para enriquecer datasets de entrenamiento mediante aprendizaje por refuerzo con feedback humano (RLHF). Usar estas cuentas con código propietario de clientes constituye una violación directa de acuerdos de confidencialidad (NDA).
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-yellow-500/30 bg-slate-900/60 p-5">
-                <span className="text-xs font-semibold uppercase tracking-wider text-yellow-400">Nivel 2: Riesgo Moderado</span>
-                <h3 className="text-lg font-bold text-white mt-1">APIs Comerciales Estándar</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Anthropic y OpenAI especifican que no utilizan datos de la API comercial para entrenar modelos. No obstante, por defecto conservan una copia cifrada durante 30 días con fines de detección de abusos y auditoría de seguridad.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-emerald-500/40 bg-slate-900/90 p-5 shadow-glow">
-                <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">Nivel 3: Máxima Seguridad</span>
-                <h3 className="text-lg font-bold text-emerald-300 mt-1">Zero Data Retention (ZDR) + Gateway DLP</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Acuerdos formalizados donde la retención temporal en disco es exactamente cero: la inferencia se procesa estrictamente en memoria RAM y se descarta de inmediato. Combinado con un gateway que anonimice secretos, el riesgo de filtración se neutraliza por completo.
-                </p>
-              </div>
-            </div>
+            <h2 className="text-2xl font-bold text-white mt-10 mb-4">Qué cubren los términos de DeepInfra</h2>
+            <p>Los términos vigentes de DeepInfra indican que el proveedor no vende los datos del cliente ni los usa para entrenar, ajustar o mejorar modelos, excepto cuando sea necesario para prestar el servicio. La obligación se refiere al proveedor de inferencia integrado en EjectorSeat.</p>
+            <p>La misma cláusula describe excepciones: retención autorizada por escrito para soporte, metadatos operativos que no incluyan el contenido de la solicitud y registros que deban conservarse por ley o para atender fraude, seguridad o abuso. Por tanto, no debe resumirse como una garantía de que nunca se almacena ningún dato.</p>
+            <p><a className="text-emerald-300 underline" href="https://deepinfra.com/terms" target="_blank" rel="noreferrer">Consulta directamente los términos de DeepInfra (sección 7)</a> y confirma que la versión vigente y el acuerdo aplicable cubran tu caso.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white mt-10 mb-4">
-              El Riesgo Oculto: Secretos en el Contexto del Prompt
-            </h2>
-            <p>
-              Incluso cuando el proveedor del modelo cumple el 100% de sus compromisos de no-entrenamiento, existe un riesgo técnico frecuente: <strong>la exposición involuntaria de credenciales</strong>.
-            </p>
-            <p>
-              Los asistentes de código envían fragmentos de archivos adyacentes, variables de entorno y comentarios de código. Si un desarrollador tiene un archivo de configuración con contraseñas o tokens de AWS, ese secreto viajará a través de la red.
-            </p>
-            <p>
-              Por esta razón, la arquitectura de Tivisoft con <strong>EjectorSeat</strong> incluye un motor de DLP preventivo:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-slate-300">
-              <li>Escanea expresiones regulares y patrones criptográficos de claves en milisegundos.</li>
-              <li>Reemplaza credenciales por variables simuladas antes de que la petición salga del gateway corporativo.</li>
-              <li>Genera alertas de auditoría interna para que el equipo de ciberseguridad pueda rotar secretos comprometidos en el repositorio.</li>
-            </ul>
+            <h2 className="text-2xl font-bold text-white mt-10 mb-4">El compromiso no reemplaza tus controles</h2>
+            <p>El compromiso sobre entrenamiento no significa que EjectorSeat filtre secretos, elimine datos personales o procese solicitudes dentro de la infraestructura del cliente. El producto actual no ofrece DLP, despliegue en VPC del cliente ni operación air-gapped.</p>
+            <p>Antes de habilitar un asistente de código, define qué contexto pueden compartir tus desarrolladores, aplica las políticas internas de manejo de secretos y revisa el contrato y las excepciones del proveedor.</p>
+            <p>Tivisoft también ofrece soluciones empresariales para asistentes en infraestructura propia. Esa oferta es distinta de EjectorSeat y requiere conversar su alcance con el equipo.</p>
           </section>
 
           <section>
@@ -182,19 +144,19 @@ export default function QueSignificaIANoEntrenaPage() {
             <div className="space-y-3 font-medium text-sm text-slate-200">
               <div className="flex items-center gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                <span>¿Existe contrato comercial que prohíba contractualmente el re-entrenamiento?</span>
+                <span>¿Qué proveedor procesa las solicitudes y qué compromiso contractual publica?</span>
               </div>
               <div className="flex items-center gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                <span>¿Se ha firmado un anexo de Zero Data Retention para evitar logs temporales de 30 días?</span>
+                <span>¿Qué excepciones de retención y soporte contempla el acuerdo vigente?</span>
               </div>
               <div className="flex items-center gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                <span>¿Las claves API están centralizadas en un gateway seguro sin llegar a las laptops de los desarrolladores?</span>
+                <span>¿Qué datos y contexto pueden enviar los desarrolladores desde el plugin?</span>
               </div>
               <div className="flex items-center gap-2 p-3 rounded-lg bg-slate-900 border border-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                <span>¿Disponemos de filtrado DLP para que ningún secreto se incluya en el contexto del prompt?</span>
+                <span>¿Tenemos controles propios para evitar compartir secretos en el contexto?</span>
               </div>
             </div>
           </section>
@@ -205,8 +167,8 @@ export default function QueSignificaIANoEntrenaPage() {
 
         {/* CTA */}
         <CtaBanner
-          title="Garantiza la custodia total de tu código con EjectorSeat"
-          subtitle="Implementa un gateway corporativo con ZDR, DLP preventivo y auditoría SOC2 para tu equipo de ingeniería."
+          title="Revisa el tratamiento de datos de tu asistente de código"
+          subtitle="Consulta los términos de DeepInfra y conversa con Tivisoft sobre los requisitos de seguridad de tu organización."
           primaryButtonText="Hablar con un Experto en Seguridad"
           secondaryButtonText="Ver Medidas de Seguridad"
           secondaryButtonHref="/seguridad-y-custodia"

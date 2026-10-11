@@ -11,8 +11,8 @@ interface CtaBannerProps {
 }
 
 export function CtaBanner({
-  title = '¿Listo para implementar IA con custodia real y control de costos?',
-  subtitle = 'EjectorSeat conecta a tu equipo de desarrollo con los mejores modelos de IA a través de Continue, garantizando Zero Data Retention y ahorro comprobado.',
+  title = '¿Quieres evaluar EjectorSeat con tu equipo?',
+  subtitle = 'Conoce el plugin para VS Code y Cursor, el acceso administrado y el análisis FinOps del consumo de inferencia.',
   primaryButtonText = 'Agendar Demo Técnica',
   primaryButtonHref = 'https://wa.me/573102134709',
   secondaryButtonText = 'Ver Planes y Precios',
@@ -23,7 +23,7 @@ export function CtaBanner({
       <div className="mx-auto max-w-3xl">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
           <ShieldCheck className="h-3.5 w-3.5" />
-          Sin vendor lock-in · Modelos Abiertos · ZDR
+          Acceso administrado · Modelo integrado · FinOps
         </div>
         <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
           {title}

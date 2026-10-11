@@ -1,0 +1,289 @@
+{
+  "captured_at_utc": "2026-10-09T18:59:16.900820+00:00",
+  "evidence_scope": "External keyword estimates; not observed GSC demand, traffic, clicks, or market demand.",
+  "market": {
+    "country": "Colombia",
+    "language": "Spanish",
+    "locale": "es-CO"
+  },
+  "requests": [
+    {
+      "action": "keyword_ideas",
+      "cost_usd": 0.0156,
+      "endpoint": "https://api.dataforseo.com/v3/dataforseo_labs/google/keyword_ideas/live",
+      "requested_limit": 30,
+      "requests_used": 1,
+      "results": [
+        {
+          "competition": 0.51,
+          "cpc": 0.3,
+          "keyword": "detector de ia gratis",
+          "search_volume": 12100
+        },
+        {
+          "competition": 0.59,
+          "cpc": 0.32,
+          "keyword": "generador de imagenes ia",
+          "search_volume": 9900
+        },
+        {
+          "competition": 0.59,
+          "cpc": 0.26,
+          "keyword": "creador de imagenes ia",
+          "search_volume": 6600
+        },
+        {
+          "competition": 0.01,
+          "cpc": 1.31,
+          "keyword": "descargar visual studio code",
+          "search_volume": 2400
+        },
+        {
+          "competition": 0.61,
+          "cpc": 0.28,
+          "keyword": "ia generador de imagenes",
+          "search_volume": 2400
+        },
+        {
+          "competition": 0.12,
+          "cpc": 0.19,
+          "keyword": "mejorar calidad de imagen ia",
+          "search_volume": 720
+        },
+        {
+          "competition": 0.61,
+          "cpc": 0.44,
+          "keyword": "ia para editar imagenes",
+          "search_volume": 720
+        },
+        {
+          "competition": 0.48,
+          "cpc": 0.19,
+          "keyword": "editar fotos con ia",
+          "search_volume": 3600
+        },
+        {
+          "competition": 0.47,
+          "cpc": 1.46,
+          "keyword": "mejor ia para programar",
+          "search_volume": 590
+        },
+        {
+          "competition": 0.6,
+          "cpc": 0.41,
+          "keyword": "editor de imagenes ia",
+          "search_volume": 1000
+        },
+        {
+          "competition": 0.46,
+          "cpc": 0.17,
+          "keyword": "arreglar fotos con ia",
+          "search_volume": 1600
+        },
+        {
+          "competition": 0.59,
+          "cpc": 0.37,
+          "keyword": "editor de fotos con ia",
+          "search_volume": 720
+        },
+        {
+          "competition": 0,
+          "cpc": null,
+          "keyword": "asistente de instalación de windows 11",
+          "search_volume": 170
+        },
+        {
+          "competition": null,
+          "cpc": null,
+          "keyword": "github copilot como funciona",
+          "search_volume": 10
+        },
+        {
+          "competition": 0.55,
+          "cpc": 0.3,
+          "keyword": "modificar imagen con ia",
+          "search_volume": 720
+        },
+        {
+          "competition": 0.66,
+          "cpc": 0.48,
+          "keyword": "editor de imagenes con ia",
+          "search_volume": 480
+        },
+        {
+          "competition": 0,
+          "cpc": null,
+          "keyword": "github copilot para estudiantes",
+          "search_volume": 40
+        },
+        {
+          "competition": 0.57,
+          "cpc": 0.32,
+          "keyword": "ia imagenes generador",
+          "search_volume": 170
+        },
+        {
+          "competition": null,
+          "cpc": null,
+          "keyword": "asistente del controlador y asistencia técnica intel",
+          "search_volume": null
+        },
+        {
+          "competition": 0.47,
+          "cpc": 0.34,
+          "keyword": "editar imagen ia",
+          "search_volume": 320
+        },
+        {
+          "competition": 0.71,
+          "cpc": 0.73,
+          "keyword": "renderizar con ia",
+          "search_volume": 110
+        },
+        {
+          "competition": 0,
+          "cpc": null,
+          "keyword": "clonar repositorio github",
+          "search_volume": 70
+        },
+        {
+          "competition": 0,
+          "cpc": null,
+          "keyword": "asistente de actualizacion windows 10",
+          "search_volume": 110
+        },
+        {
+          "competition": 0.68,
+          "cpc": 0.9,
+          "keyword": "mejor generador de imagenes ia",
+          "search_volume": 110
+        },
+        {
+          "competition": 0,
+          "cpc": null,
+          "keyword": "asistente de actualizacion windows 11",
+          "search_volume": 260
+        },
+        {
+          "competition": 0.04,
+          "cpc": null,
+          "keyword": "como usar github",
+          "search_volume": 90
+        },
+        {
+          "competition": 0.58,
+          "cpc": 0.44,
+          "keyword": "generador de imagenes con ia",
+          "search_volume": 480
+        },
+        {
+          "competition": 0.02,
+          "cpc": 0.47,
+          "keyword": "descargar copilot 365",
+          "search_volume": 50
+        },
+        {
+          "competition": 0,
+          "cpc": null,
+          "keyword": "asistente intel",
+          "search_volume": 40
+        },
+        {
+          "competition": 0.02,
+          "cpc": null,
+          "keyword": "instalar vs code",
+          "search_volume": 40
+        }
+      ],
+      "seeds": [
+        "alternativa a GitHub Copilot",
+        "asistente de código con IA para empresas",
+        "privacidad del código con IA",
+        "FinOps para inteligencia artificial",
+        "Continue VS Code"
+      ]
+    },
+    {
+      "action": "search_volume",
+      "cost_usd": 0.09,
+      "endpoint": "https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live",
+      "keywords": [
+        "alternativa a GitHub Copilot",
+        "asistente de código con IA para empresas",
+        "privacidad del código con IA",
+        "FinOps para inteligencia artificial",
+        "Continue VS Code",
+        "detector de ia gratis",
+        "generador de imagenes ia",
+        "creador de imagenes ia",
+        "ia generador de imagenes",
+        "mejorar calidad de imagen ia"
+      ],
+      "requests_used": 1,
+      "results": [
+        {
+          "competition": "LOW",
+          "cpc": null,
+          "keyword": "alternativa a GitHub Copilot",
+          "search_volume": 10
+        },
+        {
+          "competition": null,
+          "cpc": null,
+          "keyword": "asistente de código con IA para empresas",
+          "search_volume": null
+        },
+        {
+          "competition": null,
+          "cpc": null,
+          "keyword": "privacidad del código con IA",
+          "search_volume": null
+        },
+        {
+          "competition": null,
+          "cpc": null,
+          "keyword": "FinOps para inteligencia artificial",
+          "search_volume": null
+        },
+        {
+          "competition": null,
+          "cpc": null,
+          "keyword": "Continue VS Code",
+          "search_volume": null
+        },
+        {
+          "competition": "MEDIUM",
+          "cpc": 0.3,
+          "keyword": "detector de ia gratis",
+          "search_volume": 12100
+        },
+        {
+          "competition": "MEDIUM",
+          "cpc": 0.32,
+          "keyword": "generador de imagenes ia",
+          "search_volume": 9900
+        },
+        {
+          "competition": "MEDIUM",
+          "cpc": 0.26,
+          "keyword": "creador de imagenes ia",
+          "search_volume": 6600
+        },
+        {
+          "competition": "MEDIUM",
+          "cpc": 0.28,
+          "keyword": "ia generador de imagenes",
+          "search_volume": 2400
+        },
+        {
+          "competition": "LOW",
+          "cpc": 0.19,
+          "keyword": "mejorar calidad de imagen ia",
+          "search_volume": 720
+        }
+      ]
+    }
+  ],
+  "source": "DataForSEO",
+  "total_requests_reserved": 2
+}

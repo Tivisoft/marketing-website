@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Pedaleando sin parar | Videojuego de Aventura y Drama | Tivisoft Games',
+  title: 'Pedaleando sin parar: videojuego de aventura y drama',
   description:
     'Descubre Pedaleando sin parar: acompaña al oso polar Debi en su emotiva travesía en bicicleta por Colombia. Juega la demo en PC y móvil.',
   alternates: {
