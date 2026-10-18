@@ -1,8 +1,21 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, BookOpen, Film, Gamepad2, ImageIcon, Play, Smartphone, Sparkles, MessageCircle, Globe } from 'lucide-react';
-import logoLight from '@/media/LOGO TIVISOFT.png';
+import {
+  ArrowRight,
+  BookOpen,
+  Film,
+  Gamepad2,
+  GraduationCap,
+  ImageIcon,
+  Play,
+  Smartphone,
+  Sparkles,
+  TrendingUp,
+  Users,
+  Cpu,
+} from 'lucide-react';
 import pedaleandoLogo from '@/media/Pedaleando_logo.png';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 import GameGallery, { type GalleryItem } from '@/components/GameGallery';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import { path } from '@/i18n/config';
@@ -16,6 +29,9 @@ import barrio01 from '@/media/galeria-pedaleando-sin-parar/6-barrio-01.jpeg';
 import barrio02 from '@/media/galeria-pedaleando-sin-parar/7-barrio-02.jpeg';
 import fabrica from '@/media/galeria-pedaleando-sin-parar/8-fabrica.jpeg';
 import trabajo from '@/media/galeria-pedaleando-sin-parar/trabajo.jpeg';
+
+const WHATSAPP_EDUCATION_ES =
+  'https://wa.me/573102134709?text=Hola%20Tivisoft%2C%20me%20interesa%20conocer%20sus%20propuestas%20de%20videojuegos%20y%20aprendizaje%20interactivo%20para%20nuestra%20instituci%C3%B3n%20educativa.';
 
 const gameHighlights = [
   'Una aventura narrativa que atraviesa Colombia',
@@ -38,257 +54,358 @@ const galleryItems: GalleryItem[] = [
 
 export default function GamesPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800">
-      <header className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <Link href={path('home', 'es')} className="flex h-12 items-center justify-center overflow-hidden rounded-full border border-emerald-200 bg-white/80 p-2 shadow-lg shadow-blue-900/5">
-              <Image
-                src={logoLight}
-                alt="Tivisoft logo"
-                width={150}
-                height={36}
-                priority
-                className="h-8 w-auto object-contain"
-              />
-            </Link>
+    <main className="min-h-screen bg-slate-950 text-slate-100">
+      <Navbar lang="es" switchPath={path('games', 'en')} />
+
+      {/* Executive Division Header & Dual Hero */}
+      <section className="relative overflow-hidden border-b border-slate-800 bg-slate-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.18),transparent_35%)]" />
+        <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-20 lg:pt-16">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-emerald-300">
+            <TrendingUp className="h-4 w-4 flex-shrink-0" />
+            <span>
+              Dato de la industria: Los videojuegos generan más ingresos que el cine y la música juntos
+            </span>
           </div>
 
-          <div className="hidden items-center gap-8 text-sm font-medium text-slate-700 lg:flex">
-            <Link href={path('home', 'es')} className="transition hover:text-emerald-600">Inicio</Link>
-            <Link href={path('games', 'es')} className="transition hover:text-emerald-600">Games</Link>
-            <a href="#historia" className="transition hover:text-emerald-600">Historia</a>
-            <a href="#videos" className="transition hover:text-emerald-600">Videos</a>
-            <a href="#galeria" className="transition hover:text-emerald-600">Galería</a>
-            <Link href={path('games', 'en')} hrefLang="en" className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-emerald-400 hover:text-emerald-700">
-              <Globe className="h-3.5 w-3.5" />
-              EN
-            </Link>
-          </div>
+          <h1 className="max-w-4xl text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Tivisoft Games: Experiencias interactivas que entretienen, conectan y educan.
+          </h1>
 
-          <a
-            href="https://tivisoft.itch.io/pedaleando"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:scale-[1.02]"
-          >
-            <MessageCircle className="h-4 w-4" />
-            Jugar Demo
-          </a>
-        </nav>
-      </header>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+            Combinamos ingeniería de software, arte y narrativa para crear videojuegos propios multiplataforma y desarrollar propuestas interactivas de alto impacto para <strong>instituciones educativas</strong> y organizaciones. Ponte a prueba hoy en nuestro juego lanzado o lleva el poder de los videojuegos a tu institución.
+          </p>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
-              <Sparkles className="h-4 w-4" />
-              Aventura + drama
-            </div>
-
-            <div className="mb-4 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">
-                <Gamepad2 className="h-4 w-4" />
-                Videojuego
-              </span>
-              <span className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Aventura · PC y móvil
-              </span>
-            </div>
-
-            <h1 className="text-4xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Pedaleando sin parar
-            </h1>
-
-            <div className="mt-6 max-w-md overflow-hidden rounded-[2rem] border border-emerald-100 bg-white p-4 shadow-xl shadow-blue-900/5 sm:p-5">
-              <Image
-                src={pedaleandoLogo}
-                alt="Logo de Pedaleando sin parar"
-                width={520}
-                height={220}
-                priority
-                className="h-auto w-full object-contain"
-              />
-            </div>
-
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-              Sumérgete en la travesía del oso polar Debi por Colombia.
+          {/* Industry Impact Highlight Card */}
+          <div className="mt-8 max-w-4xl rounded-2xl border border-emerald-500/30 bg-slate-900/90 p-6 shadow-glow">
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              El medio tecnológico y cultural más potente de nuestra era
             </p>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="https://tivisoft.itch.io/pedaleando"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-3.5 text-base font-semibold text-slate-950 shadow-xl shadow-emerald-500/20 transition hover:scale-[1.02]"
-              >
-                Jugar Demo
-                <ArrowRight className="h-4 w-4" />
-              </a>
-
-              <a
-                href="#videos"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:border-emerald-300 hover:text-emerald-700"
-              >
-                <Play className="h-4 w-4" />
-                Ver videos y galería
-              </a>
-            </div>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200 sm:text-base">
+              La industria global de los videojuegos supera en ingresos a las industrias del <strong>cine y de la música combinadas</strong>. Más que entretenimiento, los videojuegos representan la cúspide de la ingeniería interactiva y el lenguaje natural de las nuevas generaciones para explorar, aprender y conectar con historias profundas.
+            </p>
           </div>
 
-          <div className="relative">
-            <div className="rounded-[2.5rem] border border-slate-200 bg-white p-4 shadow-[0_35px_80px_rgba(30,41,59,0.12)]">
-              <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50 p-3 sm:p-4">
-                <div className="absolute -left-10 top-8 h-28 w-28 rounded-full bg-emerald-200/60 blur-3xl" />
-                <div className="absolute -right-10 bottom-6 h-28 w-28 rounded-full bg-blue-200/60 blur-3xl" />
+          {/* Dual CTAs: Gamers + Educational Institutions */}
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="#pedaleando"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-7 py-4 text-base font-bold text-slate-950 shadow-glow transition hover:scale-[1.02]"
+            >
+              <Gamepad2 className="h-5 w-5" />
+              Probar nuestro juego lanzado
+              <ArrowRight className="h-4 w-4" />
+            </a>
 
-                <div className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-slate-50">
-                  <div className="flex items-center justify-between border-b border-slate-200 bg-white/80 px-4 py-3">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500 sm:text-xs">
-                      <Play className="h-3.5 w-3.5 text-emerald-500" />
-                      Demo game
-                    </div>
-                    <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-semibold text-emerald-700 sm:text-xs">
-                      In beta
-                    </div>
-                  </div>
+            <a
+              href="#instituciones-educativas"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full border border-blue-400/50 bg-blue-500/10 px-7 py-4 text-base font-semibold text-blue-100 transition hover:border-blue-300 hover:bg-blue-500/20"
+            >
+              <GraduationCap className="h-5 w-5 text-emerald-300" />
+              Propuestas para Instituciones Educativas
+            </a>
+          </div>
+        </div>
+      </section>
 
-                  <div className="aspect-video w-full bg-slate-100">
-                    <iframe
-                      className="h-full w-full"
-                      src="https://www.youtube.com/embed/ZSzDsUYp_oY?si=-NnglKKtT35z6EAh&start=77"
-                      title="Tivisoft Games demo"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  </div>
+      {/* Gamer Showcase Section: Pedaleando sin parar (Light Theme Showcase) */}
+      <div id="pedaleando" className="bg-slate-50 text-slate-800">
+        <section className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-20">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
+                <Sparkles className="h-4 w-4" />
+                Nuestro juego lanzado · Aventura + drama
+              </div>
 
-                  <div className="space-y-3 p-4 sm:p-5">
-                    {gameHighlights.map((item) => (
-                      <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 p-3 text-sm text-slate-600 shadow-sm">
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">✓</span>
-                        {item}
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">
+                  <Gamepad2 className="h-4 w-4" />
+                  Videojuego Oficial
+                </span>
+                <span className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Aventura · PC y móvil
+                </span>
+              </div>
+
+              <h2 className="text-4xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                Pedaleando sin parar
+              </h2>
+
+              <div className="mt-6 max-w-md overflow-hidden rounded-[2rem] border border-emerald-100 bg-white p-4 shadow-xl shadow-blue-900/5 sm:p-5">
+                <Image
+                  src={pedaleandoLogo}
+                  alt="Logo de Pedaleando sin parar"
+                  width={520}
+                  height={220}
+                  priority
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+                Sumérgete en la travesía del oso polar Debi por Colombia. ¡Pruébalo ahora desde tu computador o celular!
+              </p>
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="https://tivisoft.itch.io/pedaleando"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-3.5 text-base font-semibold text-slate-950 shadow-xl shadow-emerald-500/20 transition hover:scale-[1.02]"
+                >
+                  Jugar Demo Ahora
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="#videos"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:border-emerald-300 hover:text-emerald-700"
+                >
+                  <Play className="h-4 w-4" />
+                  Ver videos y galería
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="rounded-[2.5rem] border border-slate-200 bg-white p-4 shadow-[0_35px_80px_rgba(30,41,59,0.12)]">
+                <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-100 via-slate-50 to-blue-50 p-3 sm:p-4">
+                  <div className="absolute -left-10 top-8 h-28 w-28 rounded-full bg-emerald-200/60 blur-3xl" />
+                  <div className="absolute -right-10 bottom-6 h-28 w-28 rounded-full bg-blue-200/60 blur-3xl" />
+
+                  <div className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-slate-50">
+                    <div className="flex items-center justify-between border-b border-slate-200 bg-white/80 px-4 py-3">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500 sm:text-xs">
+                        <Play className="h-3.5 w-3.5 text-emerald-500" />
+                        Demo game
                       </div>
-                    ))}
+                      <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-[10px] font-semibold text-emerald-700 sm:text-xs">
+                        Disponible
+                      </div>
+                    </div>
+
+                    <div className="aspect-video w-full bg-slate-100">
+                      <iframe
+                        className="h-full w-full"
+                        src="https://www.youtube.com/embed/ZSzDsUYp_oY?si=-NnglKKtT35z6EAh&start=77"
+                        title="Tivisoft Games demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+
+                    <div className="space-y-3 p-4 sm:p-5">
+                      {gameHighlights.map((item) => (
+                        <div
+                          key={item}
+                          className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 p-3 text-sm text-slate-600 shadow-sm"
+                        >
+                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            ✓
+                          </span>
+                          {item}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="historia" className="border-t border-slate-200 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-slate-100">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-sm font-medium text-emerald-300">
-                <BookOpen className="h-4 w-4" />
-                El origen de todo
+        <section
+          id="historia"
+          className="border-t border-slate-200 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-slate-100"
+        >
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-sm font-medium text-emerald-300">
+                  <BookOpen className="h-4 w-4" />
+                  El origen de todo
+                </div>
+                <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                  El juego está basado en esta historia. No te la pierdas.
+                </h2>
+                <p className="mt-5 text-lg leading-relaxed text-slate-300">
+                  Todo empezó con un videoclip animado que narra el viaje de Debi… hasta que la historia queda en un nudo sin resolver. De ahí nació{' '}
+                  <span className="font-semibold text-white">Pedaleando sin parar</span>.
+                </p>
+                <p className="mt-4 text-lg leading-relaxed text-slate-300">
+                  El videojuego continúa ese relato, revela las partes que nunca se contaron y le da un final a la aventura del oso polar.
+                </p>
+
+                <a
+                  href="#videos"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-emerald-400/60 hover:text-emerald-300"
+                >
+                  Sigue la historia en el juego
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
-              <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                El juego está basado en esta historia. No te la pierdas.
-              </h2>
-              <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Todo empezó con un videoclip animado que narra el viaje de Debi… hasta que la historia queda en un nudo sin resolver. De ahí nació <span className="font-semibold text-white">Pedaleando sin parar</span>.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-300">
-                El videojuego continúa ese relato, revela las partes que nunca se contaron y le da un final a la aventura del oso polar.
-              </p>
 
-              <a
-                href="#videos"
-                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:border-emerald-400/60 hover:text-emerald-300"
-              >
-                Sigue la historia en el juego
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_35px_80px_rgba(2,6,23,0.55)]">
+                <YouTubeEmbed videoId="QVRynwNuKZ8" title="Videoclip animado: la historia de Debi" lang="es" />
+                <div className="p-5 sm:p-6">
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                    <Film className="h-3.5 w-3.5" />
+                    Videoclip animado
+                  </span>
+                  <h3 className="mt-3 text-xl font-bold text-white">La historia de Debi</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    El punto de partida del universo de Pedaleando sin parar.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="videos" className="border-y border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
+                <Film className="h-4 w-4" />
+                Videos
+              </div>
+              <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                Mira el juego en acción
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                Un vistazo a la historia de Debi y a cómo se juega en computador y en el celular.
+              </p>
             </div>
 
-            <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_35px_80px_rgba(2,6,23,0.55)]">
-              <YouTubeEmbed videoId="QVRynwNuKZ8" title="Videoclip animado: la historia de Debi" lang="es" />
-              <div className="p-5 sm:p-6">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
-                  <Film className="h-3.5 w-3.5" />
-                  Videoclip animado
-                </span>
-                <h3 className="mt-3 text-xl font-bold text-white">La historia de Debi</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  El punto de partida del universo de Pedaleando sin parar.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_25px_60px_rgba(15,23,42,0.07)]">
+                <YouTubeEmbed videoId="CKqeA4dnVcY" title="Video promocional de Pedaleando sin parar" lang="es" />
+                <div className="p-5 sm:p-6">
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
+                    <Play className="h-3.5 w-3.5" />
+                    Tráiler oficial
+                  </span>
+                  <h3 className="mt-3 text-xl font-bold text-slate-900">La travesía de Debi</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    El video promocional que resume la aventura del oso polar desde el Polo Norte hasta Colombia.
+                  </p>
+                </div>
+              </article>
 
-      <section id="videos" className="border-y border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+              <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_25px_60px_rgba(15,23,42,0.07)]">
+                <YouTubeEmbed videoId="4UL5SIs6GSc" title="Gameplay de Pedaleando sin parar en versión móvil" lang="es" />
+                <div className="p-5 sm:p-6">
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
+                    <Smartphone className="h-3.5 w-3.5" />
+                    Versión móvil
+                  </span>
+                  <h3 className="mt-3 text-xl font-bold text-slate-900">Gameplay en el celular</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Controles táctiles pensados para jugar en cualquier momento.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="galeria" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
-              <Film className="h-4 w-4" />
-              Videos
+              <ImageIcon className="h-4 w-4" />
+              Galería
             </div>
             <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Mira el juego en acción
+              Los mundos que recorre Debi
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              Un vistazo a la historia de Debi y a cómo se juega en computador y en el celular.
+              Del hielo del Polo Norte a los barrios de Bogotá. Toca cualquier imagen para verla en grande.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_25px_60px_rgba(15,23,42,0.07)]">
-              <YouTubeEmbed videoId="CKqeA4dnVcY" title="Video promocional de Pedaleando sin parar" lang="es" />
-              <div className="p-5 sm:p-6">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
-                  <Play className="h-3.5 w-3.5" />
-                  Tráiler oficial
-                </span>
-                <h3 className="mt-3 text-xl font-bold text-slate-900">La travesía de Debi</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  El video promocional que resume la aventura del oso polar desde el Polo Norte hasta Colombia.
-                </p>
-              </div>
-            </article>
+          <div className="mt-10">
+            <GameGallery items={galleryItems} lang="es" />
+          </div>
+        </section>
+      </div>
 
-            <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_25px_60px_rgba(15,23,42,0.07)]">
-              <YouTubeEmbed videoId="4UL5SIs6GSc" title="Gameplay de Pedaleando sin parar en versión móvil" lang="es" />
-              <div className="p-5 sm:p-6">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
-                  <Smartphone className="h-3.5 w-3.5" />
-                  Versión móvil
-                </span>
-                <h3 className="mt-3 text-xl font-bold text-slate-900">Gameplay en el celular</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  Controles táctiles pensados para jugar en cualquier momento.
-                </p>
-              </div>
-            </article>
+      {/* Educational Institutions & Organizations Section */}
+      <section
+        id="instituciones-educativas"
+        className="border-t border-slate-800 bg-slate-950 py-20 text-slate-100"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-xs font-semibold text-emerald-300">
+              <GraduationCap className="h-4 w-4" />
+              Alianzas Académicas y EdTech
+            </div>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              Propuestas de videojuegos y aprendizaje interactivo para Instituciones Educativas
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+              Los estudiantes de hoy son nativos interactivos. En <strong>Tivisoft</strong> diseñamos propuestas para colegios, universidades y entidades culturales que aprovechan el alcance de los videojuegos para transformar la educación:
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-7">
+              <BookOpen className="h-7 w-7 text-emerald-400" />
+              <h3 className="mt-5 text-xl font-bold text-white">
+                Videojuegos con Identidad y Cultura
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                Llevamos a las aulas experiencias narrativas como <em>Pedaleando sin parar</em>, acercando a los estudiantes a la geografía, diversidad cultural y realidad social a través del juego.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-emerald-500/30 bg-slate-900/90 p-7 shadow-glow">
+              <Cpu className="h-7 w-7 text-blue-400" />
+              <h3 className="mt-5 text-xl font-bold text-white">
+                Aprendizaje Basado en Juegos a Medida
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                Desarrollamos simuladores, videojuegos educativos y plataformas interactivas adaptadas a los objetivos pedagógicos de tu institución para multiplicar la motivación y retención.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-7">
+              <Users className="h-7 w-7 text-emerald-400" />
+              <h3 className="mt-5 text-xl font-bold text-white">
+                Talleres, Charlas y Semilleros Tech
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                Inspiramos a las nuevas generaciones mediante sesiones prácticas con nuestros ingenieros sobre creación de videojuegos, programación e Inteligencia Artificial.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/30 p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <h3 className="text-2xl font-bold text-white">
+                ¿Representas a un colegio, universidad o entidad educativa?
+              </h3>
+              <p className="mt-2 text-sm sm:text-base text-slate-300 leading-relaxed">
+                Contáctanos para presentar nuestras propuestas educativas, agendar una demostración o diseñar un proyecto interactivo para tus estudiantes.
+              </p>
+            </div>
+
+            <a
+              href={WHATSAPP_EDUCATION_ES}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-7 py-4 text-sm font-bold text-slate-950 shadow-glow transition hover:scale-[1.02]"
+            >
+              Solicitar propuesta para mi institución
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="galeria" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
-            <ImageIcon className="h-4 w-4" />
-            Galería
-          </div>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Los mundos que recorre Debi
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Del hielo del Polo Norte a los barrios de Bogotá. Toca cualquier imagen para verla en grande.
-          </p>
-        </div>
-
-        <div className="mt-10">
-          <GameGallery items={galleryItems} lang="es" />
-        </div>
-      </section>
-
+      <Footer lang="es" />
     </main>
   );
 }

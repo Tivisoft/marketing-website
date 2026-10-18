@@ -3,14 +3,14 @@ import { JsonLd } from '@/components/JsonLd';
 import { alternatesFor, ogLocales, url } from '@/i18n/config';
 
 export const metadata: Metadata = {
-  title: 'Pedaleando sin parar: an adventure and drama video game',
+  title: 'Tivisoft Games: Video Games & Interactive Proposals for Educational Institutions',
   description:
-    'Discover Pedaleando sin parar: join polar bear Debi on his moving bicycle journey across Colombia. Play the demo on PC and mobile.',
+    'Tivisoft interactive and video game division. Play our released game Pedaleando sin parar and explore our interactive learning proposals for educational institutions.',
   alternates: alternatesFor('games', 'en'),
   openGraph: {
-    title: 'Pedaleando sin parar | Tivisoft Games',
+    title: 'Tivisoft Games | Video Games & Educational Institutions',
     description:
-      "Dive into Debi's narrative adventure across Colombia. Indie video game available for PC and mobile devices.",
+      'The video game industry generates more revenue than film and music combined. Play Pedaleando sin parar and discover our programs for educational institutions.',
     url: url('games', 'en'),
     siteName: 'Tivisoft',
     locale: ogLocales.en,

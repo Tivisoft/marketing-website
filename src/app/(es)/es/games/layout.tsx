@@ -3,14 +3,14 @@ import { JsonLd } from '@/components/JsonLd';
 import { alternatesFor, ogLocales, url } from '@/i18n/config';
 
 export const metadata: Metadata = {
-  title: 'Pedaleando sin parar: videojuego de aventura y drama',
+  title: 'Tivisoft Games: Videojuegos e Innovación para Instituciones Educativas',
   description:
-    'Descubre Pedaleando sin parar: acompaña al oso polar Debi en su emotiva travesía en bicicleta por Colombia. Juega la demo en PC y móvil.',
+    'División de videojuegos y experiencias interactivas de Tivisoft. Prueba nuestro juego lanzado Pedaleando sin parar y conoce nuestras propuestas para instituciones educativas.',
   alternates: alternatesFor('games', 'es'),
   openGraph: {
-    title: 'Pedaleando sin parar | Tivisoft Games',
+    title: 'Tivisoft Games | Videojuegos y Propuestas Educativas',
     description:
-      'Sumérgete en la aventura narrativa de Debi por Colombia. Videojuego indie disponible para PC y dispositivos móviles.',
+      'La industria de los videojuegos supera al cine y la música combinados. Prueba nuestro juego Pedaleando sin parar y descubre nuestras propuestas para instituciones educativas.',
     url: url('games', 'es'),
     siteName: 'Tivisoft',
     locale: ogLocales.es,
