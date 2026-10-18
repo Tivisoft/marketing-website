@@ -33,6 +33,8 @@ export type RouteId =
   | 'altCopilot'
   | 'altCursor'
   | 'intContinue'
+  | 'serviceAeo'
+  | 'serviceEntrepreneurs'
   | 'blog'
   | 'blogCost'
   | 'blogCompare'
@@ -66,6 +68,14 @@ export const routes: Record<RouteId, Record<Locale, string>> = {
   intContinue: {
     en: '/integrations/continue',
     es: '/es/integraciones/continue',
+  },
+  serviceAeo: {
+    en: '/services/aeo-ai-agents',
+    es: '/es/servicios/aeo-agentes-ia',
+  },
+  serviceEntrepreneurs: {
+    en: '/services/ai-product-development-for-entrepreneurs',
+    es: '/es/servicios/desarrollo-productos-ia-emprendedores',
   },
   blog: { en: '/blog', es: '/es/blog' },
   blogCost: {

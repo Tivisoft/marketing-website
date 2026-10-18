@@ -1,23 +1,45 @@
 import Link from 'next/link';
-import { ArrowRight, Bot, ChartBar, Code2, Sparkles, Zap, ShieldCheck, Terminal, Clock } from 'lucide-react';
+import { ArrowRight, Bot, ChartBar, Code2, Sparkles, Zap, ShieldCheck, Terminal, Clock, Search } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { path } from '@/i18n/config';
 
 const services = [
   {
+    badge: 'Before you needed SEO, now you also need AEO',
+    title: 'AEO Service: Why does your company need AEO?',
+    description:
+      'The shift of the web makes appearing in AI agent searches (ChatGPT, Perplexity, Gemini) essential. We have extensive experience in this work—contact us so your company takes the lead while the window is open.',
+    icon: Search,
+    href: path('serviceAeo', 'en'),
+    ctaText: 'See why you need AEO',
+    whatsappHref:
+      'https://wa.me/573102134709?text=Hi%20Tivisoft%2C%20I%20want%20my%20company%20to%20take%20the%20lead%20with%20your%20AEO%20service.',
+    whatsappLabel: 'Take the lead',
+    featured: true,
+  },
+  {
     title: 'Integrating AI into existing technology solutions',
     description: 'We connect models and automations to your current systems to gain productivity and scalability.',
     icon: Zap,
+    featured: false,
   },
   {
-    title: 'Custom software development powered by AI',
-    description: 'We build omnichannel products, intelligent dashboards and outcome-driven UX that set you apart.',
+    title: 'Custom enterprise software development powered by AI',
+    description: 'We build omnichannel platforms, intelligent dashboards and outcome-driven architectures that set your organization apart.',
     icon: Code2,
+    featured: false,
   },
 ];
 
 const homeFeaturedPosts = [
+  {
+    href: path('serviceAeo', 'en'),
+    title: 'Why Does Your Company Need AEO? Before You Needed SEO, Now You Also Need AEO',
+    description: 'What AEO (Answer Engine Optimization) is and why appearing in AI agent searches is critical given the projected shift of the web.',
+    category: 'AEO & AI Agents',
+    readTime: '5 min',
+  },
   {
     href: path('blogCost', 'en'),
     title: 'The real cost of an AI assistant for your team',
@@ -31,13 +53,6 @@ const homeFeaturedPosts = [
     description: 'An in-depth comparison of IDE extensions, forked editors and terminal agents for engineering teams.',
     category: 'Comparisons',
     readTime: '8 min',
-  },
-  {
-    href: path('blogTraining', 'en'),
-    title: 'What does it mean that AI does not train on your code?',
-    description: 'A guide for CISOs on the scope of no-training clauses and how the provider handles your data.',
-    category: 'Security',
-    readTime: '5 min',
   },
 ];
 
@@ -62,7 +77,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-6 max-w-xl text-lg text-slate-300">
-                From <strong>EjectorSeat</strong>, our enterprise coding assistant based on a modification of Continue, to custom software and interactive video games.
+                From <strong>EjectorSeat</strong>, our enterprise coding assistant based on a modification of Continue, to AEO positioning in AI agents and custom enterprise software.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -147,21 +162,64 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-2xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-emerald-300">Services</p>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">Intelligent solutions for teams that want to scale.</h2>
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-emerald-300">Enterprise Services</p>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Intelligent solutions for companies that want to scale.</h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {services.map(({ title, description, icon: Icon }) => (
+        <div className="grid gap-6 lg:grid-cols-3">
+          {services.map(({ badge, title, description, icon: Icon, href, ctaText, whatsappHref, whatsappLabel, featured }) => (
             <article
               key={title}
-              className="group rounded-3xl border border-slate-700 bg-slate-800 p-6 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-1 hover:border-emerald-400/60 hover:shadow-[0_0_30px_rgba(16,185,129,0.18)]"
+              className={`group flex flex-col justify-between rounded-3xl border p-6 sm:p-8 shadow-lg shadow-slate-950/20 transition duration-300 hover:-translate-y-1 ${
+                featured
+                  ? 'border-emerald-500/40 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/30 hover:border-emerald-400 hover:shadow-[0_0_35px_rgba(16,185,129,0.22)]'
+                  : 'border-slate-700 bg-slate-800 hover:border-emerald-400/60 hover:shadow-[0_0_30px_rgba(16,185,129,0.18)]'
+              }`}
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/15 to-blue-500/15 text-emerald-300">
-                <Icon className="h-6 w-6" />
+              <div>
+                <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/15 to-blue-500/15 text-emerald-300">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  {badge && (
+                    <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300">
+                      {badge}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-white">
+                  {href ? (
+                    <Link href={href} className="transition hover:text-emerald-300">
+                      {title}
+                    </Link>
+                  ) : (
+                    title
+                  )}
+                </h3>
+                <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300">{description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-white">{title}</h3>
-              <p className="mt-4 text-slate-300">{description}</p>
+
+              {href && (
+                <div className="mt-6 pt-5 border-t border-slate-800 flex flex-wrap items-center gap-3">
+                  <Link
+                    href={href}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-emerald-400 px-4 py-2 text-xs font-bold text-slate-950 transition hover:bg-emerald-300"
+                  >
+                    {ctaText}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                  {whatsappHref && (
+                    <a
+                      href={whatsappHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-emerald-400/50 hover:text-white"
+                    >
+                      {whatsappLabel}
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>

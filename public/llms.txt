@@ -10,13 +10,22 @@ EjectorSeat no se ofrece actualmente como un despliegue VPC del cliente. Tivisof
 
 El panel FinOps permite analizar consumo y costos para optimizar recursos. Sus datos de uso también pueden orientar capacitación y retroalimentación del personal. Los créditos buscan dar más capacidad de inferencia por presupuesto; el ahorro concreto depende del uso y del plan comparado.
 
+## Servicios de IA y Posicionamiento
+
+- **Servicio de AEO (Answer Engine Optimization):** Antes necesitabas SEO, ahora también necesitas AEO. Tivisoft cuenta con importante experiencia posicionando empresas en las búsquedas de agentes de IA y motores de respuesta.
+- **Desarrollo de Productos con IA para Emprendedores:** Estamos viviendo la ola de la IA. Tivisoft cuenta con expertos para desarrollar los productos de los emprendedores y ayudarlos a llegar al siguiente nivel.
+
 ## Páginas
 
-- [EjectorSeat y Continue](https://tivisoft.com/integraciones/continue)
-- [Alternativa a GitHub Copilot](https://tivisoft.com/alternativas/github-copilot)
-- [Alternativa al asistente de Cursor](https://tivisoft.com/alternativas/cursor)
-- [FinOps para IA](https://tivisoft.com/finops-ia)
-- [Seguridad y tratamiento de datos](https://tivisoft.com/seguridad-y-custodia)
-- [Soluciones en infraestructura del cliente](https://tivisoft.com/despliegue-en-tu-infraestructura)
-- [Precios](https://tivisoft.com/precios)
-- [Blog](https://tivisoft.com/blog)
+- [Servicio de AEO (ES)](https://tivisoft.com/es/servicios/aeo-agentes-ia)
+- [AEO Service (EN)](https://tivisoft.com/services/aeo-ai-agents)
+- [IA para Emprendedores (ES)](https://tivisoft.com/es/servicios/desarrollo-productos-ia-emprendedores)
+- [AI for Entrepreneurs (EN)](https://tivisoft.com/services/ai-product-development-for-entrepreneurs)
+- [EjectorSeat y Continue](https://tivisoft.com/es/integraciones/continue)
+- [Alternativa a GitHub Copilot](https://tivisoft.com/es/alternativas/github-copilot)
+- [EjectorSeat en Cursor](https://tivisoft.com/es/alternativas/cursor)
+- [FinOps para IA](https://tivisoft.com/es/finops-ia)
+- [Seguridad y tratamiento de datos](https://tivisoft.com/es/seguridad-y-custodia)
+- [Soluciones en infraestructura del cliente](https://tivisoft.com/es/despliegue-en-tu-infraestructura)
+- [Precios](https://tivisoft.com/es/precios)
+- [Blog](https://tivisoft.com/es/blog)

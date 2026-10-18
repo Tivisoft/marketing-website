@@ -63,6 +63,10 @@ export function Navbar({ lang, switchPath }: NavbarProps) {
             {t.home}
           </Link>
 
+          <Link href={path('serviceAeo', lang)} className="transition hover:text-emerald-300">
+            {t.aeo}
+          </Link>
+
           {/* Solutions Dropdown */}
           <div className="relative group">
             <button
@@ -170,6 +174,14 @@ export function Navbar({ lang, switchPath }: NavbarProps) {
               className="block font-medium text-slate-200 hover:text-emerald-300"
             >
               {t.home}
+            </Link>
+
+            <Link
+              href={path('serviceAeo', lang)}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block font-medium text-emerald-300 hover:text-emerald-200"
+            >
+              {t.aeo}
             </Link>
 
             <div className="border-t border-slate-800/60 pt-3">

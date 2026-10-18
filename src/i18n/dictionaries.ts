@@ -8,6 +8,7 @@ import type { Locale } from './config';
 
 export interface NavDictionary {
   home: string;
+  aeo: string;
   solutions: string; // dropdown trigger label (brand stays "EjectorSeat")
   finops: string;
   pricing: string;
@@ -29,10 +30,13 @@ export interface FooterDictionary {
   brandDescription: string;
   managedAccess: string;
   whatsappContact: string;
+  colServices: string;
   colEjectorSeat: string;
   colAlternatives: string;
   colResources: string;
   links: {
+    serviceAeo: string;
+    serviceEntrepreneurs: string;
     continue: string;
     finops: string;
     pricing: string;
@@ -85,6 +89,7 @@ export interface Dictionary {
 const en: Dictionary = {
   nav: {
     home: 'Home',
+    aeo: 'AEO',
     solutions: 'EjectorSeat',
     finops: 'AI FinOps',
     pricing: 'Pricing',
@@ -118,13 +123,16 @@ const en: Dictionary = {
   },
   footer: {
     brandDescription:
-      'Applied artificial intelligence solutions, enterprise software development and narrative video games. Creators of EjectorSeat, an enterprise coding assistant based on a modification of Continue.',
+      'Applied artificial intelligence solutions, enterprise AEO positioning, custom software development and narrative video games. Creators of EjectorSeat, an enterprise coding assistant based on a modification of Continue.',
     managedAccess: 'Managed access and FinOps analytics',
     whatsappContact: 'Direct contact via WhatsApp',
+    colServices: 'Enterprise AI Services',
     colEjectorSeat: 'EjectorSeat',
     colAlternatives: 'Alternatives',
     colResources: 'Resources & Games',
     links: {
+      serviceAeo: 'Why Your Company Needs AEO',
+      serviceEntrepreneurs: 'Startups & New AI Products',
       continue: 'EjectorSeat & Continue',
       finops: 'FinOps for AI',
       pricing: 'Plans',
@@ -169,6 +177,7 @@ const en: Dictionary = {
 const es: Dictionary = {
   nav: {
     home: 'Inicio',
+    aeo: 'AEO',
     solutions: 'EjectorSeat',
     finops: 'FinOps IA',
     pricing: 'Planes',
@@ -202,13 +211,16 @@ const es: Dictionary = {
   },
   footer: {
     brandDescription:
-      'Soluciones de inteligencia artificial aplicada, desarrollo de software empresarial y videojuegos narrativos. Creadores de EjectorSeat, un asistente empresarial de código basado en una modificación de Continue.',
+      'Soluciones de inteligencia artificial aplicada, posicionamiento AEO empresarial, desarrollo de software corporativo y videojuegos narrativos. Creadores de EjectorSeat, un asistente empresarial de código basado en una modificación de Continue.',
     managedAccess: 'Acceso administrado y análisis FinOps',
     whatsappContact: 'Contacto Directo por WhatsApp',
+    colServices: 'Servicios IA',
     colEjectorSeat: 'EjectorSeat',
     colAlternatives: 'Alternativas',
     colResources: 'Recursos & Juegos',
     links: {
+      serviceAeo: '¿Por qué tu empresa necesita AEO?',
+      serviceEntrepreneurs: 'Startups & Nuevos Productos IA',
       continue: 'EjectorSeat y Continue',
       finops: 'FinOps para IA',
       pricing: 'Planes',

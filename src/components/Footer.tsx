@@ -76,8 +76,24 @@ export function Footer({ lang }: FooterProps) {
             </ul>
           </div>
 
-          {/* Col 3: Alternatives */}
+          {/* Col 3: AI Services & Alternatives */}
           <div>
+            <p className="font-semibold text-white text-xs uppercase tracking-wider mb-4">
+              {t.colServices}
+            </p>
+            <ul className="space-y-2.5 text-xs text-slate-300 mb-6">
+              <li>
+                <Link href={path('serviceAeo', lang)} className="font-medium text-emerald-300 transition hover:text-emerald-200">
+                  {t.links.serviceAeo}
+                </Link>
+              </li>
+              <li>
+                <Link href={path('serviceEntrepreneurs', lang)} className="font-medium text-emerald-300 transition hover:text-emerald-200">
+                  {t.links.serviceEntrepreneurs}
+                </Link>
+              </li>
+            </ul>
+
             <p className="font-semibold text-white text-xs uppercase tracking-wider mb-4">
               {t.colAlternatives}
             </p>

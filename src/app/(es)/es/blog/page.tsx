@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Clock, Tag, Sparkles, Shield, DollarSign, Terminal, Layers } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Sparkles, Shield, DollarSign, Terminal, Layers, Search } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -8,14 +8,14 @@ import { JsonLd } from '@/components/JsonLd';
 import { path, url, alternatesFor, siteUrl } from '@/i18n/config';
 
 export const metadata: Metadata = {
-  title: 'Blog de inteligencia artificial para ingeniería de software',
+  title: 'Blog de inteligencia artificial para ingeniería de software y AEO',
   description:
-    'Artículos sobre FinOps para IA, tratamiento de datos y comparativas entre asistentes de código como GitHub Copilot, Cursor, Claude Code y Continue.',
+    'Artículos sobre AEO (Answer Engine Optimization), FinOps para IA, tratamiento de datos y comparativas entre asistentes de código.',
   alternates: alternatesFor('blog', 'es'),
   openGraph: {
-    title: 'Blog de IA para Ingeniería y Equipos de Software | Tivisoft',
+    title: 'Blog de IA para Ingeniería y Empresas | Tivisoft',
     description:
-      'Aprende a analizar el consumo de tokens, revisar condiciones de privacidad y seleccionar asistentes de código para tu equipo.',
+      'Descubre por qué tu empresa necesita AEO, cómo analizar el consumo de tokens y cómo seleccionar asistentes de código.',
     url: url('blog', 'es'),
     siteName: 'Tivisoft',
     locale: 'es_ES',
@@ -25,6 +25,18 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    route: 'serviceAeo' as const,
+    href: path('serviceAeo', 'es'),
+    title: '¿Por qué tu empresa necesita AEO? Antes necesitabas SEO, ahora también necesitas AEO',
+    description:
+      'Explicamos qué es el AEO (Answer Engine Optimization), la importancia de aparecer en las búsquedas de los agentes de IA ante el cambio de la web y cómo tomar la delantera hoy.',
+    category: 'AEO & Agentes IA',
+    readTime: '5 min',
+    date: '2026-10-18',
+    featured: true,
+    icon: Search,
+  },
+  {
     route: 'blogCost' as const,
     href: path('blogCost', 'es'),
     title: 'El costo real de un asistente de IA para código',
@@ -33,7 +45,7 @@ const blogPosts = [
     category: 'FinOps & Costos',
     readTime: '6 min',
     date: '2026-09-24',
-    featured: true,
+    featured: false,
     icon: DollarSign,
   },
   {

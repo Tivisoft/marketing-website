@@ -3,6 +3,8 @@ import { routes, locales, siteUrl, type RouteId } from '@/i18n/config';
 
 const priorities: Record<RouteId, { priority: number; changeFrequency: 'daily' | 'weekly' | 'monthly' }> = {
   home: { priority: 1.0, changeFrequency: 'weekly' },
+  serviceAeo: { priority: 0.95, changeFrequency: 'weekly' },
+  serviceEntrepreneurs: { priority: 0.95, changeFrequency: 'weekly' },
   altCopilot: { priority: 0.9, changeFrequency: 'weekly' },
   altCursor: { priority: 0.9, changeFrequency: 'weekly' },
   intContinue: { priority: 0.9, changeFrequency: 'weekly' },

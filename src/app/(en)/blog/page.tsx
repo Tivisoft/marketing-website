@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Clock, Tag, Sparkles, Shield, DollarSign, Terminal, Layers } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, Tag, Sparkles, Shield, DollarSign, Terminal, Layers, Search } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -8,14 +8,14 @@ import { JsonLd } from '@/components/JsonLd';
 import { path, url, alternatesFor, siteUrl } from '@/i18n/config';
 
 export const metadata: Metadata = {
-  title: 'Artificial intelligence blog for software engineering',
+  title: 'Artificial intelligence blog for software engineering and AEO',
   description:
-    'Articles on FinOps for AI, data handling and comparisons of coding assistants like GitHub Copilot, Cursor, Claude Code and Continue.',
+    'Articles on AEO (Answer Engine Optimization), FinOps for AI, data handling and comparisons of coding assistants.',
   alternates: alternatesFor('blog', 'en'),
   openGraph: {
-    title: 'AI Blog for Software Engineering and Teams | Tivisoft',
+    title: 'AI Blog for Software Engineering and Businesses | Tivisoft',
     description:
-      'Learn to analyze token consumption, review privacy terms and select coding assistants for your team.',
+      'Learn why your company needs AEO, how to analyze token consumption and how to select coding assistants for your team.',
     url: url('blog', 'en'),
     siteName: 'Tivisoft',
     locale: 'en_US',
@@ -25,6 +25,18 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    route: 'serviceAeo' as const,
+    href: path('serviceAeo', 'en'),
+    title: 'Why Does Your Company Need AEO? Before You Needed SEO, Now You Also Need AEO',
+    description:
+      'We explain what AEO (Answer Engine Optimization) is, why appearing in AI agent searches is critical given the projected shift of the web, and how to take the lead now.',
+    category: 'AEO & AI Agents',
+    readTime: '5 min',
+    date: '2026-10-18',
+    featured: true,
+    icon: Search,
+  },
+  {
     route: 'blogCost' as const,
     href: path('blogCost', 'en'),
     title: 'The real cost of an AI coding assistant',
@@ -33,7 +45,7 @@ const blogPosts = [
     category: 'FinOps & Costs',
     readTime: '6 min',
     date: '2026-09-24',
-    featured: true,
+    featured: false,
     icon: DollarSign,
   },
   {
