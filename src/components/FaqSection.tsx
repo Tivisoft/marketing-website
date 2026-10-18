@@ -1,4 +1,6 @@
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { type Locale } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
 
 export interface FaqItem {
   question: string;
@@ -6,6 +8,7 @@ export interface FaqItem {
 }
 
 interface FaqSectionProps {
+  lang: Locale;
   title?: string;
   description?: string;
   items: FaqItem[];
@@ -13,21 +16,26 @@ interface FaqSectionProps {
 }
 
 export function FaqSection({
-  title = 'Preguntas frecuentes',
-  description = 'Respuestas directas y técnicas sobre EjectorSeat y la arquitectura de IA empresarial.',
+  lang,
+  title,
+  description,
   items,
   className = '',
 }: FaqSectionProps) {
+  const t = getDictionary(lang).faq;
+  const resolvedTitle = title ?? t.title;
+  const resolvedDescription = description ?? t.description;
+
   return (
     <section className={`py-12 ${className}`}>
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 text-center sm:text-left">
           <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
             <HelpCircle className="h-3.5 w-3.5" />
-            Preguntas y respuestas
+            {t.badge}
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{title}</h2>
-          {description && <p className="mt-2 text-sm text-slate-400">{description}</p>}
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{resolvedTitle}</h2>
+          {resolvedDescription && <p className="mt-2 text-sm text-slate-400">{resolvedDescription}</p>}
         </div>
 
         <div className="space-y-3">

@@ -1,22 +1,33 @@
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { type Locale, path } from '@/i18n/config';
+import { getDictionary } from '@/i18n/dictionaries';
 
-export function Footer() {
+interface FooterProps {
+  lang: Locale;
+}
+
+export function Footer({ lang }: FooterProps) {
+  const t = getDictionary(lang).footer;
+
   return (
     <footer className="border-t border-white/10 bg-slate-950 text-slate-400 text-sm">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Col 1: Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block font-black text-xl tracking-wider text-white">
+            <Link href={path('home', lang)} className="inline-block font-black text-xl tracking-wider text-white">
               TIVISOFT
             </Link>
-            <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-sm">
-              Soluciones de inteligencia artificial aplicada, desarrollo de software empresarial y videojuegos narrativos. Creadores de <strong>EjectorSeat</strong>, un asistente empresarial de código basado en una modificación de Continue.
-            </p>
+            <p
+              className="mt-3 text-sm text-slate-400 leading-relaxed max-w-sm"
+              dangerouslySetInnerHTML={{
+                __html: t.brandDescription.replace('EjectorSeat', '<strong>EjectorSeat</strong>'),
+              }}
+            />
             <div className="mt-5 flex items-center gap-2 text-xs text-emerald-400">
               <ShieldCheck className="h-4 w-4" />
-              <span>Acceso administrado y análisis FinOps</span>
+              <span>{t.managedAccess}</span>
             </div>
             <div className="mt-6">
               <a
@@ -25,7 +36,7 @@ export function Footer() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-emerald-400 hover:text-white"
               >
-                Contacto Directo por WhatsApp
+                {t.whatsappContact}
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
@@ -34,61 +45,61 @@ export function Footer() {
           {/* Col 2: EjectorSeat */}
           <div>
             <p className="font-semibold text-white text-xs uppercase tracking-wider mb-4">
-              EjectorSeat
+              {t.colEjectorSeat}
             </p>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <Link href="/integraciones/continue" className="transition hover:text-emerald-300">
-                  EjectorSeat y Continue
+                <Link href={path('intContinue', lang)} className="transition hover:text-emerald-300">
+                  {t.links.continue}
                 </Link>
               </li>
               <li>
-                <Link href="/finops-ia" className="transition hover:text-emerald-300">
-                  FinOps para IA
+                <Link href={path('finops', lang)} className="transition hover:text-emerald-300">
+                  {t.links.finops}
                 </Link>
               </li>
               <li>
-                <Link href="/precios" className="transition hover:text-emerald-300">
-                  Planes
+                <Link href={path('pricing', lang)} className="transition hover:text-emerald-300">
+                  {t.links.pricing}
                 </Link>
               </li>
               <li>
-                <Link href="/seguridad-y-custodia" className="transition hover:text-emerald-300">
-                  Seguridad y tratamiento de datos
+                <Link href={path('security', lang)} className="transition hover:text-emerald-300">
+                  {t.links.security}
                 </Link>
               </li>
               <li>
-                <Link href="/despliegue-en-tu-infraestructura" className="transition hover:text-emerald-300">
-                  Infraestructura empresarial
+                <Link href={path('deployment', lang)} className="transition hover:text-emerald-300">
+                  {t.links.infrastructure}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Alternativas */}
+          {/* Col 3: Alternatives */}
           <div>
             <p className="font-semibold text-white text-xs uppercase tracking-wider mb-4">
-              Alternativas
+              {t.colAlternatives}
             </p>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <Link href="/alternativas/github-copilot" className="transition hover:text-emerald-300">
-                  Alternativa a GitHub Copilot
+                <Link href={path('altCopilot', lang)} className="transition hover:text-emerald-300">
+                  {t.links.altCopilot}
                 </Link>
               </li>
               <li>
-                <Link href="/alternativas/cursor" className="transition hover:text-emerald-300">
-                  EjectorSeat en Cursor
+                <Link href={path('altCursor', lang)} className="transition hover:text-emerald-300">
+                  {t.links.altCursor}
                 </Link>
               </li>
               <li>
-                <Link href="/blog/github-copilot-vs-claude-code-vs-cursor-equipos" className="transition hover:text-emerald-300">
-                  Copilot vs Cursor vs Claude Code
+                <Link href={path('blogCompare', lang)} className="transition hover:text-emerald-300">
+                  {t.links.blogCompare}
                 </Link>
               </li>
               <li>
-                <Link href="/blog/claude-code-vs-continue-gateway-empresarial" className="transition hover:text-emerald-300">
-                  Claude Code vs Continue
+                <Link href={path('blogGateway', lang)} className="transition hover:text-emerald-300">
+                  {t.links.blogGateway}
                 </Link>
               </li>
             </ul>
@@ -97,32 +108,32 @@ export function Footer() {
           {/* Col 4: Blog & Tivisoft Games */}
           <div>
             <p className="font-semibold text-white text-xs uppercase tracking-wider mb-4">
-              Recursos & Juegos
+              {t.colResources}
             </p>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <Link href="/blog" className="transition hover:text-emerald-300">
-                  Blog Técnico de IA
+                <Link href={path('blog', lang)} className="transition hover:text-emerald-300">
+                  {t.links.blog}
                 </Link>
               </li>
               <li>
-                <Link href="/blog/costo-real-asistente-ia-codigo-equipo" className="transition hover:text-emerald-300">
-                  Costo Real de Asistentes IA
+                <Link href={path('blogCost', lang)} className="transition hover:text-emerald-300">
+                  {t.links.blogCost}
                 </Link>
               </li>
               <li>
-                <Link href="/blog/que-significa-ia-no-entrena-con-tu-codigo" className="transition hover:text-emerald-300">
-                  ¿La IA entrena con mi código?
+                <Link href={path('blogTraining', lang)} className="transition hover:text-emerald-300">
+                  {t.links.blogTraining}
                 </Link>
               </li>
               <li>
-                <Link href="/blog/gobierno-de-agentes-ia-en-desarrollo-de-software" className="transition hover:text-emerald-300">
-                  Gobierno de Agentes IA
+                <Link href={path('blogGovernance', lang)} className="transition hover:text-emerald-300">
+                  {t.links.blogGovernance}
                 </Link>
               </li>
               <li>
-                <Link href="/games" className="transition hover:text-emerald-300">
-                  Tivisoft Games (Pedaleando)
+                <Link href={path('games', lang)} className="transition hover:text-emerald-300">
+                  {t.links.games}
                 </Link>
               </li>
             </ul>
@@ -131,11 +142,11 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Tivisoft. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} {t.rightsReserved}</p>
           <div className="flex gap-4">
-            <Link href="/" className="hover:text-slate-300">Inicio</Link>
-            <Link href="/precios" className="hover:text-slate-300">Planes</Link>
-            <Link href="/seguridad-y-custodia" className="hover:text-slate-300">Seguridad</Link>
+            <Link href={path('home', lang)} className="hover:text-slate-300">{t.bottomHome}</Link>
+            <Link href={path('pricing', lang)} className="hover:text-slate-300">{t.bottomPricing}</Link>
+            <Link href={path('security', lang)} className="hover:text-slate-300">{t.bottomSecurity}</Link>
             <a href="https://tivisoft.com/llms.txt" target="_blank" rel="noreferrer" className="hover:text-slate-300">llms.txt</a>
             <a href="https://tivisoft.com/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-slate-300">sitemap.xml</a>
           </div>

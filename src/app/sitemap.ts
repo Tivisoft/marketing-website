@@ -1,29 +1,43 @@
 import type { MetadataRoute } from 'next';
+import { routes, locales, siteUrl, type RouteId } from '@/i18n/config';
+
+const priorities: Record<RouteId, { priority: number; changeFrequency: 'daily' | 'weekly' | 'monthly' }> = {
+  home: { priority: 1.0, changeFrequency: 'weekly' },
+  altCopilot: { priority: 0.9, changeFrequency: 'weekly' },
+  altCursor: { priority: 0.9, changeFrequency: 'weekly' },
+  intContinue: { priority: 0.9, changeFrequency: 'weekly' },
+  pricing: { priority: 0.9, changeFrequency: 'weekly' },
+  finops: { priority: 0.85, changeFrequency: 'weekly' },
+  security: { priority: 0.85, changeFrequency: 'monthly' },
+  deployment: { priority: 0.8, changeFrequency: 'monthly' },
+  blog: { priority: 0.85, changeFrequency: 'daily' },
+  blogCost: { priority: 0.8, changeFrequency: 'monthly' },
+  blogCompare: { priority: 0.8, changeFrequency: 'monthly' },
+  blogGateway: { priority: 0.8, changeFrequency: 'monthly' },
+  blogTraining: { priority: 0.75, changeFrequency: 'monthly' },
+  blogGovernance: { priority: 0.75, changeFrequency: 'monthly' },
+  games: { priority: 0.7, changeFrequency: 'monthly' },
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tivisoft.com';
+  const entries: MetadataRoute.Sitemap = [];
 
-  const routes = [
-    { url: '', priority: 1.0, changeFrequency: 'weekly' as const },
-    { url: '/alternativas/github-copilot', priority: 0.9, changeFrequency: 'weekly' as const },
-    { url: '/alternativas/cursor', priority: 0.9, changeFrequency: 'weekly' as const },
-    { url: '/integraciones/continue', priority: 0.9, changeFrequency: 'weekly' as const },
-    { url: '/precios', priority: 0.9, changeFrequency: 'weekly' as const },
-    { url: '/finops-ia', priority: 0.85, changeFrequency: 'weekly' as const },
-    { url: '/seguridad-y-custodia', priority: 0.85, changeFrequency: 'monthly' as const },
-    { url: '/despliegue-en-tu-infraestructura', priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: '/blog', priority: 0.85, changeFrequency: 'daily' as const },
-    { url: '/blog/costo-real-asistente-ia-codigo-equipo', priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: '/blog/github-copilot-vs-claude-code-vs-cursor-equipos', priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: '/blog/claude-code-vs-continue-gateway-empresarial', priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: '/blog/que-significa-ia-no-entrena-con-tu-codigo', priority: 0.75, changeFrequency: 'monthly' as const },
-    { url: '/blog/gobierno-de-agentes-ia-en-desarrollo-de-software', priority: 0.75, changeFrequency: 'monthly' as const },
-    { url: '/games', priority: 0.7, changeFrequency: 'monthly' as const },
-  ];
+  (Object.keys(routes) as RouteId[]).forEach((id) => {
+    const meta = priorities[id];
+    locales.forEach((locale) => {
+      entries.push({
+        url: `${siteUrl}${routes[id][locale]}`,
+        changeFrequency: meta.changeFrequency,
+        priority: meta.priority,
+        alternates: {
+          languages: {
+            en: `${siteUrl}${routes[id].en}`,
+            es: `${siteUrl}${routes[id].es}`,
+          },
+        },
+      });
+    });
+  });
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route.url}`,
-    changeFrequency: route.changeFrequency,
-    priority: route.priority,
-  }));
+  return entries;
 }

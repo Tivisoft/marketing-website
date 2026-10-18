@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
+import type { Locale } from '@/i18n/config';
 
 export type GalleryItem = {
   src: StaticImageData;
@@ -10,7 +11,13 @@ export type GalleryItem = {
   caption: string;
 };
 
-export default function GameGallery({ items }: { items: GalleryItem[] }) {
+const labels: Record<Locale, { enlarge: string; close: string; prev: string; next: string }> = {
+  en: { enlarge: 'Enlarge image', close: 'Close gallery', prev: 'Previous image', next: 'Next image' },
+  es: { enlarge: 'Ampliar imagen', close: 'Cerrar galería', prev: 'Imagen anterior', next: 'Imagen siguiente' },
+};
+
+export default function GameGallery({ items, lang = 'en' }: { items: GalleryItem[]; lang?: Locale }) {
+  const t = labels[lang];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastFocusedRef = useRef<HTMLElement | null>(null);
@@ -64,7 +71,7 @@ export default function GameGallery({ items }: { items: GalleryItem[] }) {
               type="button"
               onClick={() => open(index)}
               className="group relative block w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
-              aria-label={`Ampliar imagen: ${item.caption}`}
+              aria-label={`${t.enlarge}: ${item.caption}`}
             >
               <span className="block aspect-[4/3]">
                 <Image
@@ -97,7 +104,7 @@ export default function GameGallery({ items }: { items: GalleryItem[] }) {
             type="button"
             onClick={close}
             className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-            aria-label="Cerrar galería"
+            aria-label={t.close}
           >
             <X className="h-5 w-5" />
           </button>
@@ -109,7 +116,7 @@ export default function GameGallery({ items }: { items: GalleryItem[] }) {
               go(-1);
             }}
             className="absolute left-2 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:left-6"
-            aria-label="Imagen anterior"
+            aria-label={t.prev}
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
@@ -121,7 +128,7 @@ export default function GameGallery({ items }: { items: GalleryItem[] }) {
               go(1);
             }}
             className="absolute right-2 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:right-6"
-            aria-label="Imagen siguiente"
+            aria-label={t.next}
           >
             <ChevronRight className="h-6 w-6" />
           </button>

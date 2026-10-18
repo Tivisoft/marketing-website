@@ -2,12 +2,19 @@
 
 import { useState } from 'react';
 import { ExternalLink, Play } from 'lucide-react';
+import type { Locale } from '@/i18n/config';
 
 type Props = {
   videoId: string;
   title: string;
   /** Tailwind aspect-ratio class for the player frame. */
   aspectClassName?: string;
+  lang?: Locale;
+};
+
+const labels: Record<Locale, { watch: string; play: string }> = {
+  en: { watch: 'Watch on YouTube', play: 'Play video' },
+  es: { watch: 'Ver en YouTube', play: 'Reproducir video' },
 };
 
 /**
@@ -18,8 +25,10 @@ export default function YouTubeEmbed({
   videoId,
   title,
   aspectClassName = 'aspect-video',
+  lang = 'en',
 }: Props) {
   const [active, setActive] = useState(false);
+  const t = labels[lang];
   const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
   return (
@@ -42,7 +51,7 @@ export default function YouTubeEmbed({
             className="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-slate-950/70 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur transition hover:bg-slate-950"
           >
             <ExternalLink className="h-3.5 w-3.5" />
-            Ver en YouTube
+            {t.watch}
           </a>
         </>
       ) : (
@@ -50,7 +59,7 @@ export default function YouTubeEmbed({
           type="button"
           onClick={() => setActive(true)}
           className="group absolute inset-0 h-full w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-400"
-          aria-label={`Reproducir video: ${title}`}
+          aria-label={`${t.play}: ${title}`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
