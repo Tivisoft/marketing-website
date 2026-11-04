@@ -163,8 +163,8 @@ export function Footer({ lang }: FooterProps) {
             <Link href={path('home', lang)} className="hover:text-slate-300">{t.bottomHome}</Link>
             <Link href={path('pricing', lang)} className="hover:text-slate-300">{t.bottomPricing}</Link>
             <Link href={path('security', lang)} className="hover:text-slate-300">{t.bottomSecurity}</Link>
-            <a href="https://tivisoft.com/llms.txt" target="_blank" rel="noreferrer" className="hover:text-slate-300">llms.txt</a>
-            <a href="https://tivisoft.com/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-slate-300">sitemap.xml</a>
+            <a href="https://tivisoft.com/llms.txt" target="_blank" rel="nofollow noreferrer" className="hover:text-slate-300">llms.txt</a>
+            <a href="https://tivisoft.com/sitemap.xml" target="_blank" rel="nofollow noreferrer" className="hover:text-slate-300">sitemap.xml</a>
           </div>
         </div>
       </div>
